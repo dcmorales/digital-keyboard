@@ -10,7 +10,7 @@ class KeyboardSlice extends React.Component {
 
   renderKeyboardSlice = () => {
     const { noteValues, notesDefined } = this.state;
-    const { startingNote, selectedOctave, nextOctave, waveform, oscillator, duration } = this.props;
+    const { selectedScale, startingNote, selectedOctave, nextOctave, waveform, oscillator, duration } = this.props;
     return (
       <div>
         {noteValues[selectedOctave]
@@ -22,6 +22,7 @@ class KeyboardSlice extends React.Component {
                   <KeyboardSliceDetail
                     note={note}
                     notesDefined={notesDefined}
+                    selectedScale={selectedScale}
                     waveform={waveform}
                     oscillator={oscillator}
                     selectedOctave={selectedOctave}

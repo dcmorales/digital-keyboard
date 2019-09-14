@@ -4,15 +4,15 @@ import SliceSection from './SliceSection'
 class SelectedKeyboardSlice extends React.Component {
   renderSelectedKeys() {
     const { notesDefined, selectedOctave, nextOctave, waveform, oscillator, duration, noteValue } = this.props;
-    const newStartingPoint = notesDefined.slice(noteValue)
-    const oldStartingPoint = notesDefined.slice(0, noteValue)
+    const newPoint = notesDefined.slice(noteValue)
+    const oldPoint = notesDefined.slice(0, noteValue)
     //const newNotesArray = newStartingPoint.concat(oldStartingPoint)
-    const lastNote = newStartingPoint.slice(0, 1)
+    const lastNote = newPoint.slice(0, 1)
     return (
       <div className='octave-container'>
 
         <SliceSection
-          notesDefinedSlice={newStartingPoint}
+          notesDefinedSlice={newPoint}
           waveform={waveform}
           oscillator={oscillator}
           duration={duration}
@@ -20,7 +20,7 @@ class SelectedKeyboardSlice extends React.Component {
         />
 
         <SliceSection
-          notesDefinedSlice={oldStartingPoint}
+          notesDefinedSlice={oldPoint}
           waveform={waveform}
           oscillator={oscillator}
           duration={duration}
