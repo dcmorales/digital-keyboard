@@ -3,6 +3,13 @@ export const options = [
 
 //selectedKey
   [
+    '',
+    'major',
+    'minor'
+  ],
+
+//selectedKey
+  [
     'C',
     'Db',
     'D',

@@ -5,6 +5,7 @@ import './App.css'
 
 class App extends React.Component {
   state = {
+    selectedScale: '',
     selectedKey: 'C',
     selectedOctave: 3,
     nextOctave: 4,
@@ -36,20 +37,21 @@ class App extends React.Component {
   }
 
   render() {
-    const { selectedKey, selectedOctave, nextOctave, waveform, oscillator, duration } = this.state;
+    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, duration } = this.state;
     return (
       <div>
         <Selections
-          selectedKey={selectedKey} selectedOctave={selectedOctave}
-          waveform={waveform} oscillator={oscillator}
-          duration={duration}
+          selectedScale={selectedScale} selectedKey={selectedKey}
+          selectedOctave={selectedOctave} waveform={waveform}
+          oscillator={oscillator} duration={duration}
           onSelectionChange={this.onSelectionChange}
           onOctaveChange={this.onOctaveChange}
         />
         <AllKeyboards
-          startingNote={selectedKey} selectedOctave={selectedOctave}
-          nextOctave={nextOctave} waveform={waveform}
-          oscillator={oscillator} duration={duration}
+          selectedScale={selectedScale} startingNote={selectedKey}
+          selectedOctave={selectedOctave} nextOctave={nextOctave}
+          waveform={waveform} oscillator={oscillator}
+          duration={duration}
         />
       </div>
     )
