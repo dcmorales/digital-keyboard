@@ -3,11 +3,11 @@ import { synthSlice } from './synthSlice'
 import Scales from '../../Scales/Scales'
 
 class PlayButton extends React.Component {
-  renderPlayButton = (noteValue, newStart, oldStart, lastNote) => {
+  renderPlayButton = (noteValue, newStart, lastPoint) => {
     const { waveform, oscillator, selectedOctave, nextOctave } = this.props;
-    const noteArrays = [newStart, oldStart, lastNote]
-    synthSlice.playNote(noteArrays, newStart, oldStart, lastNote, waveform, oscillator, selectedOctave, nextOctave)
-    synthSlice.stopNote(noteArrays, newStart, oldStart, lastNote)
+    const noteArrays = [newStart, lastPoint]
+    synthSlice.playNote(noteArrays, newStart, lastPoint, waveform, oscillator, selectedOctave, nextOctave)
+    synthSlice.stopNote(noteArrays, newStart, lastPoint)
   }
 
   render() {

@@ -2,7 +2,7 @@ import { synth } from '../Keyboard/synth'
 
 export const synthSlice = {
 
-  stopNote(noteArrays, newPoint, oldPoint, lastNote) {
+  stopNote(noteArrays, newPoint, lastPoint) {
     var offset = 1600
     noteArrays.forEach(notesDefinedSlice => {
       notesDefinedSlice.forEach(note => {
@@ -13,8 +13,7 @@ export const synthSlice = {
     })
   },
 
-  playNote(noteArrays, newPoint, oldPoint,
-    lastNote, waveform, oscillator, selectedOctave, nextOctave) {
+  playNote(noteArrays, newPoint, lastPoint, waveform, oscillator, selectedOctave, nextOctave) {
 
     var offset = 1500
     noteArrays.forEach(notesDefinedSlice => {
