@@ -13,13 +13,13 @@ class Scales extends React.Component {
       this.props.renderPlayButton(noteValue, newPoint, lastPoint)
     } else {
       const selectNums =
-        selectedScale === 'major' ? [7, 0] : (
-        selectedScale === 'natural minor' ? [8, 1] : (
-        selectedScale === 'harmonic minor' ? [9, 2] : (
-        selectedScale === 'melodic minor' ? [10, 3] : (
-        selectedScale === 'major pentatonic' ? [11, 4] : (
-        selectedScale === 'minor pentatonic' ? [12, 5] : (
-        selectedScale === 'blues' ? [13, 6] : null
+        selectedScale === 'major' ? [1, 0] : (
+        selectedScale === 'natural minor' ? [2, 1] : (
+        selectedScale === 'harmonic minor' ? [3, 2] : (
+        selectedScale === 'melodic minor' ? [4, 3] : (
+        selectedScale === 'major pentatonic' ? [5, 4] : (
+        selectedScale === 'minor pentatonic' ? [6, 5] : (
+        selectedScale === 'blues' ? [7, 6] : null
       ))))))
       this.renderScaleNotes(noteValue, combinedNotes, selectNums[0], selectNums[1])
     }
@@ -28,7 +28,7 @@ class Scales extends React.Component {
   renderScaleNotes(noteValue, combinedNotes, scaleNum, cpNum) {
     const scaleNotes = cutPoints[scaleNum].map(point => combinedNotes.slice(point[0], point[1]))
     const scaleCombined = scaleNotes[0].concat(scaleNotes[1], scaleNotes[2], scaleNotes[3], scaleNotes[4], scaleNotes[5])
-    const slicePoint = cutPoints[cpNum][noteValue]
+    const slicePoint = cutPoints[0][noteValue][cpNum]
     const scaleNow = scaleCombined.slice(0, slicePoint)
     const scaleNext = scaleCombined.slice(slicePoint, 8)
     this.props.renderPlayButton(noteValue, scaleNow, scaleNext)

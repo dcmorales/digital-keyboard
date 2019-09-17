@@ -1,206 +1,32 @@
 export const cutPoints = [
 
 
-//keys0 (major)
+//keys [major, natural minor, harmonic minor, melodic minor, major pentatonic, minor pentatonic, blues]
   [
     //C
-      7,
+      [ 7, 7, 7, 7, 5, 5, 6 ],
     //Db
-      6,
+      [ 6, 7, 6, 6, 5, 5, 6 ],
     //D
-      6,
+      [ 6, 6, 6, 6, 5, 4, 5 ],
     //Eb
-      5,
+      [ 5, 6, 6, 5, 4, 4, 5 ],
     //E
-      5,
+      [ 5, 5, 5, 5, 4, 4, 5 ],
     //F
-      4,
+      [ 4, 4, 4, 4, 3, 4, 4 ],
     //Gb
-      4,
+      [ 4, 4, 4, 4, 3, 3, 3 ],
     //G
-      3,
+      [ 3, 3, 3, 3, 3, 2, 2 ],
     //Ab
-      2,
+      [ 2, 3, 3, 3, 2, 2, 2 ],
     //A
-      2,
+      [ 2, 2, 2, 2, 2, 1, 2 ],
     //Bb
-      1,
+      [ 1, 1, 1, 1, 1, 1, 1 ],
     //B
-      1
-  ],
-
-
-//keys1 (natural minor)
-  [
-    //C
-      7,
-    //Db
-      7,
-    //D
-      6,
-    //Eb
-      6,
-    //E
-      5,
-    //F
-      4,
-    //Gb
-      4,
-    //G
-      3,
-    //Ab
-      3,
-    //A
-      2,
-    //Bb
-      1,
-    //B
-      1
-  ],
-
-
-//keys2 (harmonic minor)
-  [
-    //C
-      7,
-    //Db
-      6,
-    //D
-      6,
-    //Eb
-      6,
-    //E
-      5,
-    //F
-      4,
-    //Gb
-      4,
-    //G
-      3,
-    //Ab
-      3,
-    //A
-      2,
-    //Bb
-      1,
-    //B
-      1
-  ],
-
-
-//keys3 (melodic minor)
-  [
-    //C
-      7,
-    //Db
-      6,
-    //D
-      6,
-    //Eb
-      5,
-    //E
-      5,
-    //F
-      4,
-    //Gb
-      4,
-    //G
-      3,
-    //Ab
-      3,
-    //A
-      2,
-    //Bb
-      1,
-    //B
-      1
-  ],
-
-
-//keys4 (major pentatonic)
-  [
-    //C
-      5,
-    //Db
-      5,
-    //D
-      5,
-    //Eb
-      4,
-    //E
-      4,
-    //F
-      3,
-    //Gb
-      3,
-    //G
-      3,
-    //Ab
-      2,
-    //A
-      2,
-    //Bb
-      1,
-    //B
-      1
-  ],
-
-
-//keys5 (minor pentatonic)
-  [
-    //C
-      5,
-    //Db
-      5,
-    //D
-      4,
-    //Eb
-      4,
-    //E
-      4,
-    //F
-      4,
-    //Gb
-      3,
-    //G
-      2,
-    //Ab
-      2,
-    //A
-      1,
-    //Bb
-      1,
-    //B
-      1
-  ],
-
-
-//keys6 (blues)
-  [
-    //C
-      6,
-    //Db
-      6,
-    //D
-      5,
-    //Eb
-      5,
-    //E
-      5,
-    //F
-      4,
-    //Gb
-      3,
-    //G
-      2,
-    //Ab
-      2,
-    //A
-      2,
-    //Bb
-      1,
-    //B
-      1
+      [ 1, 1, 1, 1, 1, 1, 1 ]
   ],
 
 
@@ -215,7 +41,7 @@ export const cutPoints = [
   ],
 
 
-//naturalMinor
+//natural minor
   [
     [0, 1],
     [2, 4],
@@ -226,7 +52,7 @@ export const cutPoints = [
   ],
 
 
-//harmonicMinor
+//harmonic minor
   [
     [0, 1],
     [2, 4],
@@ -237,7 +63,7 @@ export const cutPoints = [
   ],
 
 
-//melodicMinor
+//melodic minor
   [
     [0, 1],
     [2, 4],
@@ -248,7 +74,7 @@ export const cutPoints = [
   ],
 
 
-//majorPentatonic
+//major pentatonic
   [
     [0, 1],
     [2, 3],
@@ -259,7 +85,7 @@ export const cutPoints = [
   ],
 
 
-//majorPentatonic
+//major pentatonic
   [
     [0, 1],
     [3, 4],
