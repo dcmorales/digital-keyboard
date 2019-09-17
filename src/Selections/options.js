@@ -3,9 +3,12 @@ export const options = [
 
 //selectedKey
   [
-    '',
+    'chromatic',
     'major',
-    'minor'
+    'natural minor',
+    'harmonic minor',
+    'melodic minor',
+    'pentatonic'
   ],
 
 

@@ -5,7 +5,7 @@ import './App.css'
 
 class App extends React.Component {
   state = {
-    selectedScale: '',
+    selectedScale: 'pentatonic',
     selectedKey: 'C',
     selectedOctave: 3,
     nextOctave: 4,
