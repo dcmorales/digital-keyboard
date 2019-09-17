@@ -11,20 +11,17 @@ class Scales extends React.Component {
     const combinedNotes = newPoint.concat(oldPoint, lastNote)
     if (selectedScale === 'chromatic') {
       this.props.renderPlayButton(noteValue, newPoint, lastPoint)
-    } else if (selectedScale === 'major') {
-      this.renderScaleNotes(noteValue, combinedNotes, 7, 0)
-    } else if (selectedScale === 'natural minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 8, 1)
-    } else if (selectedScale === 'harmonic minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 9, 2)
-    } else if (selectedScale === 'melodic minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 10, 3)
-    } else if (selectedScale === 'major pentatonic') {
-      this.renderScaleNotes(noteValue, combinedNotes, 11, 4)
-    } else if (selectedScale === 'minor pentatonic') {
-      this.renderScaleNotes(noteValue, combinedNotes, 12, 5)
-    } else if (selectedScale === 'blues') {
-      this.renderScaleNotes(noteValue, combinedNotes, 13, 6)
+    } else {
+      const selectNums =
+        selectedScale === 'major' ? [7, 0] : (
+        selectedScale === 'natural minor' ? [8, 1] : (
+        selectedScale === 'harmonic minor' ? [9, 2] : (
+        selectedScale === 'melodic minor' ? [10, 3] : (
+        selectedScale === 'major pentatonic' ? [11, 4] : (
+        selectedScale === 'minor pentatonic' ? [12, 5] : (
+        selectedScale === 'blues' ? [13, 6] : null
+      ))))))
+      this.renderScaleNotes(noteValue, combinedNotes, selectNums[0], selectNums[1])
     }
   }
 
