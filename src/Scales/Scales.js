@@ -12,15 +12,19 @@ class Scales extends React.Component {
     if (selectedScale === 'chromatic') {
       this.props.renderPlayButton(noteValue, newPoint, lastPoint)
     } else if (selectedScale === 'major') {
-      this.renderScaleNotes(noteValue, combinedNotes, 2, 0)
+      this.renderScaleNotes(noteValue, combinedNotes, 6, 0)
     } else if (selectedScale === 'natural minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 3, 0)
+      this.renderScaleNotes(noteValue, combinedNotes, 7, 1)
     } else if (selectedScale === 'harmonic minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 4, 0)
+      this.renderScaleNotes(noteValue, combinedNotes, 8, 2)
     } else if (selectedScale === 'melodic minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 5, 0)
-    } else if (selectedScale === 'pentatonic') {
-      this.renderScaleNotes(noteValue, combinedNotes, 6, 1)
+      this.renderScaleNotes(noteValue, combinedNotes, 9, 3)
+    } else if (selectedScale === 'major pentatonic') {
+      this.renderScaleNotes(noteValue, combinedNotes, 10, 4)
+    } else if (selectedScale === 'minor pentatonic') {
+      this.renderScaleNotes(noteValue, combinedNotes, 11, 4)
+    } else if (selectedScale === 'blues') {
+      this.renderScaleNotes(noteValue, combinedNotes, 12, 5)
     }
   }
 
@@ -32,19 +36,6 @@ class Scales extends React.Component {
     const scaleNext = scaleCombined.slice(slicePoint, 8)
     this.props.renderPlayButton(noteValue, scaleNow, scaleNext)
   }
-
-  // var animals = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C'];
-  //
-  //   console.log(animals.slice(0, 1));
-  //
-  //
-  //   console.log(animals.slice(2, 4));
-  //
-  //
-  //   console.log(animals.slice(5, 6));
-  //   console.log(animals.slice(7, 9));
-  //   console.log(animals.slice(11, 13));
-  //   console.log(animals.slice(12, 13));
 
   render() {
     return (

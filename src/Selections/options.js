@@ -8,7 +8,9 @@ export const options = [
     'natural minor',
     'harmonic minor',
     'melodic minor',
-    'pentatonic'
+    'major pentatonic',
+    'minor pentatonic',
+    'blues'
   ],
 
 
