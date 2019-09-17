@@ -12,23 +12,30 @@ class Scales extends React.Component {
     if (selectedScale === 'chromatic') {
       this.props.renderPlayButton(noteValue, newPoint, lastPoint)
     } else {
-      const selectNums =
-        selectedScale === 'major' ? [1, 0] : (
-        selectedScale === 'natural minor' ? [2, 1] : (
-        selectedScale === 'harmonic minor' ? [3, 2] : (
-        selectedScale === 'melodic minor' ? [4, 3] : (
-        selectedScale === 'major pentatonic' ? [5, 4] : (
-        selectedScale === 'minor pentatonic' ? [6, 5] : (
-        selectedScale === 'blues' ? [7, 6] : null
+      const scaleNum =
+        selectedScale === 'major'
+                              ? 0 : (
+        selectedScale === 'natural minor'
+                              ? 1 : (
+        selectedScale === 'harmonic minor'
+                              ? 2 : (
+        selectedScale === 'melodic minor'
+                              ? 3 : (
+        selectedScale === 'major pentatonic'
+                              ? 4 : (
+        selectedScale === 'minor pentatonic'
+                              ? 5 : (
+        selectedScale === 'blues'
+                              ? 6 : null
       ))))))
-      this.renderScaleNotes(noteValue, combinedNotes, selectNums[0], selectNums[1])
+      this.renderScaleNotes(noteValue, combinedNotes, scaleNum)
     }
   }
 
-  renderScaleNotes(noteValue, combinedNotes, scaleNum, cpNum) {
-    const scaleNotes = cutPoints[scaleNum].map(point => combinedNotes.slice(point[0], point[1]))
+  renderScaleNotes(noteValue, combinedNotes, scaleNum) {
+    const scaleNotes = cutPoints[1][scaleNum].map(point => combinedNotes.slice(point[0], point[1]))
     const scaleCombined = scaleNotes[0].concat(scaleNotes[1], scaleNotes[2], scaleNotes[3], scaleNotes[4], scaleNotes[5])
-    const slicePoint = cutPoints[0][noteValue][cpNum]
+    const slicePoint = cutPoints[0][noteValue][scaleNum]
     const scaleNow = scaleCombined.slice(0, slicePoint)
     const scaleNext = scaleCombined.slice(slicePoint, 8)
     this.props.renderPlayButton(noteValue, scaleNow, scaleNext)
