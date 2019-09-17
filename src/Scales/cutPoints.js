@@ -117,7 +117,7 @@ export const cutPoints = [
   ],
 
 
-//keys4 (major pentatonic, minor pentatonic)
+//keys4 (major pentatonic)
   [
     //C
       5,
@@ -146,7 +146,36 @@ export const cutPoints = [
   ],
 
 
-//keys5 (blues)
+//keys5 (minor pentatonic)
+  [
+    //C
+      5,
+    //Db
+      5,
+    //D
+      4,
+    //Eb
+      4,
+    //E
+      4,
+    //F
+      4,
+    //Gb
+      3,
+    //G
+      2,
+    //Ab
+      2,
+    //A
+      1,
+    //Bb
+      1,
+    //B
+      1
+  ],
+
+
+//keys6 (blues)
   [
     //C
       6,

@@ -12,19 +12,19 @@ class Scales extends React.Component {
     if (selectedScale === 'chromatic') {
       this.props.renderPlayButton(noteValue, newPoint, lastPoint)
     } else if (selectedScale === 'major') {
-      this.renderScaleNotes(noteValue, combinedNotes, 6, 0)
+      this.renderScaleNotes(noteValue, combinedNotes, 7, 0)
     } else if (selectedScale === 'natural minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 7, 1)
+      this.renderScaleNotes(noteValue, combinedNotes, 8, 1)
     } else if (selectedScale === 'harmonic minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 8, 2)
+      this.renderScaleNotes(noteValue, combinedNotes, 9, 2)
     } else if (selectedScale === 'melodic minor') {
-      this.renderScaleNotes(noteValue, combinedNotes, 9, 3)
+      this.renderScaleNotes(noteValue, combinedNotes, 10, 3)
     } else if (selectedScale === 'major pentatonic') {
-      this.renderScaleNotes(noteValue, combinedNotes, 10, 4)
-    } else if (selectedScale === 'minor pentatonic') {
       this.renderScaleNotes(noteValue, combinedNotes, 11, 4)
-    } else if (selectedScale === 'blues') {
+    } else if (selectedScale === 'minor pentatonic') {
       this.renderScaleNotes(noteValue, combinedNotes, 12, 5)
+    } else if (selectedScale === 'blues') {
+      this.renderScaleNotes(noteValue, combinedNotes, 13, 6)
     }
   }
 
