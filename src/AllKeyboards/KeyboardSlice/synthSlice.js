@@ -2,10 +2,11 @@ import { synth } from '../Keyboard/synth'
 
 export const synthSlice = {
 
-  stopNote(noteArrays, newPoint, lastPoint) {
+  stopNote(sliceOrder, order) {
     var offset = 1600
-    noteArrays.forEach(notesDefinedSlice => {
-      notesDefinedSlice.forEach(note => {
+    sliceOrder.forEach(notesDefinedSlice => {
+      const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
+      noteOrder.forEach(note => {
         setTimeout(() => {
           synth.noteOff(note)
         }, offset)
@@ -13,14 +14,12 @@ export const synthSlice = {
     })
   },
 
-  playNote(noteArrays, newPoint, lastPoint, waveform, oscillator, selectedOctave, nextOctave) {
-
+  playNote(sliceOrder, order, newPoint, waveform, oscillator, selectedOctave, nextOctave) {
     var offset = 1500
-    noteArrays.forEach(notesDefinedSlice => {
-      const octave =
-        notesDefinedSlice === newPoint
-        ? selectedOctave : nextOctave
-      notesDefinedSlice.forEach(note => {
+    sliceOrder.forEach(notesDefinedSlice => {
+      const octave = notesDefinedSlice === newPoint ? selectedOctave : nextOctave
+      const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
+      noteOrder.forEach(note => {
         setTimeout(() => {
           synth.play(note, waveform, oscillator, octave, note)
           this.highlightNote(note, octave)

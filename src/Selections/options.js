@@ -73,6 +73,14 @@ export const options = [
     1250,
     1375,
     1500
+  ],
+
+
+//order
+  [
+    'ascending',
+    'descending',
+    'random'
   ]
 
 

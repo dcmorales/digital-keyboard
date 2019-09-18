@@ -11,7 +11,8 @@ class App extends React.Component {
     nextOctave: 4,
     waveform: 'sawtooth',
     oscillator: '',
-    duration: 125
+    duration: 125,
+    order: 'ascending'
   }
 
   onOctaveChange = async(e) => {
@@ -36,20 +37,27 @@ class App extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  renderOthr() {
+    const array = [1, 2, 3, 4, 5]
+    console.log(array)
+  }
+
   render() {
-    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, duration } = this.state;
+    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, duration, order } = this.state;
     return (
       <div>
         <Selections
           selectedScale={selectedScale} selectedKey={selectedKey}
           selectedOctave={selectedOctave} waveform={waveform}
           oscillator={oscillator} duration={duration}
+          order={order}
           onSelectionChange={this.onSelectionChange}
           onOctaveChange={this.onOctaveChange}
         />
         <AllKeyboards
           selectedScale={selectedScale} startingNote={selectedKey}
           selectedOctave={selectedOctave} nextOctave={nextOctave}
+          order={order}
           waveform={waveform} oscillator={oscillator}
           duration={duration}
         />
