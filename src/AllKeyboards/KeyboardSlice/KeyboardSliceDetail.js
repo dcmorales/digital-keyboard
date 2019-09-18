@@ -2,7 +2,7 @@ import React from 'react'
 import SelectedKeyboardSlice from './SelectedKeyboardSlice'
 import PlayButton from './PlayButton'
 
-const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, notesDefined, waveform, oscillator, duration, order }) => {
+const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, notesDefined, waveform, oscillator, duration, order, totalBeats }) => {
   return (
     <div>
 
@@ -26,6 +26,7 @@ const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, 
         oscillator={oscillator}
         duration={duration}
         order={order}
+        totalBeats={totalBeats}
       />
 
     </div>

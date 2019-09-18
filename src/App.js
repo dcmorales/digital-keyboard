@@ -12,7 +12,8 @@ class App extends React.Component {
     waveform: 'sawtooth',
     oscillator: '',
     duration: 125,
-    order: 'ascending'
+    order: 'ascending',
+    totalBeats: 'all'
   }
 
   onOctaveChange = async(e) => {
@@ -43,21 +44,21 @@ class App extends React.Component {
   }
 
   render() {
-    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, duration, order } = this.state;
+    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, duration, order, totalBeats } = this.state;
     return (
       <div>
         <Selections
           selectedScale={selectedScale} selectedKey={selectedKey}
           selectedOctave={selectedOctave} waveform={waveform}
           oscillator={oscillator} duration={duration}
-          order={order}
+          order={order} totalBeats={totalBeats}
           onSelectionChange={this.onSelectionChange}
           onOctaveChange={this.onOctaveChange}
         />
         <AllKeyboards
           selectedScale={selectedScale} startingNote={selectedKey}
           selectedOctave={selectedOctave} nextOctave={nextOctave}
-          order={order}
+          order={order} totalBeats={totalBeats}
           waveform={waveform} oscillator={oscillator}
           duration={duration}
         />

@@ -13,6 +13,7 @@ const TwoKeys = ({ waveform, oscillator, duration, octave, note1, note2 }) => {
         duration={duration}
         octave={octave}
         color='white'
+        keyboard='full'
       />
 
       <Key
@@ -23,8 +24,9 @@ const TwoKeys = ({ waveform, oscillator, duration, octave, note1, note2 }) => {
         duration={duration}
         octave={octave}
         color='black'
+        keyboard='full'
       />
-      
+
     </div>
   )
 }

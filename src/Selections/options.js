@@ -81,7 +81,20 @@ export const options = [
     'ascending',
     'descending',
     'random'
-  ]
+  ],
 
+
+//totalBeats
+  [
+    'all',
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ]
 
 ]

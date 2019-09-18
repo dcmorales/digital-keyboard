@@ -13,6 +13,7 @@ const SliceSection = ({ notesDefinedSlice, octave, waveform, oscillator, duratio
           duration={duration}
           octave={octave}
           note={note}
+          keyboard='slice'
         />
       </div>
     )

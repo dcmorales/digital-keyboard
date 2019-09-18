@@ -24,6 +24,7 @@ const FiveKeys= ({note1, note2, note3, note4, note5, waveform, oscillator, durat
           waveform={waveform} oscillator={oscillator}
           duration={duration} octave={octave}
           color='white'
+          keyboard='full'
         />
       </div>
 

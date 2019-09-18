@@ -15,7 +15,7 @@ class Key extends React.Component {
   }
 
   render(){
-    const { color, noteFull } = this.props
+    const { color, noteFull, keyboard } = this.props
     return (
       <button
         className={color}
@@ -23,8 +23,8 @@ class Key extends React.Component {
         onMouseUp={this.holdNote}
       >
         <div
-          className={`note ${noteFull}`}
-          id={noteFull}
+          className={`${noteFull} note ${keyboard}`}
+          id={`${noteFull} ${keyboard}`}
         >
           {noteFull}
         </div>
