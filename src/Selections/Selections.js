@@ -3,9 +3,10 @@ import SelectionDetail from './SelectionDetail';
 
 const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, duration, order, totalBeats, offset, onSelectionChange, onOctaveChange }) => {
   return (
-    <div>
+    <div className='selection-container'>
 
       <SelectionDetail
+        label='Scale'
         nameOfSelection='selectedScale'
         valueOfSelection={selectedScale}
         optionsArrayNumber={0}
@@ -13,6 +14,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
+        label='Key'
         nameOfSelection='selectedKey'
         valueOfSelection={selectedKey}
         optionsArrayNumber={1}
@@ -20,6 +22,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
+        label='Octave'
         nameOfSelection='selectedOctave'
         valueOfSelection={selectedOctave}
         optionsArrayNumber={2}
@@ -27,6 +30,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
+        label='Waveform'
         nameOfSelection='waveform'
         valueOfSelection={waveform}
         optionsArrayNumber={3}
@@ -34,6 +38,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
+        label='Oscillator'
         nameOfSelection='oscillator'
         valueOfSelection={oscillator}
         optionsArrayNumber={4}
@@ -41,6 +46,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
+        label='Duration'
         nameOfSelection='duration'
         valueOfSelection={duration}
         optionsArrayNumber={5}
@@ -48,6 +54,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
+        label='Order'
         nameOfSelection='order'
         valueOfSelection={order}
         optionsArrayNumber={6}
@@ -55,6 +62,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
+        label='total different beats'
         nameOfSelection='totalBeats'
         valueOfSelection={totalBeats}
         optionsArrayNumber={7}
@@ -62,6 +70,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
+        label='offset'
         nameOfSelection='offset'
         valueOfSelection={offset}
         optionsArrayNumber={8}

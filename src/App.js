@@ -39,11 +39,6 @@ class App extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  renderOthr() {
-    const array = [1, 2, 3, 4, 5]
-    console.log(array)
-  }
-
   render() {
     const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, duration, order, totalBeats, offset } = this.state;
     return (

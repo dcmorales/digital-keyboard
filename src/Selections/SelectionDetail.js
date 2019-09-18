@@ -1,19 +1,22 @@
 import React from 'react';
 import { options } from './options'
 
-const SelectionDetail = ({ nameOfSelection, valueOfSelection, optionsArrayNumber, onSelectionChange }) => {
+const SelectionDetail = ({ label, nameOfSelection, valueOfSelection, optionsArrayNumber, onSelectionChange }) => {
   return (
-    <select name={nameOfSelection} value={valueOfSelection} onChange={onSelectionChange}>
-      {options[optionsArrayNumber]
-        .map((option) => {
-          return (
-            <option key={option}>
-              {option}
-            </option>
-          );
-        })
-      }
-    </select>
+    <div>
+      <label>{label}</label>
+      <select name={nameOfSelection} value={valueOfSelection} onChange={onSelectionChange}>
+        {options[optionsArrayNumber]
+          .map((option) => {
+            return (
+              <option key={option}>
+                {option}
+              </option>
+            );
+          })
+        }
+      </select>
+    </div>
   )
 }
 

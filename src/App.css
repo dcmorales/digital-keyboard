@@ -1,3 +1,7 @@
+.selection-container{
+  display: flex;
+}
+
 .keyboard-container {
   display: flex;
   width: 100%;
