@@ -20,7 +20,7 @@ class PlayButton extends React.Component {
       if (totalBeats !== 'all') {
         const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])]
         const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)]
-        const repeatFragment = [fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0]]
+        const repeatFragment = [fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0]]
         this.renderPlay(newStart, repeatFragment)
       } else {
         this.renderPlay(newStart, sliceOrder)

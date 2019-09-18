@@ -55,6 +55,7 @@ export const options = [
     '',
     'osc1',
     'osc2',
+    'mid-bass',
     'bass'
   ],
 

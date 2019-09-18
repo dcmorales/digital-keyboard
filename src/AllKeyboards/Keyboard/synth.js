@@ -16,10 +16,14 @@ export const synth = {
       this.oscillators.connect(this.audioContext.destination);
       switch (oscillator) {
         case 'osc1':
-          this.oscillators.detune.value = -15;
+          this.oscillators.detune.value = -50;
           break;
         case 'osc2':
-          this.oscillators.detune.value = 15;
+          this.oscillators.detune.value = 50;
+          break;
+        case 'mid-bass':
+          this.oscillators.frequency.value = (pitch+50)/2;
+          this.oscillators.type = `${waveform}`;
           break;
         case 'bass':
           this.oscillators.frequency.value = pitch/2;
