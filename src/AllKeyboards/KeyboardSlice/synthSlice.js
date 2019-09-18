@@ -2,20 +2,22 @@ import { synth } from '../Keyboard/synth'
 
 export const synthSlice = {
 
-  stopNote(sliceOrder, order) {
-    var offset = 1600
+  stopNote(sliceOrder, order, offset) {
+    var offsetPlus = 300
+    var offsetInteger = parseInt(offset, 10)
     sliceOrder.forEach(notesDefinedSlice => {
       const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
       noteOrder.forEach(note => {
         setTimeout(() => {
           synth.noteOff(note)
-        }, offset)
-        offset += 500})
+        }, offsetPlus)
+        offsetPlus += offsetInteger})
     })
   },
 
-  playNote(sliceOrder, order, newPoint, waveform, oscillator, selectedOctave, nextOctave, totalBeats) {
-    var offset = 1500
+  playNote(sliceOrder, order, newPoint, waveform, oscillator, selectedOctave, nextOctave, totalBeats, offset) {
+    var offsetPlus = 200
+    var offsetInteger = parseInt(offset, 10)
     sliceOrder.forEach(notesDefinedSlice => {
       const octave = notesDefinedSlice === newPoint || totalBeats !== 'all' ? selectedOctave : nextOctave
       const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
@@ -23,8 +25,9 @@ export const synthSlice = {
         setTimeout(() => {
           synth.play(note, waveform, oscillator, octave, note)
           this.highlightNote(note, octave)
-        }, offset)
-        offset += 500})
+          console.log(note, octave)
+        }, offsetPlus)
+        offsetPlus += offsetInteger})
     })
   },
 

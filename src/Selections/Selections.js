@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectionDetail from './SelectionDetail';
 
-const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, duration, order, totalBeats, onSelectionChange, onOctaveChange }) => {
+const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, duration, order, totalBeats, offset, onSelectionChange, onOctaveChange }) => {
   return (
     <div>
 
@@ -58,6 +58,13 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
         nameOfSelection='totalBeats'
         valueOfSelection={totalBeats}
         optionsArrayNumber={7}
+        onSelectionChange={onSelectionChange}
+      />
+
+      <SelectionDetail
+        nameOfSelection='offset'
+        valueOfSelection={offset}
+        optionsArrayNumber={8}
         onSelectionChange={onSelectionChange}
       />
 

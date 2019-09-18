@@ -28,9 +28,9 @@ class PlayButton extends React.Component {
   }
 
   renderPlay(newStart, sliceOrder) {
-    const { order, waveform, oscillator, selectedOctave, nextOctave, totalBeats } = this.props;
-    synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, selectedOctave, nextOctave, totalBeats)
-    synthSlice.stopNote(sliceOrder, order)
+    const { order, waveform, oscillator, selectedOctave, nextOctave, totalBeats, offset } = this.props;
+    synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, selectedOctave, nextOctave, totalBeats, offset)
+    synthSlice.stopNote(sliceOrder, order, offset)
   }
 
   render() {
