@@ -2,16 +2,16 @@ import React from 'react';
 import Key from '../Keyboard/Key'
 
 const SliceSection = ({ notesDefinedSlice, octave, waveform, oscillator, duration }) => {
-  return ( notesDefinedSlice.map((note, i) => {
+  return ( notesDefinedSlice.map(noteFull => {
     return (
-      <div  className='keys' key={note}>
+      <div  className='keys' key={noteFull}>
         <Key
-          color={note.includes('b') ? 'black2' : 'white'}
-          noteFull={note}
+          color={noteFull.includes('b') ? 'black2' : 'white'}
+          noteFull={noteFull}
           waveform={waveform}
           oscillator={oscillator}
           duration={duration}
-          octave={note.includes('b') ? note[2] : note[1]}
+          octave={noteFull.includes('b') ? noteFull[2] : noteFull[1]}
           keyboard='slice'
         />
       </div>

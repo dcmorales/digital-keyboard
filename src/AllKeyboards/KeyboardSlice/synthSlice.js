@@ -7,9 +7,9 @@ export const synthSlice = {
     var offsetInteger = parseInt(offset, 10)
     sliceOrder.forEach(notesDefinedSlice => {
       const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
-      noteOrder.forEach(note => {
+      noteOrder.forEach(noteFull => {
         setTimeout(() => {
-          synth.noteOff(note)
+          synth.noteOff(noteFull)
         }, offsetPlus)
         offsetPlus += offsetInteger})
     })
