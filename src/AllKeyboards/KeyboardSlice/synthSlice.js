@@ -31,18 +31,18 @@ export const synthSlice = {
     })
   },
 
-  handleNoteHighlight(noteFull, otherClassName) {
-    document.getElementById(`${noteFull} slice`)
-      .setAttribute('class', `${noteFull} ${otherClassName}`)
-    document.getElementById(`${noteFull} full`)
-      .setAttribute('class', `${noteFull} ${otherClassName}`)
-  },
-
   highlightNote(noteFull) {
     setTimeout(() => {
       this.handleNoteHighlight(noteFull, 'note')
     }, 450)
     this.handleNoteHighlight(noteFull, 'active')
+  },
+
+  handleNoteHighlight(noteFull, otherClassName) {
+    document.getElementById(`${noteFull} slice`)
+      .setAttribute('class', `${noteFull} ${otherClassName}`)
+    document.getElementById(`${noteFull} full`)
+      .setAttribute('class', `${noteFull} ${otherClassName}`)
   }
 
 };
