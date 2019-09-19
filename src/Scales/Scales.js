@@ -3,14 +3,14 @@ import { cutPoints } from './cutPoints'
 
 class Scales extends React.Component {
   renderScale() {
-    const { selectedScale, notesDefined, noteValue } = this.props;
-    const newPoint = notesDefined.slice(noteValue)
+    const { selectedScale, notesDefined, noteValue, selectedOctave, nextOctave } = this.props;
+    const newPoint = notesDefined.slice(noteValue).map(point => point + selectedOctave)
     const oldPoint = notesDefined.slice(0, noteValue)
-    const lastNote = newPoint.slice(0, 1)
-    const lastPoint = oldPoint.concat(lastNote)
-    const combinedNotes = newPoint.concat(oldPoint, lastNote)
+    const lastNote = notesDefined.slice(noteValue)[0]
+    const lastPoint = oldPoint.concat(lastNote).map(point => point + nextOctave)
+    const combinedNotes = newPoint.concat(lastPoint)
     if (selectedScale === 'chromatic') {
-      this.props.renderPlayButton(noteValue, newPoint, lastPoint)
+      this.props.renderPlayButton(newPoint, lastPoint)
     } else {
       const scaleNum =
         selectedScale === 'major'
@@ -28,17 +28,18 @@ class Scales extends React.Component {
         selectedScale === 'blues'
                               ? 6 : null
       ))))))
-      this.renderScaleNotes(noteValue, combinedNotes, scaleNum)
+      this.renderScaleNotes(combinedNotes, scaleNum)
     }
   }
 
-  renderScaleNotes(noteValue, combinedNotes, scaleNum) {
+  renderScaleNotes(combinedNotes, scaleNum) {
+    const { noteValue } = this.props;
     const scaleNotes = cutPoints[1][scaleNum].map(point => combinedNotes.slice(point[0], point[1]))
     const scaleCombined = scaleNotes[0].concat(scaleNotes[1], scaleNotes[2], scaleNotes[3], scaleNotes[4], scaleNotes[5])
     const slicePoint = cutPoints[0][noteValue][scaleNum]
     const scaleNow = scaleCombined.slice(0, slicePoint)
     const scaleNext = scaleCombined.slice(slicePoint, 8)
-    this.props.renderPlayButton(noteValue, scaleNow, scaleNext)
+    this.props.renderPlayButton(scaleNow, scaleNext)
   }
 
   render() {

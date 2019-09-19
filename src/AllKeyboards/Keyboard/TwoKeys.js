@@ -6,7 +6,6 @@ const TwoKeys = ({ waveform, oscillator, duration, octave, note1, note2 }) => {
     <div className='keys'>
 
       <Key
-        note={note1}
         noteFull={`${note1}${octave}`}
         waveform={waveform}
         oscillator={oscillator}
@@ -17,7 +16,6 @@ const TwoKeys = ({ waveform, oscillator, duration, octave, note1, note2 }) => {
       />
 
       <Key
-        note={note2}
         noteFull={`${note2}${octave}`}
         waveform={waveform}
         oscillator={oscillator}

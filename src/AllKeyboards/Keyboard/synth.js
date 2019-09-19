@@ -8,8 +8,8 @@ export const synth = {
     this.oscillators.stop();
   },
 
-  play(noteFull, waveform, oscillator, octave, note) {
-    const pitch = noteValues[octave].filter(info => info.note === note).map(note => note.frequency)[0];
+  play(noteFull, waveform, oscillator, octave) {
+    const pitch = noteValues[octave].filter(info => noteFull.includes(info.note)).map(note => note.frequency)[0];
       this.oscillators = this.audioContext.createOscillator();
       this.oscillators.type = `${waveform}`;
       this.oscillators.frequency.value = pitch;

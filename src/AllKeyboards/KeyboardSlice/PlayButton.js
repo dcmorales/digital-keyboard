@@ -3,7 +3,7 @@ import { synthSlice } from './synthSlice'
 import Scales from '../../Scales/Scales'
 
 class PlayButton extends React.Component {
-  renderPlayButton = (noteValue, newStart, lastPoint) => {
+  renderPlayButton = (newStart, lastPoint) => {
     const { order, totalBeats } = this.props;
     const noteArrays = [newStart, lastPoint]
     const sliceOrder = order === 'descending' ? noteArrays.reverse() : noteArrays
@@ -28,18 +28,20 @@ class PlayButton extends React.Component {
   }
 
   renderPlay(newStart, sliceOrder) {
-    const { order, waveform, oscillator, selectedOctave, nextOctave, totalBeats, offset } = this.props;
-    synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, selectedOctave, nextOctave, totalBeats, offset)
+    const { order, waveform, oscillator, totalBeats, offset } = this.props;
+    synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, totalBeats, offset)
     synthSlice.stopNote(sliceOrder, order, offset)
   }
 
   render() {
-    const { note, selectedScale, notesDefined } = this.props;
+    const { noteValue, selectedScale, notesDefined, selectedOctave, nextOctave } = this.props;
     return (
       <Scales
-        noteValue={note.value}
+        noteValue={noteValue}
         selectedScale={selectedScale}
         notesDefined={notesDefined}
+        selectedOctave={selectedOctave}
+        nextOctave={nextOctave}
         renderPlayButton={this.renderPlayButton}
       />
     )

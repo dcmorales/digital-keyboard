@@ -15,19 +15,19 @@ export const synthSlice = {
     })
   },
 
-  playNote(sliceOrder, order, newPoint, waveform, oscillator, selectedOctave, nextOctave, totalBeats, offset) {
+  playNote(sliceOrder, order, newPoint, waveform, oscillator, totalBeats, offset) {
     var offsetPlus = 200
     var offsetInteger = parseInt(offset, 10)
     sliceOrder.forEach(notesDefinedSlice => {
-      const octave = notesDefinedSlice === newPoint || totalBeats !== 'all' ? selectedOctave : nextOctave
       const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
-      noteOrder.forEach(note => {
+      noteOrder.forEach(noteFull => {
+        const octave = noteFull.includes('b') ? noteFull[2] : noteFull[1]
         setTimeout(() => {
-          synth.play(note, waveform, oscillator, octave, note)
-          this.highlightNote(note, octave)
-          console.log(note, octave)
+          synth.play(noteFull, waveform, oscillator, octave)
+          this.highlightNote(noteFull)
         }, offsetPlus)
         offsetPlus += offsetInteger})
+        console.log(noteOrder)
     })
   },
 
@@ -38,8 +38,7 @@ export const synthSlice = {
       .setAttribute('class', `${noteFull} ${otherClassName}`)
   },
 
-  highlightNote(note, octave) {
-    const noteFull = `${note}${octave}`
+  highlightNote(noteFull) {
     setTimeout(() => {
       this.handleNoteHighlight(noteFull, 'note')
     }, 450)

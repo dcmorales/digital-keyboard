@@ -7,12 +7,11 @@ const SliceSection = ({ notesDefinedSlice, octave, waveform, oscillator, duratio
       <div  className='keys' key={note}>
         <Key
           color={note.includes('b') ? 'black2' : 'white'}
-          noteFull={`${note}${octave}`}
+          noteFull={note}
           waveform={waveform}
           oscillator={oscillator}
           duration={duration}
-          octave={octave}
-          note={note}
+          octave={note.includes('b') ? note[2] : note[1]}
           keyboard='slice'
         />
       </div>

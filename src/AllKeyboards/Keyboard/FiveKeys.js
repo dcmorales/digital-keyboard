@@ -20,7 +20,7 @@ const FiveKeys= ({note1, note2, note3, note4, note5, waveform, oscillator, durat
 
       <div className='keys'>
         <Key
-          note={note5} noteFull={`${note5}${octave}`}
+          noteFull={`${note5}${octave}`}
           waveform={waveform} oscillator={oscillator}
           duration={duration} octave={octave}
           color='white'

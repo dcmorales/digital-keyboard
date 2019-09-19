@@ -17,7 +17,7 @@ const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, 
       />
 
       <PlayButton
-        note={note}
+        noteValue={note.value}
         notesDefined={notesDefined}
         selectedScale={selectedScale}
         selectedOctave={selectedOctave}

@@ -3,8 +3,8 @@ import { synth } from './synth'
 
 class Key extends React.Component {
   playNote = () => {
-    const { noteFull, waveform, oscillator, octave, note } = this.props;
-    synth.play(noteFull, waveform, oscillator, octave, note)
+    const { noteFull, waveform, oscillator, octave } = this.props;
+    synth.play(noteFull, waveform, oscillator, octave)
   }
 
   holdNote = () => {
