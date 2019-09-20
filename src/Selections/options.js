@@ -46,7 +46,8 @@ export const options = [
   [
     'sawtooth',
     'square',
-    'triangle'
+    'triangle',
+    'sine (adjusted)'
   ],
 
 
