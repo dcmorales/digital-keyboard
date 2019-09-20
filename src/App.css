@@ -109,7 +109,7 @@
   position: absolute;
   color: grey;
   left: 0px;
-  bottom: 8vh;
+  bottom: 9vh;
 }
 
 .active{
@@ -117,5 +117,5 @@
   position: absolute;
   color: grey;
   left: 0px;
-  bottom: 11vh;
+  bottom: 13vh;
 }

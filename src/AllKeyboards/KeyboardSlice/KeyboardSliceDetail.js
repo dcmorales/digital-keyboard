@@ -1,6 +1,6 @@
 import React from 'react'
 import SelectedKeyboardSlice from './SelectedKeyboardSlice'
-import PlayScales from '../../PlayScales/PlayScales'
+import ScaleNotes from '../../ScaleNotes/ScaleNotes'
 
 const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, notesDefined, waveform, oscillator, duration, order, totalBeats, offset }) => {
   return (
@@ -16,7 +16,7 @@ const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, 
         duration={duration}
       />
 
-      <PlayScales
+      <ScaleNotes
         noteValue={note.value}
         notesDefined={notesDefined}
         selectedScale={selectedScale}

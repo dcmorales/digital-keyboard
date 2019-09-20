@@ -1,8 +1,7 @@
 import React from 'react'
 import { synthSlice } from '../AllKeyboards/KeyboardSlice/synthSlice'
-import ScaleNotes from './ScaleNotes'
 
-class PlayScales extends React.Component {
+class PlayScale extends React.Component {
   renderPlayButton = (newStart, lastPoint) => {
     const { order, totalBeats } = this.props;
     const noteArrays = [newStart, lastPoint]
@@ -35,18 +34,12 @@ class PlayScales extends React.Component {
   }
 
   render() {
-    const { noteValue, selectedScale, notesDefined, selectedOctave, nextOctave } = this.props;
     return (
-      <ScaleNotes
-        noteValue={noteValue}
-        selectedScale={selectedScale}
-        notesDefined={notesDefined}
-        selectedOctave={selectedOctave}
-        nextOctave={nextOctave}
-        renderPlayButton={this.renderPlayButton}
-      />
+      <button onClick={() => this.renderPlayButton(this.props.renderScale()[0], this.props.renderScale()[1])}>
+        Play keys
+      </button>
     )
   }
 }
 
-export default PlayScales;
+export default PlayScale;
