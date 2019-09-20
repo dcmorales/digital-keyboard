@@ -8,7 +8,6 @@ class SelectedKeyboardSlice extends React.Component {
     const oldPoint = notesDefined.slice(0, noteValue)
     const lastNote = notesDefined.slice(noteValue)[0]
     const lastPoint = oldPoint.concat(lastNote).map(point => point + nextOctave)
-    //pass scale notes into SliceSection
     return (
       <div className='octave-container'>
 

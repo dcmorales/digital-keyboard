@@ -19,5 +19,4 @@ const SliceSection = ({ notesDefinedSlice, waveform, oscillator, duration }) => 
   }))
 }
 
-
 export default SliceSection;

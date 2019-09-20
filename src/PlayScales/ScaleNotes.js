@@ -32,8 +32,6 @@ class ScaleNotes extends React.Component {
     }
   }
 
-  //funciton gets notes that are in scale
-
   renderScaleNotes(combinedNotes, scaleNum) {
     const { noteValue } = this.props;
     const scaleNotes = cutPoints[1][scaleNum].map(point => combinedNotes.slice(point[0], point[1]))

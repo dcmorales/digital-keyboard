@@ -33,8 +33,6 @@ class PlayScales extends React.Component {
     synthSlice.stopNote(sliceOrder, order, offset)
   }
 
-  //pass in function through props to get scale notes
-
   render() {
     const { noteValue, selectedScale, notesDefined, selectedOctave, nextOctave } = this.props;
     return (

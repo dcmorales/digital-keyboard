@@ -30,8 +30,6 @@ const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, 
         offset={offset}
       />
 
-      {/* pass in scale notes into slice */}
-
     </div>
   )
 }
