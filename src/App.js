@@ -56,9 +56,8 @@ class App extends React.Component {
           selectedScale={selectedScale} startingNote={selectedKey}
           selectedOctave={selectedOctave} nextOctave={nextOctave}
           order={order} totalBeats={totalBeats}
-          offset={offset}
-          waveform={waveform} oscillator={oscillator}
-          duration={duration}
+          offset={offset} waveform={waveform}
+          oscillator={oscillator} duration={duration}
         />
       </div>
     )

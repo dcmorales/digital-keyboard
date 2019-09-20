@@ -104,10 +104,18 @@
   left: 0px;
 }
 
+.scale-note{
+  font-size: 14px;
+  position: absolute;
+  color: grey;
+  left: 0px;
+  bottom: 8vh;
+}
+
 .active{
   font-size: 14px;
   position: absolute;
   color: grey;
   left: 0px;
-  bottom: 10vh;
+  bottom: 11vh;
 }

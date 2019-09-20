@@ -8,7 +8,7 @@ class PlayScales extends React.Component {
     const noteArrays = [newStart, lastPoint]
     const sliceOrder = order === 'descending' ? noteArrays.reverse() : noteArrays
     if (order !== 'random') {
-      this.renderPlay(newStart, sliceOrder)
+      this.renderPlayScales(newStart, sliceOrder)
     } else {
       const shuffleNotes = [newStart, lastPoint]
       shuffleNotes.forEach(shuffleSlice => {
@@ -20,14 +20,15 @@ class PlayScales extends React.Component {
       if (totalBeats !== 'all') {
         const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])]
         const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)]
-        const repeatFragment = [fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0]]
-        this.renderPlay(newStart, repeatFragment)
+        const repeatFragment =
+          [fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0]]
+        this.renderPlayScales(newStart, repeatFragment)
       } else {
-        this.renderPlay(newStart, sliceOrder)
+        this.renderPlayScales(newStart, sliceOrder)
     }}
   }
 
-  renderPlay(newStart, sliceOrder) {
+  renderPlayScales(newStart, sliceOrder) {
     const { order, waveform, oscillator, totalBeats, offset } = this.props;
     synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, totalBeats, offset)
     synthSlice.stopNote(sliceOrder, order, offset)
