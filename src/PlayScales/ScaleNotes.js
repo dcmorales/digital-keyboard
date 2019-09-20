@@ -1,7 +1,7 @@
 import React from 'react'
 import { cutPoints } from './cutPoints'
 
-class Scales extends React.Component {
+class ScaleNotes extends React.Component {
   renderScale() {
     const { selectedScale, notesDefined, noteValue, selectedOctave, nextOctave } = this.props;
     const newPoint = notesDefined.slice(noteValue).map(point => point + selectedOctave)
@@ -32,6 +32,8 @@ class Scales extends React.Component {
     }
   }
 
+  //funciton gets notes that are in scale
+
   renderScaleNotes(combinedNotes, scaleNum) {
     const { noteValue } = this.props;
     const scaleNotes = cutPoints[1][scaleNum].map(point => combinedNotes.slice(point[0], point[1]))
@@ -51,4 +53,4 @@ class Scales extends React.Component {
   }
 }
 
-export default Scales;
+export default ScaleNotes;

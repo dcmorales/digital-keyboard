@@ -27,8 +27,8 @@ export const synthSlice = {
           this.highlightNote(noteFull)
         }, offsetPlus)
         offsetPlus += offsetInteger})
-        console.log(noteOrder)
     })
+    console.log(sliceOrder[0].concat(sliceOrder[1]))
   },
 
   highlightNote(noteFull) {

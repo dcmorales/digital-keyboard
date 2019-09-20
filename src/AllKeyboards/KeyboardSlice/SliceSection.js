@@ -1,7 +1,7 @@
 import React from 'react';
 import Key from '../Keyboard/Key'
 
-const SliceSection = ({ notesDefinedSlice, octave, waveform, oscillator, duration }) => {
+const SliceSection = ({ notesDefinedSlice, waveform, oscillator, duration }) => {
   return ( notesDefinedSlice.map(noteFull => {
     return (
       <div  className='keys' key={noteFull}>
