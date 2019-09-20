@@ -33,7 +33,7 @@ export const synthSlice = {
 
   highlightNote(noteFull) {
     setTimeout(() => {
-      this.handleNoteHighlight(noteFull, 'scale-note')
+      this.handleNoteHighlight(noteFull, 'note')
     }, 450)
     this.handleNoteHighlight(noteFull, 'active')
   },

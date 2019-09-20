@@ -15,7 +15,7 @@ export const synth = {
       this.oscillators.frequency.value = pitch;
       this.oscillators.connect(this.audioContext.destination);
       if (waveform === 'sine' && oscillator === '') {
-            this.oscillators.detune.value = 2200;
+        this.oscillators.detune.value = 2200;
       } else {
         switch (oscillator) {
           case 'osc1':
