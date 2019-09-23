@@ -9,6 +9,9 @@ class HighlightScale extends React.Component {
 
   componentDidUpdate() {
     setTimeout(() => {
+      const scaleNotes = this.props.renderScale()[0].concat(this.props.renderScale()[1])
+      scaleNotes.map(noteFull => document.getElementsByClassName(`scale-note`)[0]
+        .setAttribute('class', `${noteFull} note`))
       this.highlightScaleNotes()
     }, 300)
   }
