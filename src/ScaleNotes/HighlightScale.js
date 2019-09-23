@@ -8,10 +8,12 @@ class HighlightScale extends React.Component {
   }
 
   componentDidUpdate() {
+    const scaleNotes = this.props.renderScale()[0].concat(this.props.renderScale()[1])
     setTimeout(() => {
-      const scaleNotes = this.props.renderScale()[0].concat(this.props.renderScale()[1])
-      scaleNotes.map(noteFull => document.getElementsByClassName(`scale-note`)[0]
-        .setAttribute('class', `${noteFull} note`))
+      scaleNotes.map(noteFull => document.getElementsByClassName('scale-note full')[0]
+        .setAttribute('class', `${noteFull} note full`))
+      scaleNotes.map(noteFull => document.getElementsByClassName('scale-note slice')[0]
+        .setAttribute('class', `${noteFull} note slice`))
       this.highlightScaleNotes()
     }, 300)
   }
@@ -19,23 +21,9 @@ class HighlightScale extends React.Component {
   highlightScaleNotes() {
     const scaleNotes = this.props.renderScale()[0].concat(this.props.renderScale()[1])
     scaleNotes.map(noteFull => document.getElementById(`${noteFull} slice`)
-      .setAttribute('class', `${noteFull} scale-note`))
+      .setAttribute('class', `${noteFull} scale-note slice`))
     scaleNotes.map(noteFull => document.getElementById(`${noteFull} full`)
-      .setAttribute('class', `${noteFull} scale-note`))
-  }
-
-  highlightNote(noteFull) {
-    setTimeout(() => {
-      this.handleNoteHighlight(noteFull, 'note')
-    }, 450)
-    this.handleNoteHighlight(noteFull, 'active')
-  }
-
-  handleNoteHighlight(noteFull, otherClassName) {
-    document.getElementById(`${noteFull} slice`)
-      .setAttribute('class', `${noteFull} ${otherClassName}`)
-    document.getElementById(`${noteFull} full`)
-      .setAttribute('class', `${noteFull} ${otherClassName}`)
+      .setAttribute('class', `${noteFull} scale-note full`))
   }
 
   render() {

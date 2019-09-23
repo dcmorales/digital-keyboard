@@ -1,4 +1,4 @@
-.selection-container{
+.selection-container {
   display: flex;
 }
 
@@ -71,7 +71,7 @@
   background-color: grey;
 }
 
-.black:active{
+.black:active {
   background-color: darkGrey;
   color: black;
 }
@@ -92,7 +92,7 @@
   background-color: grey;
 }
 
-.black2:active{
+.black2:active {
   background-color: darkGrey;
   color: black;
 }
@@ -104,7 +104,7 @@
   left: 0px;
 }
 
-.scale-note{
+.scale-note {
   font-size: 14px;
   position: absolute;
   color: grey;
@@ -112,7 +112,7 @@
   bottom: 9vh;
 }
 
-.active{
+.active {
   font-size: 14px;
   position: absolute;
   color: grey;
