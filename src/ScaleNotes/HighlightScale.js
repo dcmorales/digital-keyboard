@@ -16,16 +16,16 @@ class HighlightScale extends React.Component {
 
   highlightScaleNotes() {
     const scaleNotes = this.props.renderScale()[0].concat(this.props.renderScale()[1])
-    scaleNotes.map(noteFull => document.getElementById(`${noteFull} slice`)
-      .setAttribute('class', `${noteFull} scale-note slice`))
     scaleNotes.map(noteFull => document.getElementById(`${noteFull} full`)
-      .setAttribute('class', `${noteFull} scale-note full`))
+      .setAttribute('class', `${noteFull} scale-note`))
+    scaleNotes.map(noteFull => document.getElementById(`${noteFull} slice`)
+      .setAttribute('class', `${noteFull} scale-note`))
   }
 
   clearHighlight() {
     const sliceNotes = this.props.renderScale()[2]
     sliceNotes.map(noteFull => document.getElementsByClassName('scale-note')[0]
-      .setAttribute('class', `${noteFull} note`))
+      .setAttribute('class', 'note'))
     sliceNotes.map(noteFull => document.getElementById(`${noteFull} slice`)
       .setAttribute('class', 'note'))
   }
