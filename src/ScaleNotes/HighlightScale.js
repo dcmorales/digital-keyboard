@@ -24,12 +24,16 @@ class HighlightScale extends React.Component {
 
   clearHighlight() {
     const sliceNotes = this.props.renderScale()[2]
-    for ( var i = 1; i < 8; i++ ) {
-      const allNotes = this.props.renderScale()[3]
-      allNotes.map(noteFull => document.getElementById(`${noteFull}${i} full`)
-        .setAttribute('class', 'note'))
-    }
     sliceNotes.map(noteFull => document.getElementById(`${noteFull} slice`)
+      .setAttribute('class', 'note'))
+    for ( var i = 1; i < 8; i++ ) {
+      this.getAllNotes(i)
+    }
+  }
+
+  getAllNotes(i) {
+    const allNotes = this.props.renderScale()[3]
+    allNotes.map(noteFull => document.getElementById(`${noteFull}${i} full`)
       .setAttribute('class', 'note'))
   }
 
