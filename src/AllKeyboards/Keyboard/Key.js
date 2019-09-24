@@ -6,7 +6,6 @@ class Key extends React.Component {
   playNote = () => {
     const { noteFull, waveform, oscillator, octave } = this.props;
     synth.play(noteFull, waveform, oscillator, octave)
-    synthSlice.highlightNote(noteFull)
   }
 
   holdNote = () => {

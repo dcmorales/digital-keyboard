@@ -39,9 +39,9 @@ export const synthSlice = {
   },
 
   handleNoteHighlight(noteFull, otherClassName) {
-    document.getElementById(`${noteFull} slice`)
-      .setAttribute('class', `${noteFull} ${otherClassName}`)
     document.getElementById(`${noteFull} full`)
+      .setAttribute('class', `${noteFull} ${otherClassName}`)
+    document.getElementById(`${noteFull} slice`)
       .setAttribute('class', `${noteFull} ${otherClassName}`)
   }
 

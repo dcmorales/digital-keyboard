@@ -13,7 +13,7 @@ class App extends React.Component {
     oscillator: '',
     order: 'ascending',
     totalBeats: 'all',
-    offset: 500
+    offset: 300
   }
 
   onOctaveChange = async(e) => {

@@ -51,7 +51,6 @@
 
 .white:active {
   background-color: #e5e5e5;
-  color: #fff;
 }
 
 .black {
@@ -119,10 +118,10 @@
 }
 
 .notes-played {
-  width: 95vw;
+  width: 100vw;
   font-size: 60px;
   display: flex;
   justify-content: center;
-  bottom: 9vh;
+  bottom: 0;
   position: absolute;
 }
