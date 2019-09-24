@@ -28,7 +28,7 @@ class ScaleNotes extends React.Component {
                             ? 6 : null
     ))))))
     if (selectedScale === 'chromatic') {
-      return [newPoint, lastPoint, combinedNotes]
+      return [newPoint, lastPoint, combinedNotes, notesDefined]
     }
     else {
       const scaleNotes = cutPoints[1][scaleNum].map(point => combinedNotes.slice(point[0], point[1]))
@@ -36,7 +36,7 @@ class ScaleNotes extends React.Component {
       const slicePoint = cutPoints[0][noteValue][scaleNum]
       const scaleNow = scaleCombined.slice(0, slicePoint)
       const scaleNext = scaleCombined.slice(slicePoint, 8)
-      return [scaleNow, scaleNext, combinedNotes]
+      return [scaleNow, scaleNext, combinedNotes, notesDefined]
     }
   }
 
