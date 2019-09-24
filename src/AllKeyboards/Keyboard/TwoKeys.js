@@ -1,7 +1,7 @@
 import React from 'react'
 import Key from './Key'
 
-const TwoKeys = ({ waveform, oscillator, duration, octave, note1, note2 }) => {
+const TwoKeys = ({ waveform, oscillator, octave, note1, note2 }) => {
   return (
     <div className='keys'>
 
@@ -9,7 +9,6 @@ const TwoKeys = ({ waveform, oscillator, duration, octave, note1, note2 }) => {
         noteFull={`${note1}${octave}`}
         waveform={waveform}
         oscillator={oscillator}
-        duration={duration}
         octave={octave}
         color='white'
         keyboard='full'
@@ -19,7 +18,6 @@ const TwoKeys = ({ waveform, oscillator, duration, octave, note1, note2 }) => {
         noteFull={`${note2}${octave}`}
         waveform={waveform}
         oscillator={oscillator}
-        duration={duration}
         octave={octave}
         color='black'
         keyboard='full'

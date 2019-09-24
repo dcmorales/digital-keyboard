@@ -11,7 +11,6 @@ class App extends React.Component {
     nextOctave: 4,
     waveform: 'sawtooth',
     oscillator: '',
-    duration: 125,
     order: 'ascending',
     totalBeats: 'all',
     offset: 500
@@ -40,15 +39,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, duration, order, totalBeats, offset } = this.state;
+    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, order, totalBeats, offset } = this.state;
     return (
       <div>
         <Selections
           selectedScale={selectedScale} selectedKey={selectedKey}
           selectedOctave={selectedOctave} waveform={waveform}
-          oscillator={oscillator} duration={duration}
-          order={order} totalBeats={totalBeats}
-          offset={offset}
+          oscillator={oscillator} order={order}
+          totalBeats={totalBeats} offset={offset}
           onSelectionChange={this.onSelectionChange}
           onOctaveChange={this.onOctaveChange}
         />
@@ -57,7 +55,7 @@ class App extends React.Component {
           selectedOctave={selectedOctave} nextOctave={nextOctave}
           order={order} totalBeats={totalBeats}
           offset={offset} waveform={waveform}
-          oscillator={oscillator} duration={duration}
+          oscillator={oscillator}
         />
       </div>
     )

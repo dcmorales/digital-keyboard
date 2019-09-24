@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectionDetail from './SelectionDetail';
 
-const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, duration, order, totalBeats, offset, onSelectionChange, onOctaveChange }) => {
+const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, order, totalBeats, offset, onSelectionChange, onOctaveChange }) => {
   return (
     <div className='selection-container'>
 
@@ -46,18 +46,10 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetail
-        label='Duration'
-        nameOfSelection='duration'
-        valueOfSelection={duration}
-        optionsArrayNumber={5}
-        onSelectionChange={onSelectionChange}
-      />
-
-      <SelectionDetail
         label='Order'
         nameOfSelection='order'
         valueOfSelection={order}
-        optionsArrayNumber={6}
+        optionsArrayNumber={5}
         onSelectionChange={onSelectionChange}
       />
 
@@ -65,7 +57,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
         label='total different beats'
         nameOfSelection='totalBeats'
         valueOfSelection={totalBeats}
-        optionsArrayNumber={7}
+        optionsArrayNumber={6}
         onSelectionChange={onSelectionChange}
       />
 
@@ -73,7 +65,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
         label='offset'
         nameOfSelection='offset'
         valueOfSelection={offset}
-        optionsArrayNumber={8}
+        optionsArrayNumber={7}
         onSelectionChange={onSelectionChange}
       />
 
