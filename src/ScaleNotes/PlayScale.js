@@ -2,6 +2,10 @@ import React from 'react'
 import { synthSlice } from '../AllKeyboards/KeyboardSlice/synthSlice'
 
 class PlayScale extends React.Component {
+  state = {
+    notesPlayed: []
+  }
+
   renderPlayButton = (newStart, lastPoint) => {
     const { order, totalBeats } = this.props;
     const noteArrays = [newStart, lastPoint]
@@ -31,13 +35,23 @@ class PlayScale extends React.Component {
     const { order, waveform, oscillator, totalBeats, offset } = this.props;
     synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, totalBeats, offset)
     synthSlice.stopNote(sliceOrder, order, offset)
+    this.displayNotes(sliceOrder[0].concat(sliceOrder[1]))
+  }
+
+  displayNotes(notesPlayed) {
+    this.setState({
+      notesPlayed: notesPlayed
+    })
   }
 
   render() {
     return (
-      <button onClick={() => this.renderPlayButton(this.props.renderScale()[0], this.props.renderScale()[1])}>
-        Play keys
-      </button>
+      <div>
+        <button onClick={() => this.renderPlayButton(this.props.renderScale()[0], this.props.renderScale()[1])}>
+          Play keys
+        </button>
+        <div>Notes that were played: {this.state.notesPlayed.join('-')}</div>
+      </div>
     )
   }
 }

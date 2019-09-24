@@ -1,7 +1,7 @@
 import React from 'react'
 
 class HighlightScale extends React.Component {
-  componentDidMount() {
+  firstHighlight() {
     setTimeout(() => {
       this.highlightScaleNotes()
     }, 600)
@@ -39,9 +39,7 @@ class HighlightScale extends React.Component {
 
   render() {
     return (
-      <button onClick={() => this.highlightScaleNotes()}>
-        highlight
-      </button>
+      <div>{this.firstHighlight()}</div>
     )
   }
 }
