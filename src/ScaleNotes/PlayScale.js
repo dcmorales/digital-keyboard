@@ -36,18 +36,27 @@ class PlayScale extends React.Component {
     synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, totalBeats, offset)
     synthSlice.stopNote(sliceOrder, order, offset)
     this.displayNotes(sliceOrder[0].concat(sliceOrder[1]))
+    this.disablePlayButton()
   }
 
   displayNotes(notesPlayed) {
-    this.setState({
-      notesPlayed: notesPlayed
-    })
+    this.setState({ notesPlayed: notesPlayed })
+  }
+
+  disablePlayButton() {
+    document.getElementById('play-button').setAttribute('disabled', 'disbaled')
+    setTimeout(() => {
+      document.getElementById('play-button').removeAttribute('disabled')
+    }, 7000)
   }
 
   render() {
     return (
       <div>
-        <button onClick={() => this.renderPlayButton(this.props.renderScale()[0], this.props.renderScale()[1])}>
+        <button
+          id='play-button'
+          onClick={() => this.renderPlayButton(this.props.renderScale()[0], this.props.renderScale()[1])}
+        >
           Play keys
         </button>
         <div className='notes-played'>Notes that were played: {this.state.notesPlayed.join('-')}</div>
