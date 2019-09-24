@@ -8,8 +8,7 @@ class Key extends React.Component {
   }
 
   holdNote = () => {
-    const { noteFull } = this.props;
-    synth.noteOff(noteFull);
+    synth.noteOff();
   }
 
   render(){

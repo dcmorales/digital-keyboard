@@ -2,41 +2,41 @@ import { noteValues } from './noteValues'
 
 export const synth = {
   audioContext:  new AudioContext(),
-  oscillators: {},
+  oscillator: {},
 
   noteOff() {
-    this.oscillators.stop();
+    this.oscillator.stop(this.audioContext.currentTime);
   },
 
   play(noteFull, waveform, oscillator, octave) {
     const pitch = noteValues[octave].filter(info => noteFull.includes(info.note)).map(note => note.frequency)[0];
-      this.oscillators = this.audioContext.createOscillator();
-      this.oscillators.type = `${waveform}`;
-      this.oscillators.frequency.value = pitch;
-      this.oscillators.connect(this.audioContext.destination);
+      this.oscillator = this.audioContext.createOscillator();
+      this.oscillator.type = `${waveform}`;
+      this.oscillator.frequency.value = pitch;
+      this.oscillator.connect(this.audioContext.destination);
       if (waveform === 'sine' && oscillator === '') {
-        this.oscillators.detune.value = 2200;
+        this.oscillator.detune.value = 2200;
       } else {
         switch (oscillator) {
           case 'osc1':
-            this.oscillators.detune.value = -50;
+            this.oscillator.detune.value = -50;
             break;
           case 'osc2':
-            this.oscillators.detune.value = 50;
+            this.oscillator.detune.value = 50;
             break;
           case 'mid-bass':
-            this.oscillators.frequency.value = (pitch+50)/2;
-            this.oscillators.type = `${waveform}`;
+            this.oscillator.frequency.value = (pitch+50)/2;
+            this.oscillator.type = `${waveform}`;
             break;
           case 'bass':
-            this.oscillators.frequency.value = pitch/2;
-            this.oscillators.type = `${waveform}`;
+            this.oscillator.frequency.value = pitch/2;
+            this.oscillator.type = `${waveform}`;
             break;
 
           // no default
         }
 
       }
-      this.oscillators.start();
+      this.oscillator.start();
   }
 };
