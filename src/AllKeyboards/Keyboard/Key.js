@@ -1,10 +1,12 @@
 import React from 'react'
 import { synth } from './synth'
+import { synthSlice } from '../KeyboardSlice/synthSlice'
 
 class Key extends React.Component {
   playNote = () => {
     const { noteFull, waveform, oscillator, octave } = this.props;
     synth.play(noteFull, waveform, oscillator, octave)
+    synthSlice.highlightNote(noteFull)
   }
 
   holdNote = () => {

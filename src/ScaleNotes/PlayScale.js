@@ -50,7 +50,7 @@ class PlayScale extends React.Component {
         <button onClick={() => this.renderPlayButton(this.props.renderScale()[0], this.props.renderScale()[1])}>
           Play keys
         </button>
-        <div>Notes that were played: {this.state.notesPlayed.join('-')}</div>
+        <div className='notes-played'>Notes that were played: {this.state.notesPlayed.join('-')}</div>
       </div>
     )
   }

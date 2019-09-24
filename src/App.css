@@ -50,7 +50,7 @@
 }
 
 .white:active {
-  background-color: grey;
+  background-color: #e5e5e5;
   color: #fff;
 }
 
@@ -68,12 +68,11 @@
 }
 
 .black:hover {
-  background-color: grey;
+  background-color: #191919;
 }
 
 .black:active {
-  background-color: darkGrey;
-  color: black;
+  background-color: #323232;
 }
 
 .black2 {
@@ -89,12 +88,11 @@
 }
 
 .black2:hover {
-  background-color: grey;
+  background-color: #191919;
 }
 
 .black2:active {
-  background-color: darkGrey;
-  color: black;
+  background-color: #323232;
 }
 
 .note {
@@ -109,7 +107,7 @@
   position: absolute;
   color: grey;
   left: 0px;
-  bottom: 9vh;
+  bottom: 12vh;
 }
 
 .active {
@@ -117,5 +115,14 @@
   position: absolute;
   color: grey;
   left: 0px;
-  bottom: 13vh;
+  bottom: 9vh;
+}
+
+.notes-played {
+  width: 95vw;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  bottom: 9vh;
+  position: absolute;
 }
