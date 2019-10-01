@@ -28,7 +28,15 @@ export const synthSlice = {
         }, offsetPlus)
         offsetPlus += offsetInteger})
     })
+    this.disablePlayButton(offsetPlus += offsetInteger)
     console.log(sliceOrder[0].concat(sliceOrder[1]))
+  },
+
+  disablePlayButton(offset) {
+    document.getElementById('play-button').setAttribute('disabled', 'disbaled')
+    setTimeout(() => {
+      document.getElementById('play-button').removeAttribute('disabled')
+    }, offset)
   },
 
   highlightNote(noteFull) {
