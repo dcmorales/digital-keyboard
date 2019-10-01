@@ -7,28 +7,38 @@ class PlayScale extends React.Component {
   }
 
   renderPlayButton = (newStart, lastPoint) => {
-    const { order, totalBeats } = this.props;
+    const { order } = this.props;
     const noteArrays = [newStart, lastPoint]
     const sliceOrder = order === 'descending' ? noteArrays.reverse() : noteArrays
     if (order !== 'random') {
       this.renderPlayScales(newStart, sliceOrder)
     } else {
-      const shuffleNotes = [newStart, lastPoint]
-      shuffleNotes.forEach(shuffleSlice => {
-        for (let i = shuffleSlice.length - 1; i > 0; i--) {
-          let j = Math.floor(Math.random() * (i + 1));
-          [shuffleSlice[i], shuffleSlice[j]] = [shuffleSlice[j], shuffleSlice[i]]
-        }
-      })
-      if (totalBeats !== 'all') {
-        const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])]
-        const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)]
-        const repeatFragment =
-          [fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0]]
-        this.renderPlayScales(newStart, repeatFragment)
-      } else {
-        this.renderPlayScales(newStart, sliceOrder)
-    }}
+      this.handleNoteShuffle(newStart, lastPoint, noteArrays, sliceOrder)
+    }
+  }
+
+  handleNoteShuffle(newStart, lastPoint, noteArrays, sliceOrder) {
+    const { totalBeats } = this.props;
+    const shuffleNotes = [newStart, lastPoint]
+    shuffleNotes.forEach(shuffleSlice => {
+      for (let i = shuffleSlice.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [shuffleSlice[i], shuffleSlice[j]] = [shuffleSlice[j], shuffleSlice[i]]
+      }
+    })
+    if (totalBeats === 'all') {
+      this.renderPlayScales(newStart, sliceOrder)
+    } else {
+      this.handleTotalBeatChange(noteArrays, totalBeats, newStart)
+    }
+  }
+
+  handleTotalBeatChange(noteArrays, totalBeats, newStart) {
+    const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])]
+    const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)]
+    const repeatFragment =
+      [fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0]]
+    this.renderPlayScales(newStart, repeatFragment)
   }
 
   renderPlayScales(newStart, sliceOrder) {
