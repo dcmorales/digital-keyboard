@@ -29,15 +29,20 @@ class PlayScale extends React.Component {
     if (totalBeats === 'all') {
       this.renderPlayScales(newStart, sliceOrder)
     } else {
-      this.handleTotalBeatChange(noteArrays, totalBeats, newStart)
+      this.handleTotalBeatChange(noteArrays, newStart)
     }
   }
 
-  handleTotalBeatChange(noteArrays, totalBeats, newStart) {
+  handleTotalBeatChange(noteArrays, newStart) {
+    const { totalBeats, repeatx } = this.props;
     const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])]
     const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)]
-    const repeatFragment =
-      [fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0], fragmentSlice[0]]
+    var repeatFragment = [fragmentSlice[0]];
+    if (repeatx !== 0) {
+      for (var i = 0; i < repeatx; i++) {
+        repeatFragment.push(fragmentSlice[0]);
+      }
+    }
     this.renderPlayScales(newStart, repeatFragment)
   }
 
