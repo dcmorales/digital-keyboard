@@ -4,14 +4,12 @@ class HighlightScale extends React.Component {
   firstHighlight() {
     setTimeout(() => {
       this.highlightScaleNotes()
-    }, 600)
+    }, 300)
   }
 
   componentDidUpdate() {
-    setTimeout(() => {
-      this.clearHighlight()
-      this.highlightScaleNotes()
-    }, 300)
+    this.clearHighlight()
+    this.highlightScaleNotes()
   }
 
   highlightScaleNotes() {
