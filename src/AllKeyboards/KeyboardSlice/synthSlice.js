@@ -33,9 +33,12 @@ export const synthSlice = {
   },
 
   disablePlayButton(offset) {
+    const selectionsArray = Array.from(document.getElementsByClassName('selections'))
     document.getElementById('play-button').setAttribute('disabled', 'disbaled')
+    selectionsArray.map(selection => selection.setAttribute('disabled', 'disabled'))
     setTimeout(() => {
       document.getElementById('play-button').removeAttribute('disabled')
+      selectionsArray.map(selection => selection.removeAttribute('disabled', 'disabled'))
     }, offset)
   },
 

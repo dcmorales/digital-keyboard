@@ -5,7 +5,9 @@ const SelectionDetail = ({ label, nameOfSelection, valueOfSelection, optionsArra
   return (
     <div>
       <label>{label}</label>
-      <select name={nameOfSelection} value={valueOfSelection} onChange={onSelectionChange}>
+      <select className='selections' name={nameOfSelection} value={valueOfSelection}
+        onChange={onSelectionChange} >
+
         {options[optionsArrayNumber]
           .map((option) => {
             return (
@@ -15,6 +17,7 @@ const SelectionDetail = ({ label, nameOfSelection, valueOfSelection, optionsArra
             );
           })
         }
+
       </select>
     </div>
   )
