@@ -53,13 +53,15 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
         onSelectionChange={onSelectionChange}
       />
 
-      <SelectionDetail
-        label='total different beats'
-        nameOfSelection='totalBeats'
-        valueOfSelection={totalBeats}
-        optionsArrayNumber={6}
-        onSelectionChange={onSelectionChange}
-      />
+      {order !== 'random' ? null :
+        <SelectionDetail
+          label='total different beats'
+          nameOfSelection='totalBeats'
+          valueOfSelection={totalBeats}
+          optionsArrayNumber={6}
+          onSelectionChange={onSelectionChange}
+        />
+      }
 
       <SelectionDetail
         label='offset'
