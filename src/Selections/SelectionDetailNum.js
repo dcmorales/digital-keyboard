@@ -1,6 +1,7 @@
 import React from 'react';
+import { selectionsInfo } from './selectionsInfo'
 
-const SelectionDetailNum = ({ start, max, label, nameOfSelection, valueOfSelection, onSelectionChange }) => {
+const SelectionDetailNum = ({ start, max, label, infoArrNum, nameOfSelection, valueOfSelection, onSelectionChange }) => {
 
   var options = []
   var iNum = parseInt(start, 10)
@@ -13,7 +14,14 @@ const SelectionDetailNum = ({ start, max, label, nameOfSelection, valueOfSelecti
 
   return (
     <div>
-      <label>{label}</label>
+      <label className='tooltip'>
+        {label}
+        <span className='tooltiptext'>
+          <ul>
+            {selectionsInfo[infoArrNum].map(info => <li>{info}</li>)}
+          </ul>
+        </span>
+      </label>
 
       <select className='selections' name={nameOfSelection} value={valueOfSelection}
         onChange={onSelectionChange} >

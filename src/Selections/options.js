@@ -1,7 +1,7 @@
 export const options = [
 
 
-//selectedKey
+//selectedScale
   [
     'chromatic',
     'major',

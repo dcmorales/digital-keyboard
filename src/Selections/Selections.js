@@ -9,47 +9,49 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       <SelectionDetailNaN
         label='Scale'
         nameOfSelection='selectedScale' valueOfSelection={selectedScale}
-        optionsArrayNumber={0}
+        optionsArrNum={0} infoArrNum={0}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNaN
         label='Key'
         nameOfSelection='selectedKey' valueOfSelection={selectedKey}
-        optionsArrayNumber={1}
+        optionsArrNum={1} infoArrNum={1}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNum
         label='Octave' start='1' max='6'
         nameOfSelection='selectedOctave' valueOfSelection={selectedOctave}
+        infoArrNum={2}
         onSelectionChange={onOctaveChange}
       />
 
       <SelectionDetailNaN
         label='Waveform'
         nameOfSelection='waveform' valueOfSelection={waveform}
-        optionsArrayNumber={2}
+        optionsArrNum={2} infoArrNum={3}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNaN
         label='Oscillator'
         nameOfSelection='oscillator' valueOfSelection={oscillator}
-        optionsArrayNumber={3}
+        optionsArrNum={3} infoArrNum={4}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNum
         label='offset' start='125' max='725'
         nameOfSelection='offset' valueOfSelection={offset}
+        infoArrNum={5}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNaN
         label='Order'
         nameOfSelection='order' valueOfSelection={order}
-        optionsArrayNumber={4}
+        optionsArrNum={4} infoArrNum={6}
         onSelectionChange={onSelectionChange}
       />
 
@@ -58,12 +60,14 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
           <SelectionDetailNum
             label='# of different beats' start='1' max={maxBeats}
             nameOfSelection='totalBeats' valueOfSelection={totalBeats}
+            infoArrNum={7}
             onSelectionChange={onSelectionChange}
           />
           {totalBeats === '' ? null :
             <SelectionDetailNum
               label='repeat beat x' start='0' max='8'
               nameOfSelection='repeatx' valueOfSelection={repeatx}
+              infoArrNum={8}
               onSelectionChange={onSelectionChange}
             />
           }
