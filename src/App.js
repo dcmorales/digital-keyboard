@@ -14,7 +14,7 @@ class App extends React.Component {
     order: 'ascending',
     totalBeats: '',
     repeatx: 0,
-    offset: 300
+    offset: 350
   }
 
   onOctaveChange = async(e) => {

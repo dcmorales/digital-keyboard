@@ -1,13 +1,16 @@
 import React from 'react';
 
 const SelectionDetailNum = ({ start, max, label, nameOfSelection, valueOfSelection, onSelectionChange }) => {
+
   var options = []
-  for (var i = start; i < max; i++) {
+  var iNum = parseInt(start, 10)
+  for (var i = iNum; i < max; nameOfSelection !== 'offset' ? i++ : i+=75) {
     options.push(i);
   }
   const optionDetail = nameOfSelection !== 'totalBeats'
     ? [ null, options ]
     : [ <option></option>, options.reverse() ]
+
   return (
     <div>
       <label>{label}</label>

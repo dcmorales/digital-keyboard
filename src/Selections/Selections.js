@@ -49,7 +49,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
 
       <SelectionDetailNum
         start='125'
-        max='300'
+        max='625'
         label='offset'
         nameOfSelection='offset'
         valueOfSelection={offset}
