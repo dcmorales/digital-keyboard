@@ -8,58 +8,47 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
 
       <SelectionDetailNaN
         label='Scale'
-        nameOfSelection='selectedScale'
-        valueOfSelection={selectedScale}
+        nameOfSelection='selectedScale' valueOfSelection={selectedScale}
         optionsArrayNumber={0}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNaN
         label='Key'
-        nameOfSelection='selectedKey'
-        valueOfSelection={selectedKey}
+        nameOfSelection='selectedKey' valueOfSelection={selectedKey}
         optionsArrayNumber={1}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNum
-        start='1'
-        max='6'
-        label='Octave'
-        nameOfSelection='selectedOctave'
-        valueOfSelection={selectedOctave}
+        label='Octave' start='1' max='6'
+        nameOfSelection='selectedOctave' valueOfSelection={selectedOctave}
         onSelectionChange={onOctaveChange}
       />
 
       <SelectionDetailNaN
         label='Waveform'
-        nameOfSelection='waveform'
-        valueOfSelection={waveform}
+        nameOfSelection='waveform' valueOfSelection={waveform}
         optionsArrayNumber={2}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNaN
         label='Oscillator'
-        nameOfSelection='oscillator'
-        valueOfSelection={oscillator}
+        nameOfSelection='oscillator' valueOfSelection={oscillator}
         optionsArrayNumber={3}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNum
-        start='125'
-        max='725'
-        label='offset'
-        nameOfSelection='offset'
-        valueOfSelection={offset}
+        label='offset' start='125' max='725'
+        nameOfSelection='offset' valueOfSelection={offset}
         onSelectionChange={onSelectionChange}
       />
 
       <SelectionDetailNaN
         label='Order'
-        nameOfSelection='order'
-        valueOfSelection={order}
+        nameOfSelection='order' valueOfSelection={order}
         optionsArrayNumber={4}
         onSelectionChange={onSelectionChange}
       />
@@ -67,20 +56,14 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       {order !== 'random' ? null :
         <div>
           <SelectionDetailNum
-            start='1'
-            max={maxBeats}
-            label='# of different beats'
-            nameOfSelection='totalBeats'
-            valueOfSelection={totalBeats}
+            label='# of different beats' start='1' max={maxBeats}
+            nameOfSelection='totalBeats' valueOfSelection={totalBeats}
             onSelectionChange={onSelectionChange}
           />
           {totalBeats === '' ? null :
             <SelectionDetailNum
-              start='0'
-              max='8'
-              label='repeat beat x'
-              nameOfSelection='repeatx'
-              valueOfSelection={repeatx}
+              label='repeat beat x' start='0' max='8'
+              nameOfSelection='repeatx' valueOfSelection={repeatx}
               onSelectionChange={onSelectionChange}
             />
           }
