@@ -12,7 +12,7 @@ class App extends React.Component {
     waveform: 'sawtooth',
     oscillator: '',
     order: 'ascending',
-    totalBeats: 'all',
+    totalBeats: '',
     repeatx: 0,
     offset: 300
   }

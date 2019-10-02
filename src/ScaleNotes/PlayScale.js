@@ -26,7 +26,7 @@ class PlayScale extends React.Component {
         [shuffleSlice[i], shuffleSlice[j]] = [shuffleSlice[j], shuffleSlice[i]]
       }
     })
-    if (totalBeats === 'all') {
+    if (totalBeats === '') {
       this.renderPlayScales(newStart, sliceOrder)
     } else {
       this.handleTotalBeatChange(noteArrays, newStart)

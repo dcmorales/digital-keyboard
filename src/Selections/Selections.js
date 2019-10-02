@@ -56,19 +56,21 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       {order !== 'random' ? null :
         <div>
           <SelectionDetail
-            label='total different beats'
+            label='# of beats'
             nameOfSelection='totalBeats'
             valueOfSelection={totalBeats}
             optionsArrayNumber={6}
             onSelectionChange={onSelectionChange}
           />
-          <SelectionDetail
-            label='repeat beat x'
-            nameOfSelection='repeatx'
-            valueOfSelection={repeatx}
-            optionsArrayNumber={7}
-            onSelectionChange={onSelectionChange}
-          />
+          {totalBeats === '' ? null :
+            <SelectionDetail
+              label='repeat beat x'
+              nameOfSelection='repeatx'
+              valueOfSelection={repeatx}
+              optionsArrayNumber={7}
+              onSelectionChange={onSelectionChange}
+            />
+          }
         </div>
       }
 
