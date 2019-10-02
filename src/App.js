@@ -23,9 +23,10 @@ class App extends React.Component {
   }
 
   onNextOctaveChange = async(e) => {
-    for ( var i = 1; i < 8; i++ ) {
-      await this.setState({ nextOctave: i })
-    }
+    const { selectedOctave } = this.state;
+    var selOctNum = parseInt(selectedOctave, 10)
+    for ( var i = selectedOctave; i <= (selOctNum + 1); i++ ) {
+      this.setState({ nextOctave: i }) }
   }
 
   onSelectionChange = (e) => {

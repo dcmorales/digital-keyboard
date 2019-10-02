@@ -1,10 +1,11 @@
 import React from 'react';
 import { options } from './options'
 
-const SelectionDetail = ({ label, nameOfSelection, valueOfSelection, optionsArrayNumber, onSelectionChange }) => {
+const SelectionDetailNaN = ({ label, nameOfSelection, valueOfSelection, optionsArrayNumber, onSelectionChange }) => {
   return (
     <div>
       <label>{label}</label>
+
       <select className='selections' name={nameOfSelection} value={valueOfSelection}
         onChange={onSelectionChange} >
 
@@ -23,4 +24,4 @@ const SelectionDetail = ({ label, nameOfSelection, valueOfSelection, optionsArra
   )
 }
 
-export default SelectionDetail;
+export default SelectionDetailNaN;

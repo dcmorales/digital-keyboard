@@ -1,11 +1,12 @@
 import React from 'react';
-import SelectionDetail from './SelectionDetail';
+import SelectionDetailNaN from './SelectionDetailNaN';
+import SelectionDetailNum from './SelectionDetailNum';
 
 const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, order, totalBeats, repeatx, offset, onSelectionChange, onOctaveChange }) => {
   return (
     <div className='selection-container'>
 
-      <SelectionDetail
+      <SelectionDetailNaN
         label='Scale'
         nameOfSelection='selectedScale'
         valueOfSelection={selectedScale}
@@ -13,7 +14,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
         onSelectionChange={onSelectionChange}
       />
 
-      <SelectionDetail
+      <SelectionDetailNaN
         label='Key'
         nameOfSelection='selectedKey'
         valueOfSelection={selectedKey}
@@ -21,66 +22,70 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
         onSelectionChange={onSelectionChange}
       />
 
-      <SelectionDetail
+      <SelectionDetailNum
+        start='1'
+        max='7'
         label='Octave'
         nameOfSelection='selectedOctave'
         valueOfSelection={selectedOctave}
-        optionsArrayNumber={2}
         onSelectionChange={onOctaveChange}
       />
 
-      <SelectionDetail
+      <SelectionDetailNaN
         label='Waveform'
         nameOfSelection='waveform'
         valueOfSelection={waveform}
+        optionsArrayNumber={2}
+        onSelectionChange={onSelectionChange}
+      />
+
+      <SelectionDetailNaN
+        label='Oscillator'
+        nameOfSelection='oscillator'
+        valueOfSelection={oscillator}
         optionsArrayNumber={3}
         onSelectionChange={onSelectionChange}
       />
 
-      <SelectionDetail
-        label='Oscillator'
-        nameOfSelection='oscillator'
-        valueOfSelection={oscillator}
-        optionsArrayNumber={4}
+      <SelectionDetailNum
+        start='125'
+        max='300'
+        label='offset'
+        nameOfSelection='offset'
+        valueOfSelection={offset}
         onSelectionChange={onSelectionChange}
       />
 
-      <SelectionDetail
+      <SelectionDetailNaN
         label='Order'
         nameOfSelection='order'
         valueOfSelection={order}
-        optionsArrayNumber={5}
+        optionsArrayNumber={4}
         onSelectionChange={onSelectionChange}
       />
 
       {order !== 'random' ? null :
         <div>
-          <SelectionDetail
+          <SelectionDetailNum
+            start='1'
+            max='13'
             label='# of beats'
             nameOfSelection='totalBeats'
             valueOfSelection={totalBeats}
-            optionsArrayNumber={6}
             onSelectionChange={onSelectionChange}
           />
           {totalBeats === '' ? null :
-            <SelectionDetail
+            <SelectionDetailNum
+              start='0'
+              max='8'
               label='repeat beat x'
               nameOfSelection='repeatx'
               valueOfSelection={repeatx}
-              optionsArrayNumber={7}
               onSelectionChange={onSelectionChange}
             />
           }
         </div>
       }
-
-      <SelectionDetail
-        label='offset'
-        nameOfSelection='offset'
-        valueOfSelection={offset}
-        optionsArrayNumber={8}
-        onSelectionChange={onSelectionChange}
-      />
 
     </div>
   )
