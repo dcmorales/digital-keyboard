@@ -41,7 +41,7 @@ class ScaleNotes extends React.Component {
   }
 
   render() {
-    const { order, waveform, oscillator, totalBeats, repeatx, offset } = this.props;
+    const { order, waveform, oscillator, totalBeats, repeatx, offset, selectedScale } = this.props;
     return (
       <div>
         <HighLightScale renderScale={this.renderScale} />
@@ -49,7 +49,9 @@ class ScaleNotes extends React.Component {
           order={order} waveform={waveform}
           oscillator={oscillator} totalBeats={totalBeats}
           repeatx={repeatx} offset={offset}
+          selectedScale={selectedScale}
           renderScale={this.renderScale}
+          getMaxBeats={this.props.getMaxBeats}
         />
       </div>
     )

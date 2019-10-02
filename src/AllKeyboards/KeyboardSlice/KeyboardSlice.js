@@ -29,6 +29,7 @@ class KeyboardSlice extends React.Component {
                     nextOctave={nextOctave}
                     order={order}
                     totalBeats={totalBeats}
+                    getMaxBeats={this.props.getMaxBeats}
                     repeatx={repeatx}
                     offset={offset}
                   />

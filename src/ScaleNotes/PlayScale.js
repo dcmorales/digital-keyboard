@@ -6,6 +6,13 @@ class PlayScale extends React.Component {
     notesPlayed: []
   }
 
+  componentDidUpdate(prevProps) {
+    const maxBeatArray = this.props.renderScale()[0].concat(this.props.renderScale()[1])
+    if (this.props.selectedScale !== prevProps.selectedScale) {
+      this.props.getMaxBeats(maxBeatArray.length)
+    }
+  }
+
   renderPlayButton = (newStart, lastPoint) => {
     const { order } = this.props;
     const noteArrays = [newStart, lastPoint]
@@ -55,6 +62,8 @@ class PlayScale extends React.Component {
 
   displayNotes(notesPlayed) {
     this.setState({ notesPlayed: notesPlayed })
+    this.props.getMaxBeats(notesPlayed.length)
+    console.log(notesPlayed.length)
   }
 
   render() {

@@ -13,6 +13,7 @@ class App extends React.Component {
     oscillator: '',
     order: 'ascending',
     totalBeats: '',
+    maxBeats: 13,
     repeatx: 0,
     offset: 350
   }
@@ -33,8 +34,13 @@ class App extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  getMaxBeats = (maxBeats) => {
+    this.setState({ maxBeats: maxBeats })
+    console.log(maxBeats)
+  }
+
   render() {
-    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, order, totalBeats, repeatx, offset } = this.state;
+    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, order, totalBeats, repeatx, maxBeats, offset } = this.state;
     return (
       <div>
         <Selections
@@ -42,7 +48,7 @@ class App extends React.Component {
           selectedOctave={selectedOctave} waveform={waveform}
           oscillator={oscillator} order={order}
           totalBeats={totalBeats} offset={offset}
-          repeatx={repeatx}
+          repeatx={repeatx} maxBeats={maxBeats}
           onSelectionChange={this.onSelectionChange}
           onOctaveChange={this.onOctaveChange}
         />
@@ -52,6 +58,7 @@ class App extends React.Component {
           order={order} totalBeats={totalBeats}
           repeatx={repeatx} offset={offset}
           waveform={waveform} oscillator={oscillator}
+          getMaxBeats={this.getMaxBeats}
         />
       </div>
     )
