@@ -28,17 +28,19 @@ export const synthSlice = {
         }, offsetPlus)
         offsetPlus += offsetInteger})
     })
-    this.disablePlayButton(offsetPlus += offsetInteger)
+    this.disableButtons(offsetPlus += offsetInteger)
     console.log(sliceOrder[0].concat(sliceOrder[1]))
   },
 
-  disablePlayButton(offset) {
+  disableButtons(offset) {
     const selectionsArray = Array.from(document.getElementsByClassName('selections'))
+    const keysArray = Array.from(document.getElementsByClassName('key'))
+    const buttons = selectionsArray.concat(keysArray)
     document.getElementById('play-button').setAttribute('disabled', 'disbaled')
-    selectionsArray.map(selection => selection.setAttribute('disabled', 'disabled'))
+    buttons.map(button => button.setAttribute('disabled', 'disabled'))
     setTimeout(() => {
       document.getElementById('play-button').removeAttribute('disabled')
-      selectionsArray.map(selection => selection.removeAttribute('disabled', 'disabled'))
+      buttons.map(button => button.removeAttribute('disabled'))
     }, offset)
   },
 
