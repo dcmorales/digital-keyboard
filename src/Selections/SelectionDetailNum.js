@@ -4,7 +4,7 @@ const SelectionDetailNum = ({ start, max, label, nameOfSelection, valueOfSelecti
 
   var options = []
   var iNum = parseInt(start, 10)
-  for (var i = iNum; i < max; nameOfSelection !== 'offset' ? i++ : i+=75) {
+  for (var i = iNum; i <= max; nameOfSelection !== 'offset' ? i++ : i+=75) {
     options.push(i);
   }
   const optionDetail = nameOfSelection !== 'totalBeats'

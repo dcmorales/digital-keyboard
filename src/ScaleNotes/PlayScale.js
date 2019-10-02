@@ -62,8 +62,6 @@ class PlayScale extends React.Component {
 
   displayNotes(notesPlayed) {
     this.setState({ notesPlayed: notesPlayed })
-    this.props.getMaxBeats(notesPlayed.length)
-    console.log(notesPlayed.length)
   }
 
   render() {

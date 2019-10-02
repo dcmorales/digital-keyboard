@@ -24,7 +24,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
 
       <SelectionDetailNum
         start='1'
-        max='7'
+        max='6'
         label='Octave'
         nameOfSelection='selectedOctave'
         valueOfSelection={selectedOctave}
@@ -49,7 +49,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
 
       <SelectionDetailNum
         start='125'
-        max='575'
+        max='725'
         label='offset'
         nameOfSelection='offset'
         valueOfSelection={offset}
@@ -69,7 +69,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
           <SelectionDetailNum
             start='1'
             max={maxBeats}
-            label='# of beats'
+            label='# of different beats'
             nameOfSelection='totalBeats'
             valueOfSelection={totalBeats}
             onSelectionChange={onSelectionChange}

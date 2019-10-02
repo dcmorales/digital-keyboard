@@ -36,7 +36,6 @@ class App extends React.Component {
 
   getMaxBeats = (maxBeats) => {
     this.setState({ maxBeats: maxBeats })
-    console.log(maxBeats)
   }
 
   render() {
