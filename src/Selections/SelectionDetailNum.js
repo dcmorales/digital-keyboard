@@ -5,6 +5,9 @@ const SelectionDetailNum = ({ start, max, label, nameOfSelection, valueOfSelecti
   for (var i = start; i < max; i++) {
     options.push(i);
   }
+  const optionDetail = nameOfSelection !== 'totalBeats'
+    ? [ null, options ]
+    : [ <option></option>, options.reverse() ]
   return (
     <div>
       <label>{label}</label>
@@ -12,7 +15,8 @@ const SelectionDetailNum = ({ start, max, label, nameOfSelection, valueOfSelecti
       <select className='selections' name={nameOfSelection} value={valueOfSelection}
         onChange={onSelectionChange} >
 
-        {options
+        {optionDetail[0]}
+        {optionDetail[1]
           .map((option) => {
             return (
               <option key={option}>
