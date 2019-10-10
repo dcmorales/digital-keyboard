@@ -4,7 +4,7 @@ import Key from './Key';
 
 const FiveKeys= ({ note1, note2, note3, note4, note5, waveform, oscillator, octave }) => {
   return (
-    <div className='five-keys-container'>
+    <React.Fragment>
 
       <TwoKeys
         note1={note1} note2={note2}
@@ -28,7 +28,7 @@ const FiveKeys= ({ note1, note2, note3, note4, note5, waveform, oscillator, octa
         />
       </div>
 
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -4,7 +4,7 @@ import Key from '../Keyboard/Key'
 const SliceSection = ({ notesDefinedSlice, waveform, oscillator }) => {
   return ( notesDefinedSlice.map(noteFull => {
     return (
-      <div  className='keys' key={noteFull}>
+      <div className='keys' key={noteFull}>
         <Key
           color={noteFull.includes('b') ? 'black2' : 'white'}
           noteFull={noteFull}

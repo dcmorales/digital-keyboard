@@ -13,13 +13,11 @@ const Octave = ({ octNum, waveform, oscillator }) => {
         octave={octNum}
       />
 
-      <div className='two-keys-container'>
-        <TwoKeys
-          note1='F'  note2='Gb'
-          waveform={waveform} oscillator={oscillator}
-          octave={octNum}
-        />
-      </div>
+      <TwoKeys
+        note1='F'  note2='Gb'
+        waveform={waveform} oscillator={oscillator}
+        octave={octNum}
+      />
 
       <FiveKeys
         note1='G' note2='Ab' note3='A'
