@@ -54,9 +54,9 @@ class PlayScale extends React.Component {
   }
 
   renderPlayScales(newStart, sliceOrder) {
-    const { order, waveform, oscillator, totalBeats, offset } = this.props;
-    synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, totalBeats, offset)
-    synthSlice.stopNote(sliceOrder, order, offset)
+    const { order, waveform, oscillator, totalBeats, bpm } = this.props;
+    synthSlice.playNote(sliceOrder, order, newStart, waveform, oscillator, totalBeats, bpm)
+    synthSlice.stopNote(sliceOrder, order, bpm)
     this.displayNotes(sliceOrder[0].concat(sliceOrder[1]))
   }
 

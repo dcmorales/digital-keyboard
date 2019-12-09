@@ -44,9 +44,9 @@ export const selectionsInfo = [
   ],
 
 
-//offset
+//bpm
   [
-    'The amount of time (in milliseconds) between the start of one note and the start of the next'
+    'Beats Per Minute: the number of beats, in quarter notes, per minute'
   ],
 
 

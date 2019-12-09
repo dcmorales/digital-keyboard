@@ -2,7 +2,7 @@ import React from 'react';
 import SelectionDetailNaN from './SelectionDetailNaN';
 import SelectionDetailNum from './SelectionDetailNum';
 
-const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, order, totalBeats, repeatx, maxBeats, offset, onSelectionChange, onOctaveChange }) => {
+const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, order, totalBeats, repeatx, maxBeats, bpm, onSelectionChange, onOctaveChange }) => {
   return (
     <div className='selection-container'>
 
@@ -42,8 +42,8 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetailNum
-        label='offset' start='125' max='725'
-        nameOfSelection='offset' valueOfSelection={offset}
+        label='bpm' start='100' max='140'
+        nameOfSelection='bpm' valueOfSelection={bpm}
         infoArrNum={5}
         onSelectionChange={onSelectionChange}
       />

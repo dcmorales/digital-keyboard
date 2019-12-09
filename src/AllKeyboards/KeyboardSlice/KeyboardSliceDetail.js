@@ -2,7 +2,7 @@ import React from 'react'
 import SelectedKeyboardSlice from './SelectedKeyboardSlice'
 import ScaleNotes from '../../ScaleNotes/ScaleNotes'
 
-const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, notesDefined, waveform, oscillator, order, totalBeats, repeatx, offset, getMaxBeats }) => {
+const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, notesDefined, waveform, oscillator, order, totalBeats, repeatx, bpm, getMaxBeats }) => {
   return (
     <div>
 
@@ -27,7 +27,7 @@ const KeyboardSliceDetail = ({ selectedScale, note, selectedOctave, nextOctave, 
         totalBeats={totalBeats}
         getMaxBeats={getMaxBeats}
         repeatx={repeatx}
-        offset={offset}
+        bpm={bpm}
       />
 
     </div>

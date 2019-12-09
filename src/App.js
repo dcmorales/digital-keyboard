@@ -15,7 +15,7 @@ class App extends React.Component {
     totalBeats: '',
     maxBeats: 13,
     repeatx: 0,
-    offset: 350
+    bpm: 125
   }
 
   onOctaveChange = async(e) => {
@@ -39,14 +39,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, order, totalBeats, repeatx, maxBeats, offset } = this.state;
+    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, order, totalBeats, repeatx, maxBeats, bpm } = this.state;
     return (
       <div>
         <Selections
           selectedScale={selectedScale} selectedKey={selectedKey}
           selectedOctave={selectedOctave} waveform={waveform}
           oscillator={oscillator} order={order}
-          totalBeats={totalBeats} offset={offset}
+          totalBeats={totalBeats} bpm={bpm}
           repeatx={repeatx} maxBeats={maxBeats}
           onSelectionChange={this.onSelectionChange}
           onOctaveChange={this.onOctaveChange}
@@ -55,7 +55,7 @@ class App extends React.Component {
           selectedScale={selectedScale} startingNote={selectedKey}
           selectedOctave={selectedOctave} nextOctave={nextOctave}
           order={order} totalBeats={totalBeats}
-          repeatx={repeatx} offset={offset}
+          repeatx={repeatx} bpm={bpm}
           waveform={waveform} oscillator={oscillator}
           getMaxBeats={this.getMaxBeats}
         />

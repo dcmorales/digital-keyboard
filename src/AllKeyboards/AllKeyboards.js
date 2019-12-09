@@ -2,7 +2,7 @@ import React from 'react';
 import Keyboard from './Keyboard/Keyboard';
 import KeyboardSlice from './KeyboardSlice/KeyboardSlice';
 
-const AllKeyboards = ({ selectedScale, startingNote, selectedOctave, nextOctave, waveform, oscillator, order, totalBeats, repeatx, offset, getMaxBeats }) => {
+const AllKeyboards = ({ selectedScale, startingNote, selectedOctave, nextOctave, waveform, oscillator, order, totalBeats, repeatx, bpm, getMaxBeats }) => {
   return (
     <div>
 
@@ -24,7 +24,7 @@ const AllKeyboards = ({ selectedScale, startingNote, selectedOctave, nextOctave,
         totalBeats={totalBeats}
         getMaxBeats={getMaxBeats}
         repeatx={repeatx}
-        offset={offset}
+        bpm={bpm}
       />
 
     </div>

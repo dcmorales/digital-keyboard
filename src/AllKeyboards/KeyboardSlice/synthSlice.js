@@ -2,22 +2,22 @@ import { synth } from '../Keyboard/synth'
 
 export const synthSlice = {
 
-  stopNote(sliceOrder, order, offset) {
+  stopNote(sliceOrder, order, bpm) {
     var offsetPlus = 300
-    var offsetInteger = parseInt(offset, 10)
+    var bpmToMs = parseInt((60000/bpm), 10)
     sliceOrder.forEach(notesDefinedSlice => {
       const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
       noteOrder.forEach(noteFull => {
         setTimeout(() => {
           synth.noteOff(noteFull)
         }, offsetPlus)
-        offsetPlus += offsetInteger})
+        offsetPlus += bpmToMs})
     })
   },
 
-  playNote(sliceOrder, order, newPoint, waveform, oscillator, totalBeats, offset) {
+  playNote(sliceOrder, order, newPoint, waveform, oscillator, totalBeats, bpm) {
     var offsetPlus = 200
-    var offsetInteger = parseInt(offset, 10)
+    var bpmToMs = parseInt((60000/bpm), 10)
     sliceOrder.forEach(notesDefinedSlice => {
       const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
       noteOrder.forEach(noteFull => {
@@ -26,9 +26,9 @@ export const synthSlice = {
           synth.play(noteFull, waveform, oscillator, octave)
           this.highlightNote(noteFull)
         }, offsetPlus)
-        offsetPlus += offsetInteger})
+        offsetPlus += bpmToMs})
     })
-    this.disableButtons(offsetPlus += offsetInteger)
+    this.disableButtons(offsetPlus += bpmToMs)
     console.log(sliceOrder[0].concat(sliceOrder[1]))
   },
 
