@@ -5,7 +5,7 @@ const SelectionDetailNum = ({ start, max, label, infoArrNum, nameOfSelection, va
 
   var options = []
   var iNum = parseInt(start, 10)
-  for (var i = iNum; i <= max; i++) {
+  for (var i = iNum; i <= max; nameOfSelection !== 'noteLength' ? i++ : i*=2) {
     options.push(i);
   }
   const optionDetail = nameOfSelection !== 'totalBeats'

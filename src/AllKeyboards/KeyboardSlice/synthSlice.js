@@ -2,9 +2,9 @@ import { synth } from '../Keyboard/synth'
 
 export const synthSlice = {
 
-  stopNote(sliceOrder, order, bpm) {
-    var offsetPlus = 300
-    var bpmToMs = parseInt((60000/bpm), 10)
+  stopNote(sliceOrder, order, bpm, noteLength) {
+    var offsetPlus = 250
+    var bpmToMs = parseInt((60000/(bpm*(noteLength/4))), 10)
     sliceOrder.forEach(notesDefinedSlice => {
       const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
       noteOrder.forEach(noteFull => {
@@ -15,9 +15,9 @@ export const synthSlice = {
     })
   },
 
-  playNote(sliceOrder, order, newPoint, waveform, oscillator, totalBeats, bpm) {
+  playNote(sliceOrder, order, newPoint, waveform, oscillator, totalBeats, bpm, noteLength) {
     var offsetPlus = 200
-    var bpmToMs = parseInt((60000/bpm), 10)
+    var bpmToMs = parseInt((60000/(bpm*(noteLength/4))), 10)
     sliceOrder.forEach(notesDefinedSlice => {
       const noteOrder = order === 'descending' ? notesDefinedSlice.reverse() : notesDefinedSlice
       noteOrder.forEach(noteFull => {

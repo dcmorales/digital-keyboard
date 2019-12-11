@@ -2,7 +2,7 @@ import React from 'react';
 import SelectionDetailNaN from './SelectionDetailNaN';
 import SelectionDetailNum from './SelectionDetailNum';
 
-const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, order, totalBeats, repeatx, maxBeats, bpm, onSelectionChange, onOctaveChange }) => {
+const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, oscillator, order, totalBeats, repeatx, maxBeats, bpm, noteLength, onSelectionChange, onOctaveChange }) => {
   return (
     <div className='selection-container'>
 
@@ -48,10 +48,17 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
         onSelectionChange={onSelectionChange}
       />
 
+      <SelectionDetailNum
+        label='note length 1/' start='4' max='32'
+        nameOfSelection='noteLength' valueOfSelection={noteLength}
+        infoArrNum={6}
+        onSelectionChange={onSelectionChange}
+      />
+
       <SelectionDetailNaN
         label='Order'
         nameOfSelection='order' valueOfSelection={order}
-        optionsArrNum={4} infoArrNum={6}
+        optionsArrNum={4} infoArrNum={7}
         onSelectionChange={onSelectionChange}
       />
 
@@ -60,14 +67,14 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
           <SelectionDetailNum
             label='# of different beats' start='1' max={maxBeats}
             nameOfSelection='totalBeats' valueOfSelection={totalBeats}
-            infoArrNum={7}
+            infoArrNum={8}
             onSelectionChange={onSelectionChange}
           />
           {totalBeats === '' ? null :
             <SelectionDetailNum
               label='repeat beat x' start='0' max='8'
               nameOfSelection='repeatx' valueOfSelection={repeatx}
-              infoArrNum={8}
+              infoArrNum={9}
               onSelectionChange={onSelectionChange}
             />
           }

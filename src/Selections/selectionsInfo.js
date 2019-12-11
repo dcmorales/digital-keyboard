@@ -50,6 +50,12 @@ export const selectionsInfo = [
   ],
 
 
+//noteLength
+  [
+    'Length of note, options are quarter, eighth, sixteenth, 32nd '
+  ],
+
+
 //order
   [
     'Ascending: frequency => higher frequency',
