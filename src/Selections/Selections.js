@@ -42,7 +42,7 @@ const Selections = ({ selectedScale, selectedKey, selectedOctave, waveform, osci
       />
 
       <SelectionDetailNum
-        label='bpm' start='100' max='140'
+        label='bpm' start='100' max='130'
         nameOfSelection='bpm' valueOfSelection={bpm}
         infoArrNum={5}
         onSelectionChange={onSelectionChange}
