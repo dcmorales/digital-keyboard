@@ -35,6 +35,10 @@ export class SelectionStore extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  getMaxBeats = maxBeats => {
+    this.setState({ maxBeats: maxBeats });
+  };
+
   render() {
     return (
       <Context.Provider
@@ -42,6 +46,7 @@ export class SelectionStore extends React.Component {
           ...this.state,
           onSelectionChange: this.onSelectionChange,
           onOctaveChange: this.onOctaveChange,
+          getMaxBeats: this.getMaxBeats,
         }}
       >
         {this.props.children}
