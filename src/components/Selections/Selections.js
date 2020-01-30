@@ -7,14 +7,7 @@ class Selections extends React.Component {
   static contextType = SelectionContext;
 
   render() {
-    const {
-      order,
-      totalBeats,
-      repeatx,
-      maxBeats,
-      bpm,
-      noteLength,
-    } = this.props;
+    const { totalBeats, repeatx, maxBeats, bpm, noteLength } = this.props;
     return (
       <div className="selection-container">
         <SelectionDetailNaN
@@ -86,13 +79,13 @@ class Selections extends React.Component {
         <SelectionDetailNaN
           label="Order"
           nameOfSelection="order"
-          valueOfSelection={order}
+          valueOfSelection={this.context.order}
           optionsArrNum={4}
           infoArrNum={7}
-          onSelectionChange={this.props.onSelectionChange}
+          onSelectionChange={this.context.onSelectionChange}
         />
 
-        {order !== 'random' ? null : (
+        {this.context.order !== 'random' ? null : (
           <div>
             <SelectionDetailNum
               label="# of different beats"

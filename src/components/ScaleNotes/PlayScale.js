@@ -19,7 +19,7 @@ class PlayScale extends React.Component {
   }
 
   renderPlayButton = (newStart, lastPoint) => {
-    const { order } = this.props;
+    const { order } = this.context;
     const noteArrays = [newStart, lastPoint];
     const sliceOrder =
       order === 'descending' ? noteArrays.reverse() : noteArrays;
@@ -60,10 +60,10 @@ class PlayScale extends React.Component {
   }
 
   renderPlayScales(newStart, sliceOrder) {
-    const { order, totalBeats, bpm, noteLength } = this.props;
+    const { totalBeats, bpm, noteLength } = this.props;
     synthSlice.playNote(
       sliceOrder,
-      order,
+      this.context.order,
       newStart,
       this.context.waveform,
       this.context.oscillator,
@@ -71,7 +71,7 @@ class PlayScale extends React.Component {
       bpm,
       noteLength
     );
-    synthSlice.stopNote(sliceOrder, order, bpm, noteLength);
+    synthSlice.stopNote(sliceOrder, this.context.order, bpm, noteLength);
     this.displayNotes(sliceOrder[0].concat(sliceOrder[1]));
   }
 
