@@ -3,7 +3,6 @@ import Keyboard from './Keyboard/Keyboard';
 import KeyboardSlice from './KeyboardSlice/KeyboardSlice';
 
 const AllKeyboards = ({
-  oscillator,
   order,
   totalBeats,
   repeatx,
@@ -16,7 +15,6 @@ const AllKeyboards = ({
       <Keyboard />
 
       <KeyboardSlice
-        oscillator={oscillator}
         order={order}
         totalBeats={totalBeats}
         getMaxBeats={getMaxBeats}

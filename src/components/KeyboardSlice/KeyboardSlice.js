@@ -16,14 +16,7 @@ class KeyboardSlice extends React.Component {
   renderKeyboardSlice = () => {
     const { noteValues, notesDefined } = this.state;
     const startingNote = this.context.selectedKey;
-    const {
-      oscillator,
-      order,
-      totalBeats,
-      repeatx,
-      noteLength,
-      bpm,
-    } = this.props;
+    const { order, totalBeats, repeatx, noteLength, bpm } = this.props;
     return (
       <div>
         {noteValues[this.context.selectedOctave]
@@ -36,7 +29,6 @@ class KeyboardSlice extends React.Component {
                 <KeyboardSliceDetail
                   note={note}
                   notesDefined={notesDefined}
-                  oscillator={oscillator}
                   order={order}
                   totalBeats={totalBeats}
                   getMaxBeats={this.props.getMaxBeats}

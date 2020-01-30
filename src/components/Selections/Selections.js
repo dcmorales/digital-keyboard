@@ -8,7 +8,6 @@ class Selections extends React.Component {
 
   render() {
     const {
-      oscillator,
       order,
       totalBeats,
       repeatx,
@@ -58,10 +57,10 @@ class Selections extends React.Component {
         <SelectionDetailNaN
           label="Oscillator"
           nameOfSelection="oscillator"
-          valueOfSelection={oscillator}
+          valueOfSelection={this.context.oscillator}
           optionsArrNum={3}
           infoArrNum={4}
-          onSelectionChange={this.props.onSelectionChange}
+          onSelectionChange={this.context.onSelectionChange}
         />
 
         <SelectionDetailNum

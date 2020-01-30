@@ -6,7 +6,6 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    oscillator: '',
     order: 'ascending',
     totalBeats: '',
     maxBeats: 13,
@@ -25,7 +24,6 @@ class App extends React.Component {
 
   render() {
     const {
-      oscillator,
       order,
       totalBeats,
       repeatx,
@@ -37,7 +35,6 @@ class App extends React.Component {
       <div>
         <SelectionStore>
           <Selections
-            oscillator={oscillator}
             order={order}
             totalBeats={totalBeats}
             bpm={bpm}
@@ -52,7 +49,6 @@ class App extends React.Component {
             repeatx={repeatx}
             bpm={bpm}
             noteLength={noteLength}
-            oscillator={oscillator}
             getMaxBeats={this.getMaxBeats}
           />
         </SelectionStore>
