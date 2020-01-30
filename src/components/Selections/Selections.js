@@ -12,100 +12,70 @@ class Selections extends React.Component {
     return (
       <div className="selection-container">
         <SelectionDetailNaN
-          label="Scale"
           nameOfSelection="selectedScale"
-          valueOfSelection={this.context.selectedScale}
           optionsArrNum={0}
           infoArrNum={0}
-          onSelectionChange={this.context.onSelectionChange}
         />
 
         <SelectionDetailNaN
-          label="Key"
           nameOfSelection="selectedKey"
-          valueOfSelection={this.context.selectedKey}
           optionsArrNum={1}
           infoArrNum={1}
-          onSelectionChange={this.context.onSelectionChange}
         />
 
         <SelectionDetailNum
-          label="Octave"
           start="1"
           max="6"
           nameOfSelection="selectedOctave"
-          valueOfSelection={this.context.selectedOctave}
           infoArrNum={2}
-          onSelectionChange={this.context.onOctaveChange}
         />
 
         <SelectionDetailNaN
-          label="Waveform"
           nameOfSelection="waveform"
-          valueOfSelection={this.context.waveform}
           optionsArrNum={2}
           infoArrNum={3}
-          onSelectionChange={this.context.onSelectionChange}
         />
 
         <SelectionDetailNaN
-          label="Oscillator"
           nameOfSelection="oscillator"
-          valueOfSelection={this.context.oscillator}
           optionsArrNum={3}
           infoArrNum={4}
-          onSelectionChange={this.context.onSelectionChange}
         />
 
         <SelectionDetailNum
-          label="bpm"
           start="100"
           max="130"
           nameOfSelection="bpm"
-          valueOfSelection={this.context.bpm}
           infoArrNum={5}
-          onSelectionChange={this.context.onSelectionChange}
         />
 
         <SelectionDetailNum
-          label="note length 1/"
           start="4"
           max="32"
           nameOfSelection="noteLength"
-          valueOfSelection={this.context.noteLength}
           infoArrNum={6}
-          onSelectionChange={this.context.onSelectionChange}
         />
 
         <SelectionDetailNaN
-          label="Order"
           nameOfSelection="order"
-          valueOfSelection={this.context.order}
           optionsArrNum={4}
           infoArrNum={7}
-          onSelectionChange={this.context.onSelectionChange}
         />
 
         {this.context.order !== 'random' ? null : (
           <div>
             <SelectionDetailNum
-              label="# of different beats"
               start="1"
               max={this.context.maxBeats}
               nameOfSelection="totalBeats"
-              valueOfSelection={this.context.totalBeats}
               infoArrNum={8}
-              onSelectionChange={this.context.onSelectionChange}
             />
             {this.context.totalBeats === '' ? null : (
               <SelectionDetailNum
-                label="repeat beat x"
                 start="0"
                 max="8"
                 nameOfSelection="repeatx"
-                valueOfSelection={this.context.repeatx}
                 infoArrNum={9}
-                onSelectionChange={this.context.onSelectionChange}
               />
             )}
           </div>
