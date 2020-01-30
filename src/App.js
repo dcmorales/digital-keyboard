@@ -5,24 +5,12 @@ import { SelectionStore } from './contexts/SelectionContext';
 import './App.css';
 
 class App extends React.Component {
-  state = {
-    noteLength: 4,
-  };
-
-  onSelectionChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
   render() {
-    const { noteLength } = this.state;
     return (
       <div>
         <SelectionStore>
-          <Selections
-            noteLength={noteLength}
-            onSelectionChange={this.onSelectionChange}
-          />
-          <AllKeyboards noteLength={noteLength} />
+          <Selections />
+          <AllKeyboards />
         </SelectionStore>
       </div>
     );

@@ -16,7 +16,6 @@ class KeyboardSlice extends React.Component {
   renderKeyboardSlice = () => {
     const { noteValues, notesDefined } = this.state;
     const startingNote = this.context.selectedKey;
-    const { noteLength } = this.props;
     return (
       <div>
         {noteValues[this.context.selectedOctave]
@@ -26,11 +25,7 @@ class KeyboardSlice extends React.Component {
           .map((note, i) => {
             return (
               <div key={i}>
-                <KeyboardSliceDetail
-                  note={note}
-                  notesDefined={notesDefined}
-                  noteLength={noteLength}
-                />
+                <KeyboardSliceDetail note={note} notesDefined={notesDefined} />
               </div>
             );
           })}
