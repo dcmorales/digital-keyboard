@@ -57,7 +57,6 @@ class ScaleNotes extends React.Component {
   render() {
     const {
       order,
-      waveform,
       oscillator,
       totalBeats,
       repeatx,
@@ -69,7 +68,6 @@ class ScaleNotes extends React.Component {
         <HighLightScale renderScale={this.renderScale} />
         <PlayScale
           order={order}
-          waveform={waveform}
           oscillator={oscillator}
           totalBeats={totalBeats}
           repeatx={repeatx}

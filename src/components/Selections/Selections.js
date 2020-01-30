@@ -8,7 +8,6 @@ class Selections extends React.Component {
 
   render() {
     const {
-      waveform,
       oscillator,
       order,
       totalBeats,
@@ -50,10 +49,10 @@ class Selections extends React.Component {
         <SelectionDetailNaN
           label="Waveform"
           nameOfSelection="waveform"
-          valueOfSelection={waveform}
+          valueOfSelection={this.context.waveform}
           optionsArrNum={2}
           infoArrNum={3}
-          onSelectionChange={this.props.onSelectionChange}
+          onSelectionChange={this.context.onSelectionChange}
         />
 
         <SelectionDetailNaN

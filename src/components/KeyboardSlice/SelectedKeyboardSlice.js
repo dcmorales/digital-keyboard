@@ -6,7 +6,7 @@ class SelectedKeyboardSlice extends React.Component {
   static contextType = SelectionContext;
 
   renderSelectedKeys() {
-    const { notesDefined, waveform, oscillator, noteValue } = this.props;
+    const { notesDefined, oscillator, noteValue } = this.props;
     const newPoint = notesDefined
       .slice(noteValue)
       .map(point => point + this.context.selectedOctave);
@@ -17,17 +17,9 @@ class SelectedKeyboardSlice extends React.Component {
       .map(point => point + this.context.nextOctave);
     return (
       <div className="octave-container">
-        <SliceSection
-          notesDefinedSlice={newPoint}
-          waveform={waveform}
-          oscillator={oscillator}
-        />
+        <SliceSection notesDefinedSlice={newPoint} oscillator={oscillator} />
 
-        <SliceSection
-          notesDefinedSlice={lastPoint}
-          waveform={waveform}
-          oscillator={oscillator}
-        />
+        <SliceSection notesDefinedSlice={lastPoint} oscillator={oscillator} />
       </div>
     );
   }

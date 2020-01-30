@@ -1,10 +1,13 @@
 import React from 'react';
+import SelectionContext from '../../contexts/SelectionContext';
 import { synth } from '../../utils/synth';
 
 class Key extends React.Component {
+  static contextType = SelectionContext;
+
   playNote = () => {
-    const { noteFull, waveform, oscillator, octave } = this.props;
-    synth.play(noteFull, waveform, oscillator, octave);
+    const { noteFull, oscillator, octave } = this.props;
+    synth.play(noteFull, this.context.waveform, oscillator, octave);
   };
 
   holdNote = () => {

@@ -3,7 +3,6 @@ import Keyboard from './Keyboard/Keyboard';
 import KeyboardSlice from './KeyboardSlice/KeyboardSlice';
 
 const AllKeyboards = ({
-  waveform,
   oscillator,
   order,
   totalBeats,
@@ -14,10 +13,9 @@ const AllKeyboards = ({
 }) => {
   return (
     <div>
-      <Keyboard waveform={waveform} oscillator={oscillator} />
+      <Keyboard />
 
       <KeyboardSlice
-        waveform={waveform}
         oscillator={oscillator}
         order={order}
         totalBeats={totalBeats}

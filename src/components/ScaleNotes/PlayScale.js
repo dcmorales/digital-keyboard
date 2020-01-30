@@ -1,7 +1,10 @@
 import React from 'react';
+import SelectionContext from '../../contexts/SelectionContext';
 import { synthSlice } from '../../utils/synthSlice';
 
 class PlayScale extends React.Component {
+  static contextType = SelectionContext;
+
   state = {
     notesPlayed: [],
   };
@@ -57,19 +60,12 @@ class PlayScale extends React.Component {
   }
 
   renderPlayScales(newStart, sliceOrder) {
-    const {
-      order,
-      waveform,
-      oscillator,
-      totalBeats,
-      bpm,
-      noteLength,
-    } = this.props;
+    const { order, oscillator, totalBeats, bpm, noteLength } = this.props;
     synthSlice.playNote(
       sliceOrder,
       order,
       newStart,
-      waveform,
+      this.context.waveform,
       oscillator,
       totalBeats,
       bpm,

@@ -6,7 +6,6 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    waveform: 'sawtooth',
     oscillator: '',
     order: 'ascending',
     totalBeats: '',
@@ -26,7 +25,6 @@ class App extends React.Component {
 
   render() {
     const {
-      waveform,
       oscillator,
       order,
       totalBeats,
@@ -39,7 +37,6 @@ class App extends React.Component {
       <div>
         <SelectionStore>
           <Selections
-            waveform={waveform}
             oscillator={oscillator}
             order={order}
             totalBeats={totalBeats}
@@ -55,7 +52,6 @@ class App extends React.Component {
             repeatx={repeatx}
             bpm={bpm}
             noteLength={noteLength}
-            waveform={waveform}
             oscillator={oscillator}
             getMaxBeats={this.getMaxBeats}
           />

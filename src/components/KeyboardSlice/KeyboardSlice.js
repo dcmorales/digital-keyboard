@@ -17,7 +17,6 @@ class KeyboardSlice extends React.Component {
     const { noteValues, notesDefined } = this.state;
     const startingNote = this.context.selectedKey;
     const {
-      waveform,
       oscillator,
       order,
       totalBeats,
@@ -37,7 +36,6 @@ class KeyboardSlice extends React.Component {
                 <KeyboardSliceDetail
                   note={note}
                   notesDefined={notesDefined}
-                  waveform={waveform}
                   oscillator={oscillator}
                   order={order}
                   totalBeats={totalBeats}
