@@ -6,7 +6,6 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    bpm: 125,
     noteLength: 4,
   };
 
@@ -15,16 +14,15 @@ class App extends React.Component {
   };
 
   render() {
-    const { bpm, noteLength } = this.state;
+    const { noteLength } = this.state;
     return (
       <div>
         <SelectionStore>
           <Selections
-            bpm={bpm}
             noteLength={noteLength}
             onSelectionChange={this.onSelectionChange}
           />
-          <AllKeyboards bpm={bpm} noteLength={noteLength} />
+          <AllKeyboards noteLength={noteLength} />
         </SelectionStore>
       </div>
     );

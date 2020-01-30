@@ -2,7 +2,7 @@ import React from 'react';
 import SelectedKeyboardSlice from './SelectedKeyboardSlice';
 import ScaleNotes from '../ScaleNotes/ScaleNotes';
 
-const KeyboardSliceDetail = ({ note, notesDefined, noteLength, bpm }) => {
+const KeyboardSliceDetail = ({ note, notesDefined, noteLength }) => {
   return (
     <div>
       <SelectedKeyboardSlice
@@ -14,7 +14,6 @@ const KeyboardSliceDetail = ({ note, notesDefined, noteLength, bpm }) => {
         noteValue={note.value}
         notesDefined={notesDefined}
         noteLength={noteLength}
-        bpm={bpm}
       />
     </div>
   );

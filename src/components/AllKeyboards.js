@@ -7,7 +7,7 @@ const AllKeyboards = ({ noteLength, bpm }) => {
     <div>
       <Keyboard />
 
-      <KeyboardSlice noteLength={noteLength} bpm={bpm} />
+      <KeyboardSlice noteLength={noteLength} />
     </div>
   );
 };
