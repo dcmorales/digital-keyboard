@@ -55,12 +55,11 @@ class ScaleNotes extends React.Component {
   };
 
   render() {
-    const { totalBeats, repeatx, noteLength, bpm } = this.props;
+    const { repeatx, noteLength, bpm } = this.props;
     return (
       <div>
         <HighLightScale renderScale={this.renderScale} />
         <PlayScale
-          totalBeats={totalBeats}
           repeatx={repeatx}
           noteLength={noteLength}
           bpm={bpm}

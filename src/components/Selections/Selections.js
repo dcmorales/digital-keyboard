@@ -7,7 +7,7 @@ class Selections extends React.Component {
   static contextType = SelectionContext;
 
   render() {
-    const { totalBeats, repeatx, maxBeats, bpm, noteLength } = this.props;
+    const { repeatx, maxBeats, bpm, noteLength } = this.props;
     return (
       <div className="selection-container">
         <SelectionDetailNaN
@@ -92,11 +92,11 @@ class Selections extends React.Component {
               start="1"
               max={maxBeats}
               nameOfSelection="totalBeats"
-              valueOfSelection={totalBeats}
+              valueOfSelection={this.context.totalBeats}
               infoArrNum={8}
-              onSelectionChange={this.props.onSelectionChange}
+              onSelectionChange={this.context.onSelectionChange}
             />
-            {totalBeats === '' ? null : (
+            {this.context.totalBeats === '' ? null : (
               <SelectionDetailNum
                 label="repeat beat x"
                 start="0"

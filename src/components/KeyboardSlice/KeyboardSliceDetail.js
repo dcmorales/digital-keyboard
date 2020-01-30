@@ -5,7 +5,6 @@ import ScaleNotes from '../ScaleNotes/ScaleNotes';
 const KeyboardSliceDetail = ({
   note,
   notesDefined,
-  totalBeats,
   repeatx,
   noteLength,
   bpm,
@@ -21,7 +20,6 @@ const KeyboardSliceDetail = ({
       <ScaleNotes
         noteValue={note.value}
         notesDefined={notesDefined}
-        totalBeats={totalBeats}
         getMaxBeats={getMaxBeats}
         repeatx={repeatx}
         noteLength={noteLength}

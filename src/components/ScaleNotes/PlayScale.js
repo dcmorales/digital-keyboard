@@ -31,7 +31,7 @@ class PlayScale extends React.Component {
   };
 
   handleNoteShuffle(newStart, lastPoint, noteArrays, sliceOrder) {
-    const { totalBeats } = this.props;
+    const { totalBeats } = this.context;
     const shuffleNotes = [newStart, lastPoint];
     shuffleNotes.forEach(shuffleSlice => {
       for (let i = shuffleSlice.length - 1; i > 0; i--) {
@@ -47,9 +47,11 @@ class PlayScale extends React.Component {
   }
 
   handleTotalBeatChange(noteArrays, newStart) {
-    const { totalBeats, repeatx } = this.props;
+    const { repeatx } = this.props;
     const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])];
-    const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)];
+    const fragmentSlice = [
+      noteArrayFragment[0].slice(0, this.context.totalBeats),
+    ];
     var repeatFragment = [fragmentSlice[0]];
     if (repeatx !== 0) {
       for (var i = 0; i < repeatx; i++) {
@@ -60,14 +62,14 @@ class PlayScale extends React.Component {
   }
 
   renderPlayScales(newStart, sliceOrder) {
-    const { totalBeats, bpm, noteLength } = this.props;
+    const { bpm, noteLength } = this.props;
     synthSlice.playNote(
       sliceOrder,
       this.context.order,
       newStart,
       this.context.waveform,
       this.context.oscillator,
-      totalBeats,
+      this.context.totalBeats,
       bpm,
       noteLength
     );
