@@ -1,7 +1,7 @@
 import React from 'react';
-import Selections from './Selections/Selections'
-import AllKeyboards from './AllKeyboards/AllKeyboards'
-import './App.css'
+import Selections from './components/Selections/Selections';
+import AllKeyboards from './components/AllKeyboards';
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -16,53 +16,78 @@ class App extends React.Component {
     maxBeats: 13,
     repeatx: 0,
     bpm: 125,
-    noteLength: 4
-  }
+    noteLength: 4,
+  };
 
-  onOctaveChange = async(e) => {
-    await this.setState({ selectedOctave: e.target.value })
-    await this.onNextOctaveChange()
-  }
+  onOctaveChange = async e => {
+    await this.setState({ selectedOctave: e.target.value });
+    await this.onNextOctaveChange();
+  };
 
-  onNextOctaveChange = async(e) => {
+  onNextOctaveChange = async e => {
     const { selectedOctave } = this.state;
-    var selOctNum = parseInt(selectedOctave, 10)
-    for ( var i = selectedOctave; i <= (selOctNum + 1); i++ ) {
-      this.setState({ nextOctave: i }) }
-  }
+    var selOctNum = parseInt(selectedOctave, 10);
+    for (var i = selectedOctave; i <= selOctNum + 1; i++) {
+      this.setState({ nextOctave: i });
+    }
+  };
 
-  onSelectionChange = (e) => {
+  onSelectionChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  }
+  };
 
-  getMaxBeats = (maxBeats) => {
-    this.setState({ maxBeats: maxBeats })
-  }
+  getMaxBeats = maxBeats => {
+    this.setState({ maxBeats: maxBeats });
+  };
 
   render() {
-    const { selectedScale, selectedKey, selectedOctave, nextOctave, waveform, oscillator, order, totalBeats, repeatx, maxBeats, bpm, noteLength } = this.state;
+    const {
+      selectedScale,
+      selectedKey,
+      selectedOctave,
+      nextOctave,
+      waveform,
+      oscillator,
+      order,
+      totalBeats,
+      repeatx,
+      maxBeats,
+      bpm,
+      noteLength,
+    } = this.state;
     return (
       <div>
         <Selections
-          selectedScale={selectedScale} selectedKey={selectedKey}
-          selectedOctave={selectedOctave} waveform={waveform}
-          oscillator={oscillator} order={order}
-          totalBeats={totalBeats} bpm={bpm}
-          repeatx={repeatx} maxBeats={maxBeats}
+          selectedScale={selectedScale}
+          selectedKey={selectedKey}
+          selectedOctave={selectedOctave}
+          waveform={waveform}
+          oscillator={oscillator}
+          order={order}
+          totalBeats={totalBeats}
+          bpm={bpm}
+          repeatx={repeatx}
+          maxBeats={maxBeats}
           noteLength={noteLength}
           onSelectionChange={this.onSelectionChange}
           onOctaveChange={this.onOctaveChange}
         />
         <AllKeyboards
-          selectedScale={selectedScale} startingNote={selectedKey}
-          selectedOctave={selectedOctave} nextOctave={nextOctave}
-          order={order} totalBeats={totalBeats}
-          repeatx={repeatx} bpm={bpm} noteLength={noteLength}
-          waveform={waveform} oscillator={oscillator}
+          selectedScale={selectedScale}
+          startingNote={selectedKey}
+          selectedOctave={selectedOctave}
+          nextOctave={nextOctave}
+          order={order}
+          totalBeats={totalBeats}
+          repeatx={repeatx}
+          bpm={bpm}
+          noteLength={noteLength}
+          waveform={waveform}
+          oscillator={oscillator}
           getMaxBeats={this.getMaxBeats}
         />
       </div>
-    )
+    );
   }
 }
 

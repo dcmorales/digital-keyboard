@@ -1,17 +1,16 @@
-import React from 'react'
-import Key from './Key'
+import React from 'react';
+import Key from './Key';
 
 const TwoKeys = ({ waveform, oscillator, octave, note1, note2 }) => {
   return (
-    <div className='keys'>
-
+    <div className="keys">
       <Key
         noteFull={`${note1}${octave}`}
         waveform={waveform}
         oscillator={oscillator}
         octave={octave}
-        color='white'
-        keyboard='full'
+        color="white"
+        keyboard="full"
       />
 
       <Key
@@ -19,12 +18,11 @@ const TwoKeys = ({ waveform, oscillator, octave, note1, note2 }) => {
         waveform={waveform}
         oscillator={oscillator}
         octave={octave}
-        color='black'
-        keyboard='full'
+        color="black"
+        keyboard="full"
       />
-
     </div>
-  )
-}
+  );
+};
 
 export default TwoKeys;

@@ -1,18 +1,18 @@
-import React from 'react'
-import { synth } from './synth'
+import React from 'react';
+import { synth } from '../../utils/synth';
 
 class Key extends React.Component {
   playNote = () => {
     const { noteFull, waveform, oscillator, octave } = this.props;
-    synth.play(noteFull, waveform, oscillator, octave)
-  }
+    synth.play(noteFull, waveform, oscillator, octave);
+  };
 
   holdNote = () => {
     synth.noteOff();
-  }
+  };
 
-  render(){
-    const { color, noteFull, keyboard } = this.props
+  render() {
+    const { color, noteFull, keyboard } = this.props;
     return (
       <button
         className={`${color} key`}
@@ -28,6 +28,6 @@ class Key extends React.Component {
       </button>
     );
   }
-};
+}
 
 export default Key;
