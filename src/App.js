@@ -1,6 +1,6 @@
 import React from 'react';
 import Selections from './components/Selections/Selections';
-import Keyboard from './components/Keyboard/Keyboard';
+import KeyboardFull from './components/KeyboardFull/KeyboardFull';
 import KeyboardSlice from './components/KeyboardSlice/KeyboardSlice';
 import { SelectionStore } from './contexts/SelectionContext';
 import './App.css';
@@ -11,7 +11,7 @@ class App extends React.Component {
       <div>
         <SelectionStore>
           <Selections />
-          <Keyboard />
+          <KeyboardFull />
           <KeyboardSlice />
         </SelectionStore>
       </div>
