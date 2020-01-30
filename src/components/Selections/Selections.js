@@ -1,5 +1,7 @@
 import React from 'react';
+
 import SelectionContext from '../../contexts/SelectionContext';
+
 import SelectionDetailNaN from './SelectionDetailNaN';
 import SelectionDetailNum from './SelectionDetailNum';
 

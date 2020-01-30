@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { selectionsInfo } from '../../values/selectionsInfo';
 
 const SelectionDetailNum = ({

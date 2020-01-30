@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SelectionContext from '../../contexts/SelectionContext';
 import { synth } from '../../utils/synth';
 

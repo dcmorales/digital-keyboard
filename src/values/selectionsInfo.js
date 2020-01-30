@@ -1,7 +1,6 @@
 export const selectionsInfo = [
-
-
-//scale
+  //****************************************************************************
+  //scale
   [
     'Chromatic: plays all',
     'Major: W-W-H-W-W-W-H',
@@ -11,73 +10,63 @@ export const selectionsInfo = [
     'Melodic Minor Descending: natural minor',
     'Major Pentatonic: W-W-W+H-W-W+H',
     'Minor Pentatonic: W+H-W-W-W+H-W',
-    'Blues: W+H-W-H-H-W+H-W'
+    'Blues: W+H-W-H-H-W+H-W',
   ],
 
+  //****************************************************************************
+  //key
+  ['First key to start the scale with'],
 
-//key
-  [
-    'First key to start the scale with'
-  ],
-
-
-//octave
+  //****************************************************************************
+  //octave
   [
     'Series of notes occupying the interval between two notes',
     'Going up an octave doubles the frequency',
-    'Going down an octave divides frequency in half'
+    'Going down an octave divides frequency in half',
   ],
 
+  //****************************************************************************
+  //waveform
+  ['The shape of the oscillator wave'],
 
-//waveform
-  [
-    'The shape of the oscillator wave'
-  ],
-
-
-//oscillator
+  //****************************************************************************
+  //oscillator
   [
     'Osc1 detunes value by -50',
     'Osc2 detunes value by +50',
     'Mid-bass is (pitch + 50)/2',
-    'Bass is pitch/2'
+    'Bass is pitch/2',
   ],
 
+  //****************************************************************************
+  //bpm
+  ['Beats Per Minute: the number of beats, in quarter notes, per minute'],
 
-//bpm
-  [
-    'Beats Per Minute: the number of beats, in quarter notes, per minute'
-  ],
+  //****************************************************************************
+  //noteLength
+  ['Length of note, options are quarter, eighth, sixteenth, 32nd '],
 
-
-//noteLength
-  [
-    'Length of note, options are quarter, eighth, sixteenth, 32nd '
-  ],
-
-
-//order
+  //****************************************************************************
+  //order
   [
     'Ascending: frequency => higher frequency',
     'Descending: frequency => lower frequency',
-    'Random: will play notes in random order'
+    'Random: will play notes in random order',
   ],
 
-
-//# of different beats
+  //****************************************************************************
+  //# of different beats
   [
     'Total of different beats to play',
     'Max number is defined by total notes in scale',
     'Only works when order is set to random',
   ],
 
-
-//repeatx
+  //****************************************************************************
+  //repeatx
   [
     'Number of times to repeat selected notes',
     'Note: repeat 0x will play through once, 1x will play all notes then repeat once, etc.',
     'Only works when order is set to random and total beats is not blank',
-  ]
-
-
-]
+  ],
+];

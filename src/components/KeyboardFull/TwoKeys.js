@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Key from './Key';
 
 const TwoKeys = ({ octave, note1, note2 }) => {

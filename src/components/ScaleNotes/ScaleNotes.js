@@ -1,6 +1,8 @@
 import React from 'react';
+
 import SelectionContext from '../../contexts/SelectionContext';
 import { cutPoints } from '../../values/cutPoints';
+
 import HighLightScale from './HighlightScale';
 import PlayScale from './PlayScale';
 

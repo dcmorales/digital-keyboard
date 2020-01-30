@@ -1,5 +1,7 @@
 import React from 'react';
+
 import SelectionContext from '../../contexts/SelectionContext';
+
 import SliceSection from './SliceSection';
 
 class SelectedKeyboardSlice extends React.Component {

@@ -1,7 +1,6 @@
 export const options = [
-
-
-//selectedScale
+  //****************************************************************************
+  //selectedScale
   [
     'chromatic',
     'major',
@@ -10,51 +9,22 @@ export const options = [
     'melodic minor',
     'major pentatonic',
     'minor pentatonic',
-    'blues'
+    'blues',
   ],
 
+  //****************************************************************************
+  //selectedKey
+  ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'],
 
-//selectedKey
-  [
-    'C',
-    'Db',
-    'D',
-    'Eb',
-    'E',
-    'F',
-    'Gb',
-    'G',
-    'Ab',
-    'A',
-    'Bb',
-    'B'
-  ],
+  //****************************************************************************
+  //waveform
+  ['sawtooth', 'square', 'triangle', 'sine'],
 
+  //****************************************************************************
+  //oscillator
+  ['', 'osc1', 'osc2', 'mid-bass', 'bass'],
 
-//waveform
-  [
-    'sawtooth',
-    'square',
-    'triangle',
-    'sine'
-  ],
-
-
-//oscillator
-  [
-    '',
-    'osc1',
-    'osc2',
-    'mid-bass',
-    'bass'
-  ],
-
-
-//order
-  [
-    'ascending',
-    'descending',
-    'random'
-  ]
-
-]
+  //****************************************************************************
+  //order
+  ['ascending', 'descending', 'random'],
+];

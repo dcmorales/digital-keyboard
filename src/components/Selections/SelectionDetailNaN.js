@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { options } from '../../values/options';
 import { selectionsInfo } from '../../values/selectionsInfo';
 

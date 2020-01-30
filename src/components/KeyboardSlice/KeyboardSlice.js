@@ -1,7 +1,9 @@
 import React from 'react';
+
 import SelectionContext from '../../contexts/SelectionContext';
 import { noteValues } from '../../values/noteValues';
 import ScaleNotes from '../ScaleNotes/ScaleNotes';
+
 import SelectedKeyboardSlice from './SelectedKeyboardSlice';
 
 class KeyboardSlice extends React.Component {

@@ -1,5 +1,6 @@
 import React from 'react';
-import Key from '../Keyboard/Key';
+
+import Key from '../KeyboardFull/Key';
 
 const SliceSection = ({ notesDefinedSlice }) => {
   return notesDefinedSlice.map(noteFull => {
