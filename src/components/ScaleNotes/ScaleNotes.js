@@ -8,15 +8,15 @@ class ScaleNotes extends React.Component {
   static contextType = SelectionContext;
 
   renderScale = () => {
-    const { notesDefined, noteValue, selectedOctave, nextOctave } = this.props;
+    const { notesDefined, noteValue } = this.props;
     const newPoint = notesDefined
       .slice(noteValue)
-      .map(point => point + selectedOctave);
+      .map(point => point + this.context.selectedOctave);
     const oldPoint = notesDefined.slice(0, noteValue);
     const lastNote = notesDefined.slice(noteValue)[0];
     const lastPoint = oldPoint
       .concat(lastNote)
-      .map(point => point + nextOctave);
+      .map(point => point + this.context.nextOctave);
     const combinedNotes = newPoint.concat(lastPoint);
     const scaleNum =
       this.context.selectedScale === 'major'

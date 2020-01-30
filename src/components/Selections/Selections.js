@@ -8,7 +8,6 @@ class Selections extends React.Component {
 
   render() {
     const {
-      selectedOctave,
       waveform,
       oscillator,
       order,
@@ -43,9 +42,9 @@ class Selections extends React.Component {
           start="1"
           max="6"
           nameOfSelection="selectedOctave"
-          valueOfSelection={selectedOctave}
+          valueOfSelection={this.context.selectedOctave}
           infoArrNum={2}
-          onSelectionChange={this.props.onOctaveChange}
+          onSelectionChange={this.context.onOctaveChange}
         />
 
         <SelectionDetailNaN

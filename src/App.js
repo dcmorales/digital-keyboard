@@ -6,8 +6,6 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    selectedOctave: 3,
-    nextOctave: 4,
     waveform: 'sawtooth',
     oscillator: '',
     order: 'ascending',
@@ -16,19 +14,6 @@ class App extends React.Component {
     repeatx: 0,
     bpm: 125,
     noteLength: 4,
-  };
-
-  onOctaveChange = async e => {
-    await this.setState({ selectedOctave: e.target.value });
-    await this.onNextOctaveChange();
-  };
-
-  onNextOctaveChange = async e => {
-    const { selectedOctave } = this.state;
-    var selOctNum = parseInt(selectedOctave, 10);
-    for (var i = selectedOctave; i <= selOctNum + 1; i++) {
-      this.setState({ nextOctave: i });
-    }
   };
 
   onSelectionChange = e => {
@@ -41,8 +26,6 @@ class App extends React.Component {
 
   render() {
     const {
-      selectedOctave,
-      nextOctave,
       waveform,
       oscillator,
       order,
@@ -56,7 +39,6 @@ class App extends React.Component {
       <div>
         <SelectionStore>
           <Selections
-            selectedOctave={selectedOctave}
             waveform={waveform}
             oscillator={oscillator}
             order={order}
@@ -66,11 +48,8 @@ class App extends React.Component {
             maxBeats={maxBeats}
             noteLength={noteLength}
             onSelectionChange={this.onSelectionChange}
-            onOctaveChange={this.onOctaveChange}
           />
           <AllKeyboards
-            selectedOctave={selectedOctave}
-            nextOctave={nextOctave}
             order={order}
             totalBeats={totalBeats}
             repeatx={repeatx}

@@ -8,15 +8,15 @@ class KeyboardSlice extends React.Component {
 
   state = {
     noteValues: noteValues,
-    notesDefined: noteValues[this.props.selectedOctave].map(note => note.note),
+    notesDefined: noteValues[this.context.selectedOctave].map(
+      note => note.note
+    ),
   };
 
   renderKeyboardSlice = () => {
     const { noteValues, notesDefined } = this.state;
     const startingNote = this.context.selectedKey;
     const {
-      selectedOctave,
-      nextOctave,
       waveform,
       oscillator,
       order,
@@ -27,7 +27,7 @@ class KeyboardSlice extends React.Component {
     } = this.props;
     return (
       <div>
-        {noteValues[selectedOctave]
+        {noteValues[this.context.selectedOctave]
           .filter(noteInfo => {
             return noteInfo.note === startingNote;
           })
@@ -39,8 +39,6 @@ class KeyboardSlice extends React.Component {
                   notesDefined={notesDefined}
                   waveform={waveform}
                   oscillator={oscillator}
-                  selectedOctave={selectedOctave}
-                  nextOctave={nextOctave}
                   order={order}
                   totalBeats={totalBeats}
                   getMaxBeats={this.props.getMaxBeats}
