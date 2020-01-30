@@ -17,15 +17,9 @@ class SelectedKeyboardSlice extends React.Component {
       .map(point => point + this.context.nextOctave);
     return (
       <div className="octave-container">
-        <SliceSection
-          notesDefinedSlice={newPoint}
-          oscillator={this.context.oscillator}
-        />
+        <SliceSection notesDefinedSlice={newPoint} />
 
-        <SliceSection
-          notesDefinedSlice={lastPoint}
-          oscillator={this.context.oscillator}
-        />
+        <SliceSection notesDefinedSlice={lastPoint} />
       </div>
     );
   }

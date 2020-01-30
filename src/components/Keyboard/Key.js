@@ -6,8 +6,13 @@ class Key extends React.Component {
   static contextType = SelectionContext;
 
   playNote = () => {
-    const { noteFull, oscillator, octave } = this.props;
-    synth.play(noteFull, this.context.waveform, oscillator, octave);
+    const { noteFull, octave } = this.props;
+    synth.play(
+      noteFull,
+      this.context.waveform,
+      this.context.oscillator,
+      octave
+    );
   };
 
   holdNote = () => {
