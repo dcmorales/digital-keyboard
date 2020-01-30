@@ -1,125 +1,128 @@
 import React from 'react';
+import SelectionContext from '../../contexts/SelectionContext';
 import SelectionDetailNaN from './SelectionDetailNaN';
 import SelectionDetailNum from './SelectionDetailNum';
 
-const Selections = ({
-  selectedScale,
-  selectedKey,
-  selectedOctave,
-  waveform,
-  oscillator,
-  order,
-  totalBeats,
-  repeatx,
-  maxBeats,
-  bpm,
-  noteLength,
-  onSelectionChange,
-  onOctaveChange,
-}) => {
-  return (
-    <div className="selection-container">
-      <SelectionDetailNaN
-        label="Scale"
-        nameOfSelection="selectedScale"
-        valueOfSelection={selectedScale}
-        optionsArrNum={0}
-        infoArrNum={0}
-        onSelectionChange={onSelectionChange}
-      />
+class Selections extends React.Component {
+  static contextType = SelectionContext;
 
-      <SelectionDetailNaN
-        label="Key"
-        nameOfSelection="selectedKey"
-        valueOfSelection={selectedKey}
-        optionsArrNum={1}
-        infoArrNum={1}
-        onSelectionChange={onSelectionChange}
-      />
+  render() {
+    const {
+      selectedKey,
+      selectedOctave,
+      waveform,
+      oscillator,
+      order,
+      totalBeats,
+      repeatx,
+      maxBeats,
+      bpm,
+      noteLength,
+    } = this.props;
+    return (
+      <div className="selection-container">
+        <SelectionDetailNaN
+          label="Scale"
+          nameOfSelection="selectedScale"
+          valueOfSelection={this.context.selectedScale}
+          optionsArrNum={0}
+          infoArrNum={0}
+          onSelectionChange={this.context.onSelectionChange}
+        />
 
-      <SelectionDetailNum
-        label="Octave"
-        start="1"
-        max="6"
-        nameOfSelection="selectedOctave"
-        valueOfSelection={selectedOctave}
-        infoArrNum={2}
-        onSelectionChange={onOctaveChange}
-      />
+        <SelectionDetailNaN
+          label="Key"
+          nameOfSelection="selectedKey"
+          valueOfSelection={selectedKey}
+          optionsArrNum={1}
+          infoArrNum={1}
+          onSelectionChange={this.props.onSelectionChange}
+        />
 
-      <SelectionDetailNaN
-        label="Waveform"
-        nameOfSelection="waveform"
-        valueOfSelection={waveform}
-        optionsArrNum={2}
-        infoArrNum={3}
-        onSelectionChange={onSelectionChange}
-      />
+        <SelectionDetailNum
+          label="Octave"
+          start="1"
+          max="6"
+          nameOfSelection="selectedOctave"
+          valueOfSelection={selectedOctave}
+          infoArrNum={2}
+          onSelectionChange={this.props.onOctaveChange}
+        />
 
-      <SelectionDetailNaN
-        label="Oscillator"
-        nameOfSelection="oscillator"
-        valueOfSelection={oscillator}
-        optionsArrNum={3}
-        infoArrNum={4}
-        onSelectionChange={onSelectionChange}
-      />
+        <SelectionDetailNaN
+          label="Waveform"
+          nameOfSelection="waveform"
+          valueOfSelection={waveform}
+          optionsArrNum={2}
+          infoArrNum={3}
+          onSelectionChange={this.props.onSelectionChange}
+        />
 
-      <SelectionDetailNum
-        label="bpm"
-        start="100"
-        max="130"
-        nameOfSelection="bpm"
-        valueOfSelection={bpm}
-        infoArrNum={5}
-        onSelectionChange={onSelectionChange}
-      />
+        <SelectionDetailNaN
+          label="Oscillator"
+          nameOfSelection="oscillator"
+          valueOfSelection={oscillator}
+          optionsArrNum={3}
+          infoArrNum={4}
+          onSelectionChange={this.props.onSelectionChange}
+        />
 
-      <SelectionDetailNum
-        label="note length 1/"
-        start="4"
-        max="32"
-        nameOfSelection="noteLength"
-        valueOfSelection={noteLength}
-        infoArrNum={6}
-        onSelectionChange={onSelectionChange}
-      />
+        <SelectionDetailNum
+          label="bpm"
+          start="100"
+          max="130"
+          nameOfSelection="bpm"
+          valueOfSelection={bpm}
+          infoArrNum={5}
+          onSelectionChange={this.props.onSelectionChange}
+        />
 
-      <SelectionDetailNaN
-        label="Order"
-        nameOfSelection="order"
-        valueOfSelection={order}
-        optionsArrNum={4}
-        infoArrNum={7}
-        onSelectionChange={onSelectionChange}
-      />
+        <SelectionDetailNum
+          label="note length 1/"
+          start="4"
+          max="32"
+          nameOfSelection="noteLength"
+          valueOfSelection={noteLength}
+          infoArrNum={6}
+          onSelectionChange={this.props.onSelectionChange}
+        />
 
-      {order !== 'random' ? null : (
-        <div>
-          <SelectionDetailNum
-            label="# of different beats"
-            start="1"
-            max={maxBeats}
-            nameOfSelection="totalBeats"
-            valueOfSelection={totalBeats}
-            infoArrNum={8}
-            onSelectionChange={onSelectionChange}
-          />
-          {totalBeats === '' ? null : (
+        <SelectionDetailNaN
+          label="Order"
+          nameOfSelection="order"
+          valueOfSelection={order}
+          optionsArrNum={4}
+          infoArrNum={7}
+          onSelectionChange={this.props.onSelectionChange}
+        />
+
+        {order !== 'random' ? null : (
+          <div>
             <SelectionDetailNum
-              label="repeat beat x"
-              start="0"
-              max="8"
-              nameOfSelection="repeatx"
-              valueOfSelection={repeatx}
-              infoArrNum={9}
-              onSelectionChange={onSelectionChange}
+              label="# of different beats"
+              start="1"
+              max={maxBeats}
+              nameOfSelection="totalBeats"
+              valueOfSelection={totalBeats}
+              infoArrNum={8}
+              onSelectionChange={this.props.onSelectionChange}
             />
-          )}
-        </div>
-      )}
-    </div>
-  );
-};
+            {totalBeats === '' ? null : (
+              <SelectionDetailNum
+                label="repeat beat x"
+                start="0"
+                max="8"
+                nameOfSelection="repeatx"
+                valueOfSelection={repeatx}
+                infoArrNum={9}
+                onSelectionChange={this.props.onSelectionChange}
+              />
+            )}
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
 export default Selections;

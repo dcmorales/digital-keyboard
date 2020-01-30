@@ -3,7 +3,6 @@ import SelectedKeyboardSlice from './SelectedKeyboardSlice';
 import ScaleNotes from '../ScaleNotes/ScaleNotes';
 
 const KeyboardSliceDetail = ({
-  selectedScale,
   note,
   selectedOctave,
   nextOctave,
@@ -31,7 +30,6 @@ const KeyboardSliceDetail = ({
       <ScaleNotes
         noteValue={note.value}
         notesDefined={notesDefined}
-        selectedScale={selectedScale}
         selectedOctave={selectedOctave}
         nextOctave={nextOctave}
         waveform={waveform}

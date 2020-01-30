@@ -1,17 +1,14 @@
 import React from 'react';
+import SelectionContext from '../../contexts/SelectionContext';
 import { cutPoints } from '../../values/cutPoints';
 import HighLightScale from './HighlightScale';
 import PlayScale from './PlayScale';
 
 class ScaleNotes extends React.Component {
+  static contextType = SelectionContext;
+
   renderScale = () => {
-    const {
-      selectedScale,
-      notesDefined,
-      noteValue,
-      selectedOctave,
-      nextOctave,
-    } = this.props;
+    const { notesDefined, noteValue, selectedOctave, nextOctave } = this.props;
     const newPoint = notesDefined
       .slice(noteValue)
       .map(point => point + selectedOctave);
@@ -22,22 +19,22 @@ class ScaleNotes extends React.Component {
       .map(point => point + nextOctave);
     const combinedNotes = newPoint.concat(lastPoint);
     const scaleNum =
-      selectedScale === 'major'
+      this.context.selectedScale === 'major'
         ? 0
-        : selectedScale === 'natural minor'
+        : this.context.selectedScale === 'natural minor'
         ? 1
-        : selectedScale === 'harmonic minor'
+        : this.context.selectedScale === 'harmonic minor'
         ? 2
-        : selectedScale === 'melodic minor'
+        : this.context.selectedScale === 'melodic minor'
         ? 3
-        : selectedScale === 'major pentatonic'
+        : this.context.selectedScale === 'major pentatonic'
         ? 4
-        : selectedScale === 'minor pentatonic'
+        : this.context.selectedScale === 'minor pentatonic'
         ? 5
-        : selectedScale === 'blues'
+        : this.context.selectedScale === 'blues'
         ? 6
         : null;
-    if (selectedScale === 'chromatic') {
+    if (this.context.selectedScale === 'chromatic') {
       return [newPoint, lastPoint, combinedNotes, notesDefined];
     } else {
       const scaleNotes = cutPoints[1][scaleNum].map(point =>
@@ -66,7 +63,6 @@ class ScaleNotes extends React.Component {
       repeatx,
       noteLength,
       bpm,
-      selectedScale,
     } = this.props;
     return (
       <div>
@@ -79,7 +75,7 @@ class ScaleNotes extends React.Component {
           repeatx={repeatx}
           noteLength={noteLength}
           bpm={bpm}
-          selectedScale={selectedScale}
+          selectedScale={this.context.selectedScale}
           renderScale={this.renderScale}
           getMaxBeats={this.props.getMaxBeats}
         />

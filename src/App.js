@@ -1,11 +1,11 @@
 import React from 'react';
 import Selections from './components/Selections/Selections';
 import AllKeyboards from './components/AllKeyboards';
+import { SelectionStore } from './contexts/SelectionContext';
 import './App.css';
 
 class App extends React.Component {
   state = {
-    selectedScale: 'chromatic',
     selectedKey: 'C',
     selectedOctave: 3,
     nextOctave: 4,
@@ -42,7 +42,6 @@ class App extends React.Component {
 
   render() {
     const {
-      selectedScale,
       selectedKey,
       selectedOctave,
       nextOctave,
@@ -57,35 +56,35 @@ class App extends React.Component {
     } = this.state;
     return (
       <div>
-        <Selections
-          selectedScale={selectedScale}
-          selectedKey={selectedKey}
-          selectedOctave={selectedOctave}
-          waveform={waveform}
-          oscillator={oscillator}
-          order={order}
-          totalBeats={totalBeats}
-          bpm={bpm}
-          repeatx={repeatx}
-          maxBeats={maxBeats}
-          noteLength={noteLength}
-          onSelectionChange={this.onSelectionChange}
-          onOctaveChange={this.onOctaveChange}
-        />
-        <AllKeyboards
-          selectedScale={selectedScale}
-          startingNote={selectedKey}
-          selectedOctave={selectedOctave}
-          nextOctave={nextOctave}
-          order={order}
-          totalBeats={totalBeats}
-          repeatx={repeatx}
-          bpm={bpm}
-          noteLength={noteLength}
-          waveform={waveform}
-          oscillator={oscillator}
-          getMaxBeats={this.getMaxBeats}
-        />
+        <SelectionStore>
+          <Selections
+            selectedKey={selectedKey}
+            selectedOctave={selectedOctave}
+            waveform={waveform}
+            oscillator={oscillator}
+            order={order}
+            totalBeats={totalBeats}
+            bpm={bpm}
+            repeatx={repeatx}
+            maxBeats={maxBeats}
+            noteLength={noteLength}
+            onSelectionChange={this.onSelectionChange}
+            onOctaveChange={this.onOctaveChange}
+          />
+          <AllKeyboards
+            startingNote={selectedKey}
+            selectedOctave={selectedOctave}
+            nextOctave={nextOctave}
+            order={order}
+            totalBeats={totalBeats}
+            repeatx={repeatx}
+            bpm={bpm}
+            noteLength={noteLength}
+            waveform={waveform}
+            oscillator={oscillator}
+            getMaxBeats={this.getMaxBeats}
+          />
+        </SelectionStore>
       </div>
     );
   }

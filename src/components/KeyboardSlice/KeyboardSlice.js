@@ -11,7 +11,6 @@ class KeyboardSlice extends React.Component {
   renderKeyboardSlice = () => {
     const { noteValues, notesDefined } = this.state;
     const {
-      selectedScale,
       startingNote,
       selectedOctave,
       nextOctave,
@@ -35,7 +34,6 @@ class KeyboardSlice extends React.Component {
                 <KeyboardSliceDetail
                   note={note}
                   notesDefined={notesDefined}
-                  selectedScale={selectedScale}
                   waveform={waveform}
                   oscillator={oscillator}
                   selectedOctave={selectedOctave}

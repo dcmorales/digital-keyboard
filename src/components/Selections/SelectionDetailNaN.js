@@ -16,8 +16,8 @@ const SelectionDetailNaN = ({
         {label}
         <span className="tooltiptext">
           <ul>
-            {selectionsInfo[infoArrNum].map(info => (
-              <li>{info}</li>
+            {selectionsInfo[infoArrNum].map((info, i) => (
+              <li key={i}>{info}</li>
             ))}
           </ul>
         </span>

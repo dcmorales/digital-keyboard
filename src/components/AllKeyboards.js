@@ -3,7 +3,6 @@ import Keyboard from './Keyboard/Keyboard';
 import KeyboardSlice from './KeyboardSlice/KeyboardSlice';
 
 const AllKeyboards = ({
-  selectedScale,
   startingNote,
   selectedOctave,
   nextOctave,
@@ -26,7 +25,6 @@ const AllKeyboards = ({
       />
 
       <KeyboardSlice
-        selectedScale={selectedScale}
         startingNote={startingNote}
         selectedOctave={selectedOctave}
         nextOctave={nextOctave}
