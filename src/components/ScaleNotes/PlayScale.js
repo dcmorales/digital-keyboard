@@ -47,7 +47,7 @@ class PlayScale extends React.Component {
   }
 
   handleTotalBeatChange(noteArrays, newStart) {
-    const { repeatx } = this.props;
+    const { repeatx } = this.context;
     const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])];
     const fragmentSlice = [
       noteArrayFragment[0].slice(0, this.context.totalBeats),

@@ -7,7 +7,7 @@ class Selections extends React.Component {
   static contextType = SelectionContext;
 
   render() {
-    const { repeatx, bpm, noteLength } = this.props;
+    const { bpm, noteLength } = this.props;
     return (
       <div className="selection-container">
         <SelectionDetailNaN
@@ -102,9 +102,9 @@ class Selections extends React.Component {
                 start="0"
                 max="8"
                 nameOfSelection="repeatx"
-                valueOfSelection={repeatx}
+                valueOfSelection={this.context.repeatx}
                 infoArrNum={9}
-                onSelectionChange={this.props.onSelectionChange}
+                onSelectionChange={this.context.onSelectionChange}
               />
             )}
           </div>
