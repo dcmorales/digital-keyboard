@@ -3,7 +3,6 @@ import Keyboard from './Keyboard/Keyboard';
 import KeyboardSlice from './KeyboardSlice/KeyboardSlice';
 
 const AllKeyboards = ({
-  startingNote,
   selectedOctave,
   nextOctave,
   waveform,
@@ -17,15 +16,9 @@ const AllKeyboards = ({
 }) => {
   return (
     <div>
-      <Keyboard
-        startingNote={startingNote}
-        selectedOctave={selectedOctave}
-        waveform={waveform}
-        oscillator={oscillator}
-      />
+      <Keyboard waveform={waveform} oscillator={oscillator} />
 
       <KeyboardSlice
-        startingNote={startingNote}
         selectedOctave={selectedOctave}
         nextOctave={nextOctave}
         waveform={waveform}

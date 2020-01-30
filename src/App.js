@@ -6,7 +6,6 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    selectedKey: 'C',
     selectedOctave: 3,
     nextOctave: 4,
     waveform: 'sawtooth',
@@ -42,7 +41,6 @@ class App extends React.Component {
 
   render() {
     const {
-      selectedKey,
       selectedOctave,
       nextOctave,
       waveform,
@@ -58,7 +56,6 @@ class App extends React.Component {
       <div>
         <SelectionStore>
           <Selections
-            selectedKey={selectedKey}
             selectedOctave={selectedOctave}
             waveform={waveform}
             oscillator={oscillator}
@@ -72,7 +69,6 @@ class App extends React.Component {
             onOctaveChange={this.onOctaveChange}
           />
           <AllKeyboards
-            startingNote={selectedKey}
             selectedOctave={selectedOctave}
             nextOctave={nextOctave}
             order={order}

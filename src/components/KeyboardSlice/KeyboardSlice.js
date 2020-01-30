@@ -1,8 +1,11 @@
 import React from 'react';
+import SelectionContext from '../../contexts/SelectionContext';
 import KeyboardSliceDetail from './KeyboardSliceDetail';
 import { noteValues } from '../../values/noteValues';
 
 class KeyboardSlice extends React.Component {
+  static contextType = SelectionContext;
+
   state = {
     noteValues: noteValues,
     notesDefined: noteValues[this.props.selectedOctave].map(note => note.note),
@@ -10,8 +13,8 @@ class KeyboardSlice extends React.Component {
 
   renderKeyboardSlice = () => {
     const { noteValues, notesDefined } = this.state;
+    const startingNote = this.context.selectedKey;
     const {
-      startingNote,
       selectedOctave,
       nextOctave,
       waveform,
