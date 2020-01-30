@@ -1,4 +1,4 @@
-export const selectionsInfo = [
+export const selectionInfo = [
   //****************************************************************************
   //scale
   [
@@ -6,8 +6,7 @@ export const selectionsInfo = [
     'Major: W-W-H-W-W-W-H',
     'Natural Minor: W-H-W-W-H-W-W',
     'Harmonic Minor: W-H-W-W-H-A2-H',
-    'Melodic Minor Ascending: W-H-W-W-W-W-H ',
-    'Melodic Minor Descending: natural minor',
+    'Melodic Minor: W-H-W-W-W-W-H ',
     'Major Pentatonic: W-W-W+H-W-W+H',
     'Minor Pentatonic: W+H-W-W-W+H-W',
     'Blues: W+H-W-H-H-W+H-W',
@@ -16,14 +15,6 @@ export const selectionsInfo = [
   //****************************************************************************
   //key
   ['First key to start the scale with'],
-
-  //****************************************************************************
-  //octave
-  [
-    'Series of notes occupying the interval between two notes',
-    'Going up an octave doubles the frequency',
-    'Going down an octave divides frequency in half',
-  ],
 
   //****************************************************************************
   //waveform
@@ -39,20 +30,28 @@ export const selectionsInfo = [
   ],
 
   //****************************************************************************
-  //bpm
-  ['Beats Per Minute: the number of beats, in quarter notes, per minute'],
-
-  //****************************************************************************
-  //noteLength
-  ['Length of note, options are quarter, eighth, sixteenth, 32nd '],
-
-  //****************************************************************************
   //order
   [
     'Ascending: frequency => higher frequency',
     'Descending: frequency => lower frequency',
     'Random: will play notes in random order',
   ],
+
+  //****************************************************************************
+  //octave
+  [
+    'Series of notes occupying the interval between two notes',
+    'Going up an octave doubles the frequency',
+    'Going down an octave divides frequency in half',
+  ],
+
+  //****************************************************************************
+  //bpm
+  ['Beats Per Minute: the number of beats, in quarter notes, per minute'],
+
+  //****************************************************************************
+  //noteLength
+  ['Length of note, options are quarter, eighth, sixteenth, 32nd '],
 
   //****************************************************************************
   //# of different beats

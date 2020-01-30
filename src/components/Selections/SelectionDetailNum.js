@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
-import { selectionsInfo } from '../../values/selectionsInfo';
+import { selectionInfo } from '../../values/selectionInfo';
 
 class SelectionDetailNum extends React.Component {
   static contextType = SelectionContext;
@@ -10,7 +10,7 @@ class SelectionDetailNum extends React.Component {
     const {
       start,
       max,
-      infoArrNum,
+      arrNum,
       nameOfSelection,
       valueOfSelection,
     } = this.props;
@@ -33,7 +33,7 @@ class SelectionDetailNum extends React.Component {
           {nameOfSelection}
           <span className="tooltiptext">
             <ul>
-              {selectionsInfo[infoArrNum].map((info, i) => (
+              {selectionInfo[arrNum].map((info, i) => (
                 <li key={i}>{info}</li>
               ))}
             </ul>

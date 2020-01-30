@@ -1,19 +1,14 @@
 import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
-import { options } from '../../values/options';
-import { selectionsInfo } from '../../values/selectionsInfo';
+import { optionsNaN } from '../../values/optionsNaN';
+import { selectionInfo } from '../../values/selectionInfo';
 
 class SelectionDetailNaN extends React.Component {
   static contextType = SelectionContext;
 
   render() {
-    const {
-      nameOfSelection,
-      valueOfSelection,
-      optionsArrNum,
-      infoArrNum,
-    } = this.props;
+    const { nameOfSelection, valueOfSelection, arrNum } = this.props;
 
     return (
       <div>
@@ -21,7 +16,7 @@ class SelectionDetailNaN extends React.Component {
           {nameOfSelection}
           <span className="tooltiptext">
             <ul>
-              {selectionsInfo[infoArrNum].map((info, i) => (
+              {selectionInfo[arrNum].map((info, i) => (
                 <li key={i}>{info}</li>
               ))}
             </ul>
@@ -35,7 +30,7 @@ class SelectionDetailNaN extends React.Component {
           value={valueOfSelection}
           onChange={this.context.onSelectionChange}
         >
-          {options[optionsArrNum].map(option => {
+          {optionsNaN[arrNum].map(option => {
             return (
               <option key={option} value={option}>
                 {option}

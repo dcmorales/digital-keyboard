@@ -14,15 +14,31 @@ class Selections extends React.Component {
         <SelectionDetailNaN
           nameOfSelection="selectedScale"
           valueOfSelection={this.context.selectedScale}
-          optionsArrNum={0}
-          infoArrNum={0}
+          arrNum={0}
         />
 
         <SelectionDetailNaN
           nameOfSelection="selectedKey"
           valueOfSelection={this.context.selectedKey}
-          optionsArrNum={1}
-          infoArrNum={1}
+          arrNum={1}
+        />
+
+        <SelectionDetailNaN
+          nameOfSelection="waveform"
+          valueOfSelection={this.context.waveform}
+          arrNum={2}
+        />
+
+        <SelectionDetailNaN
+          nameOfSelection="oscillator"
+          valueOfSelection={this.context.oscillator}
+          arrNum={3}
+        />
+
+        <SelectionDetailNaN
+          nameOfSelection="order"
+          valueOfSelection={this.context.order}
+          arrNum={4}
         />
 
         <SelectionDetailNum
@@ -30,21 +46,7 @@ class Selections extends React.Component {
           max="6"
           nameOfSelection="selectedOctave"
           valueOfSelection={this.context.selectedOctave}
-          infoArrNum={2}
-        />
-
-        <SelectionDetailNaN
-          nameOfSelection="waveform"
-          valueOfSelection={this.context.waveform}
-          optionsArrNum={2}
-          infoArrNum={3}
-        />
-
-        <SelectionDetailNaN
-          nameOfSelection="oscillator"
-          valueOfSelection={this.context.oscillator}
-          optionsArrNum={3}
-          infoArrNum={4}
+          arrNum={5}
         />
 
         <SelectionDetailNum
@@ -52,7 +54,7 @@ class Selections extends React.Component {
           max="130"
           nameOfSelection="bpm"
           valueOfSelection={this.context.bpm}
-          infoArrNum={5}
+          arrNum={6}
         />
 
         <SelectionDetailNum
@@ -60,14 +62,7 @@ class Selections extends React.Component {
           max="32"
           nameOfSelection="noteLength"
           valueOfSelection={this.context.noteLength}
-          infoArrNum={6}
-        />
-
-        <SelectionDetailNaN
-          nameOfSelection="order"
-          valueOfSelection={this.context.order}
-          optionsArrNum={4}
-          infoArrNum={7}
+          arrNum={7}
         />
 
         {this.context.order !== 'random' ? null : (
@@ -77,7 +72,7 @@ class Selections extends React.Component {
               max={this.context.maxBeats}
               nameOfSelection="totalBeats"
               valueOfSelection={this.context.totalBeats}
-              infoArrNum={8}
+              arrNum={8}
             />
             {this.context.totalBeats === '' ? null : (
               <SelectionDetailNum
@@ -85,7 +80,7 @@ class Selections extends React.Component {
                 max="8"
                 nameOfSelection="repeatx"
                 valueOfSelection={this.context.repeatx}
-                infoArrNum={9}
+                arrNum={9}
               />
             )}
           </div>
