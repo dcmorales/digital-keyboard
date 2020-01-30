@@ -1,7 +1,8 @@
 import React from 'react';
 import SelectionContext from '../../contexts/SelectionContext';
-import KeyboardSliceDetail from './KeyboardSliceDetail';
 import { noteValues } from '../../values/noteValues';
+import ScaleNotes from '../ScaleNotes/ScaleNotes';
+import SelectedKeyboardSlice from './SelectedKeyboardSlice';
 
 class KeyboardSlice extends React.Component {
   static contextType = SelectionContext;
@@ -25,7 +26,14 @@ class KeyboardSlice extends React.Component {
           .map((note, i) => {
             return (
               <div key={i}>
-                <KeyboardSliceDetail note={note} notesDefined={notesDefined} />
+                <SelectedKeyboardSlice
+                  noteValue={note.value}
+                  notesDefined={notesDefined}
+                />
+                <ScaleNotes
+                  noteValue={note.value}
+                  notesDefined={notesDefined}
+                />{' '}
               </div>
             );
           })}

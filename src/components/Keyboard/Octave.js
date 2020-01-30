@@ -2,7 +2,7 @@ import React from 'react';
 import FiveKeys from './FiveKeys';
 import TwoKeys from './TwoKeys';
 
-const Octave = ({ octNum, waveform, oscillator }) => {
+const Octave = ({ octNum }) => {
   return (
     <div className="octave-container">
       <FiveKeys
@@ -11,18 +11,10 @@ const Octave = ({ octNum, waveform, oscillator }) => {
         note3="D"
         note4="Eb"
         note5="E"
-        waveform={waveform}
-        oscillator={oscillator}
         octave={octNum}
       />
 
-      <TwoKeys
-        note1="F"
-        note2="Gb"
-        waveform={waveform}
-        oscillator={oscillator}
-        octave={octNum}
-      />
+      <TwoKeys note1="F" note2="Gb" octave={octNum} />
 
       <FiveKeys
         note1="G"
@@ -30,8 +22,6 @@ const Octave = ({ octNum, waveform, oscillator }) => {
         note3="A"
         note4="Bb"
         note5="B"
-        waveform={waveform}
-        oscillator={oscillator}
         octave={octNum}
       />
     </div>
