@@ -7,7 +7,13 @@ class SelectionDetailNum extends React.Component {
   static contextType = SelectionContext;
 
   render() {
-    const { start, max, infoArrNum, nameOfSelection } = this.props;
+    const {
+      start,
+      max,
+      infoArrNum,
+      nameOfSelection,
+      valueOfSelection,
+    } = this.props;
     var options = [];
     var iNum = parseInt(start, 10);
     for (
@@ -38,6 +44,7 @@ class SelectionDetailNum extends React.Component {
           className="selections"
           name={nameOfSelection}
           id={`${nameOfSelection}`}
+          value={valueOfSelection}
           onChange={
             nameOfSelection === 'selectedOctave'
               ? this.context.onOctaveChange

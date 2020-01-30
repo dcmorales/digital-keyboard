@@ -13,12 +13,14 @@ class Selections extends React.Component {
       <div className="selection-container">
         <SelectionDetailNaN
           nameOfSelection="selectedScale"
+          valueOfSelection={this.context.selectedScale}
           optionsArrNum={0}
           infoArrNum={0}
         />
 
         <SelectionDetailNaN
           nameOfSelection="selectedKey"
+          valueOfSelection={this.context.selectedKey}
           optionsArrNum={1}
           infoArrNum={1}
         />
@@ -27,17 +29,20 @@ class Selections extends React.Component {
           start="1"
           max="6"
           nameOfSelection="selectedOctave"
+          valueOfSelection={this.context.selectedOctave}
           infoArrNum={2}
         />
 
         <SelectionDetailNaN
           nameOfSelection="waveform"
+          valueOfSelection={this.context.waveform}
           optionsArrNum={2}
           infoArrNum={3}
         />
 
         <SelectionDetailNaN
           nameOfSelection="oscillator"
+          valueOfSelection={this.context.oscillator}
           optionsArrNum={3}
           infoArrNum={4}
         />
@@ -46,6 +51,7 @@ class Selections extends React.Component {
           start="100"
           max="130"
           nameOfSelection="bpm"
+          valueOfSelection={this.context.bpm}
           infoArrNum={5}
         />
 
@@ -53,11 +59,13 @@ class Selections extends React.Component {
           start="4"
           max="32"
           nameOfSelection="noteLength"
+          valueOfSelection={this.context.noteLength}
           infoArrNum={6}
         />
 
         <SelectionDetailNaN
           nameOfSelection="order"
+          valueOfSelection={this.context.order}
           optionsArrNum={4}
           infoArrNum={7}
         />
@@ -68,6 +76,7 @@ class Selections extends React.Component {
               start="1"
               max={this.context.maxBeats}
               nameOfSelection="totalBeats"
+              valueOfSelection={this.context.totalBeats}
               infoArrNum={8}
             />
             {this.context.totalBeats === '' ? null : (
@@ -75,6 +84,7 @@ class Selections extends React.Component {
                 start="0"
                 max="8"
                 nameOfSelection="repeatx"
+                valueOfSelection={this.context.repeatx}
                 infoArrNum={9}
               />
             )}

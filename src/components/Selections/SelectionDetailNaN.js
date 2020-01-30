@@ -8,7 +8,12 @@ class SelectionDetailNaN extends React.Component {
   static contextType = SelectionContext;
 
   render() {
-    const { nameOfSelection, optionsArrNum, infoArrNum } = this.props;
+    const {
+      nameOfSelection,
+      valueOfSelection,
+      optionsArrNum,
+      infoArrNum,
+    } = this.props;
 
     return (
       <div>
@@ -27,7 +32,7 @@ class SelectionDetailNaN extends React.Component {
           className="selections"
           name={nameOfSelection}
           id={`${nameOfSelection}`}
-          //value is handled by context state
+          value={valueOfSelection}
           onChange={this.context.onSelectionChange}
         >
           {options[optionsArrNum].map(option => {
