@@ -7,12 +7,7 @@ const AllKeyboards = ({ repeatx, noteLength, bpm, getMaxBeats }) => {
     <div>
       <Keyboard />
 
-      <KeyboardSlice
-        getMaxBeats={getMaxBeats}
-        repeatx={repeatx}
-        noteLength={noteLength}
-        bpm={bpm}
-      />
+      <KeyboardSlice repeatx={repeatx} noteLength={noteLength} bpm={bpm} />
     </div>
   );
 };

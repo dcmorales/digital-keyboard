@@ -65,7 +65,6 @@ class ScaleNotes extends React.Component {
           bpm={bpm}
           selectedScale={this.context.selectedScale}
           renderScale={this.renderScale}
-          getMaxBeats={this.props.getMaxBeats}
         />
       </div>
     );

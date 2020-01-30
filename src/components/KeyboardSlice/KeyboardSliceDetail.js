@@ -8,7 +8,6 @@ const KeyboardSliceDetail = ({
   repeatx,
   noteLength,
   bpm,
-  getMaxBeats,
 }) => {
   return (
     <div>
@@ -20,7 +19,6 @@ const KeyboardSliceDetail = ({
       <ScaleNotes
         noteValue={note.value}
         notesDefined={notesDefined}
-        getMaxBeats={getMaxBeats}
         repeatx={repeatx}
         noteLength={noteLength}
         bpm={bpm}

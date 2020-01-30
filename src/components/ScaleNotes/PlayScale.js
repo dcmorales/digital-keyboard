@@ -14,7 +14,7 @@ class PlayScale extends React.Component {
       .renderScale()[0]
       .concat(this.props.renderScale()[1]);
     if (this.props.selectedScale !== prevProps.selectedScale) {
-      this.props.getMaxBeats(maxBeatArray.length);
+      this.context.onSelectionChange(maxBeatArray.length);
     }
   }
 

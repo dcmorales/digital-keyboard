@@ -12,6 +12,7 @@ export class SelectionStore extends React.Component {
     oscillator: '',
     order: 'ascending',
     totalBeats: '',
+    maxBeats: 13,
     repeatx: 0,
     bpm: 125,
     noteLength: 4,

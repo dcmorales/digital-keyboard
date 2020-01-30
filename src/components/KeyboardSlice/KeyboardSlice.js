@@ -29,7 +29,6 @@ class KeyboardSlice extends React.Component {
                 <KeyboardSliceDetail
                   note={note}
                   notesDefined={notesDefined}
-                  getMaxBeats={this.props.getMaxBeats}
                   repeatx={repeatx}
                   noteLength={noteLength}
                   bpm={bpm}
