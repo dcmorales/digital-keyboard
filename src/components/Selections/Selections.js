@@ -11,56 +11,56 @@ class Selections extends React.Component {
     return (
       <div className="selection-container">
         <SelectionDetail
-          nameOfSelection="selectedScale"
-          valueOfSelection={this.context.selectedScale}
+          selectionName="selectedScale"
+          selectionValue={this.context.selectedScale}
           arrNum={0}
         />
 
         <SelectionDetail
-          nameOfSelection="selectedKey"
-          valueOfSelection={this.context.selectedKey}
+          selectionName="selectedKey"
+          selectionValue={this.context.selectedKey}
           arrNum={1}
         />
 
         <SelectionDetail
-          nameOfSelection="waveform"
-          valueOfSelection={this.context.waveform}
+          selectionName="waveform"
+          selectionValue={this.context.waveform}
           arrNum={2}
         />
 
         <SelectionDetail
-          nameOfSelection="oscillator"
-          valueOfSelection={this.context.oscillator}
+          selectionName="oscillator"
+          selectionValue={this.context.oscillator}
           arrNum={3}
         />
 
         <SelectionDetail
-          nameOfSelection="order"
-          valueOfSelection={this.context.order}
+          selectionName="order"
+          selectionValue={this.context.order}
           arrNum={4}
         />
 
         <SelectionDetail
           start="1"
           max="6"
-          nameOfSelection="selectedOctave"
-          valueOfSelection={this.context.selectedOctave}
+          selectionName="selectedOctave"
+          selectionValue={this.context.selectedOctave}
           arrNum={5}
         />
 
         <SelectionDetail
           start="100"
           max="130"
-          nameOfSelection="bpm"
-          valueOfSelection={this.context.bpm}
+          selectionName="bpm"
+          selectionValue={this.context.bpm}
           arrNum={6}
         />
 
         <SelectionDetail
           start="4"
           max="32"
-          nameOfSelection="noteLength"
-          valueOfSelection={this.context.noteLength}
+          selectionName="noteLength"
+          selectionValue={this.context.noteLength}
           arrNum={7}
         />
 
@@ -69,16 +69,16 @@ class Selections extends React.Component {
             <SelectionDetail
               start="1"
               max={this.context.maxBeats}
-              nameOfSelection="totalBeats"
-              valueOfSelection={this.context.totalBeats}
+              selectionName="totalBeats"
+              selectionValue={this.context.totalBeats}
               arrNum={8}
             />
             {this.context.totalBeats === '' ? null : (
               <SelectionDetail
                 start="0"
                 max="8"
-                nameOfSelection="repeatx"
-                valueOfSelection={this.context.repeatx}
+                selectionName="repeatx"
+                selectionValue={this.context.repeatx}
                 arrNum={9}
               />
             )}

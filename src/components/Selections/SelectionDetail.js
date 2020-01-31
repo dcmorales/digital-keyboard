@@ -8,19 +8,13 @@ class SelectionDetail extends React.Component {
   static contextType = SelectionContext;
 
   render() {
-    const {
-      start,
-      max,
-      arrNum,
-      nameOfSelection,
-      valueOfSelection,
-    } = this.props;
+    const { start, max, arrNum, selectionName, selectionValue } = this.props;
     var optionsNum = [];
     var iNum = parseInt(start, 10);
     for (
       var i = iNum;
       i <= max;
-      nameOfSelection !== 'noteLength' ? i++ : (i *= 2)
+      selectionName !== 'noteLength' ? i++ : (i *= 2)
     ) {
       optionsNum.push(i);
     }
@@ -29,8 +23,8 @@ class SelectionDetail extends React.Component {
     const optionsDefined = !start && !max ? optionsNaN[arrNum] : optionsNum;
     return (
       <div>
-        <label className="tooltip" htmlFor={`${nameOfSelection}`}>
-          {nameOfSelection}
+        <label className="tooltip" htmlFor={`${selectionName}`}>
+          {selectionName}
           <span className="tooltiptext">
             <ul>
               {selectionInfo[arrNum].map((info, i) => (
@@ -42,17 +36,16 @@ class SelectionDetail extends React.Component {
 
         <select
           className="selections"
-          name={nameOfSelection}
-          id={`${nameOfSelection}`}
-          value={valueOfSelection}
+          name={selectionName}
+          id={`${selectionName}`}
+          value={selectionValue}
           onChange={
-            nameOfSelection === 'selectedOctave'
+            selectionName === 'selectedOctave'
               ? this.context.onOctaveChange
               : this.context.onSelectionChange
           }
         >
-          {nameOfSelection === 'totalBeats' ||
-          nameOfSelection === 'oscillator' ? (
+          {selectionName === 'totalBeats' || selectionName === 'oscillator' ? (
             <option></option>
           ) : null}
           {optionsDefined.map(option => {
