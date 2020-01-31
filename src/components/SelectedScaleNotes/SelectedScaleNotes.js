@@ -2,6 +2,7 @@ import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
 import { cutPoints } from '../../values/cutPoints';
+import { optionsNaN } from '../../values/optionsNaN';
 
 import HighLightScale from './HighlightScale';
 import PlayScale from './PlayScale';
@@ -21,22 +22,7 @@ class SelectedScaleNotes extends React.Component {
       .concat(lastNote)
       .map(point => point + nextOctave);
     const combinedNotes = newPoint.concat(lastPoint);
-    const scaleNum =
-      selectedScale === 'major'
-        ? 0
-        : selectedScale === 'natural minor'
-        ? 1
-        : selectedScale === 'harmonic minor'
-        ? 2
-        : selectedScale === 'melodic minor'
-        ? 3
-        : selectedScale === 'major pentatonic'
-        ? 4
-        : selectedScale === 'minor pentatonic'
-        ? 5
-        : selectedScale === 'blues'
-        ? 6
-        : null;
+    const scaleNum = optionsNaN[0].indexOf(selectedScale);
     if (selectedScale === 'chromatic') {
       return [newPoint, lastPoint, combinedNotes, notesDefined];
     } else {
