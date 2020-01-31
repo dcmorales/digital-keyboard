@@ -11,32 +11,33 @@ class ScaleNotes extends React.Component {
 
   renderScale = () => {
     const { notesDefined, noteValue } = this.props;
+    const { selectedOctave, nextOctave, selectedScale } = this.context;
     const newPoint = notesDefined
       .slice(noteValue)
-      .map(point => point + this.context.selectedOctave);
+      .map(point => point + selectedOctave);
     const oldPoint = notesDefined.slice(0, noteValue);
     const lastNote = notesDefined.slice(noteValue)[0];
     const lastPoint = oldPoint
       .concat(lastNote)
-      .map(point => point + this.context.nextOctave);
+      .map(point => point + nextOctave);
     const combinedNotes = newPoint.concat(lastPoint);
     const scaleNum =
-      this.context.selectedScale === 'major'
+      selectedScale === 'major'
         ? 0
-        : this.context.selectedScale === 'natural minor'
+        : selectedScale === 'natural minor'
         ? 1
-        : this.context.selectedScale === 'harmonic minor'
+        : selectedScale === 'harmonic minor'
         ? 2
-        : this.context.selectedScale === 'melodic minor'
+        : selectedScale === 'melodic minor'
         ? 3
-        : this.context.selectedScale === 'major pentatonic'
+        : selectedScale === 'major pentatonic'
         ? 4
-        : this.context.selectedScale === 'minor pentatonic'
+        : selectedScale === 'minor pentatonic'
         ? 5
-        : this.context.selectedScale === 'blues'
+        : selectedScale === 'blues'
         ? 6
         : null;
-    if (this.context.selectedScale === 'chromatic') {
+    if (selectedScale === 'chromatic') {
       return [newPoint, lastPoint, combinedNotes, notesDefined];
     } else {
       const scaleNotes = cutPoints[1][scaleNum].map(point =>
