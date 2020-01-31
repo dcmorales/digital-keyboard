@@ -2,7 +2,7 @@ import React from 'react';
 
 import Octave from './Octave';
 
-const Keyboard = () => {
+const KeyboardFull = () => {
   return (
     <div className="keyboard-container">
       <Octave octNum="1" />
@@ -22,4 +22,4 @@ const Keyboard = () => {
   );
 };
 
-export default Keyboard;
+export default KeyboardFull;
