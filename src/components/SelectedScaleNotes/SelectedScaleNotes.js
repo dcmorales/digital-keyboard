@@ -6,7 +6,7 @@ import { cutPoints } from '../../values/cutPoints';
 import HighLightScale from './HighlightScale';
 import PlayScale from './PlayScale';
 
-class ScaleNotes extends React.Component {
+class SelectedScaleNotes extends React.Component {
   static contextType = SelectionContext;
 
   renderScale = () => {
@@ -70,4 +70,4 @@ class ScaleNotes extends React.Component {
   }
 }
 
-export default ScaleNotes;
+export default SelectedScaleNotes;

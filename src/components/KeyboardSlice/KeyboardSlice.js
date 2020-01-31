@@ -2,7 +2,7 @@ import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
 import { noteValues } from '../../values/noteValues';
-import ScaleNotes from '../ScaleNotes/ScaleNotes';
+import SelectedScaleNotes from '../SelectedScaleNotes/SelectedScaleNotes';
 
 import SelectedKeyboardSlice from './SelectedKeyboardSlice';
 
@@ -32,7 +32,7 @@ class KeyboardSlice extends React.Component {
                   noteValue={note.value}
                   notesDefined={notesDefined}
                 />
-                <ScaleNotes
+                <SelectedScaleNotes
                   noteValue={note.value}
                   notesDefined={notesDefined}
                 />{' '}
