@@ -22,10 +22,10 @@ class SelectedScaleNotes extends React.Component {
       .concat(lastNote)
       .map(point => point + nextOctave);
     const combinedNotes = newPoint.concat(lastPoint);
-    const scaleNum = optionsNaN[0].indexOf(selectedScale);
     if (selectedScale === 'chromatic') {
       return [newPoint, lastPoint, combinedNotes, notesDefined];
     } else {
+      const scaleNum = optionsNaN[0].indexOf(selectedScale) - 1;
       const scaleNotes = cutPoints[1][scaleNum].map(point =>
         combinedNotes.slice(point[0], point[1])
       );
