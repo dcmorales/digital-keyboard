@@ -2,8 +2,7 @@ import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
 
-import SelectionDetailNaN from './SelectionDetailNaN';
-import SelectionDetailNum from './SelectionDetailNum';
+import SelectionDetail from './SelectionDetail';
 
 class Selections extends React.Component {
   static contextType = SelectionContext;
@@ -11,37 +10,37 @@ class Selections extends React.Component {
   render() {
     return (
       <div className="selection-container">
-        <SelectionDetailNaN
+        <SelectionDetail
           nameOfSelection="selectedScale"
           valueOfSelection={this.context.selectedScale}
           arrNum={0}
         />
 
-        <SelectionDetailNaN
+        <SelectionDetail
           nameOfSelection="selectedKey"
           valueOfSelection={this.context.selectedKey}
           arrNum={1}
         />
 
-        <SelectionDetailNaN
+        <SelectionDetail
           nameOfSelection="waveform"
           valueOfSelection={this.context.waveform}
           arrNum={2}
         />
 
-        <SelectionDetailNaN
+        <SelectionDetail
           nameOfSelection="oscillator"
           valueOfSelection={this.context.oscillator}
           arrNum={3}
         />
 
-        <SelectionDetailNaN
+        <SelectionDetail
           nameOfSelection="order"
           valueOfSelection={this.context.order}
           arrNum={4}
         />
 
-        <SelectionDetailNum
+        <SelectionDetail
           start="1"
           max="6"
           nameOfSelection="selectedOctave"
@@ -49,7 +48,7 @@ class Selections extends React.Component {
           arrNum={5}
         />
 
-        <SelectionDetailNum
+        <SelectionDetail
           start="100"
           max="130"
           nameOfSelection="bpm"
@@ -57,7 +56,7 @@ class Selections extends React.Component {
           arrNum={6}
         />
 
-        <SelectionDetailNum
+        <SelectionDetail
           start="4"
           max="32"
           nameOfSelection="noteLength"
@@ -67,7 +66,7 @@ class Selections extends React.Component {
 
         {this.context.order !== 'random' ? null : (
           <div>
-            <SelectionDetailNum
+            <SelectionDetail
               start="1"
               max={this.context.maxBeats}
               nameOfSelection="totalBeats"
@@ -75,7 +74,7 @@ class Selections extends React.Component {
               arrNum={8}
             />
             {this.context.totalBeats === '' ? null : (
-              <SelectionDetailNum
+              <SelectionDetail
                 start="0"
                 max="8"
                 nameOfSelection="repeatx"

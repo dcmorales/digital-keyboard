@@ -2,8 +2,9 @@ import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
 import { selectionInfo } from '../../values/selectionInfo';
+import { optionsNaN } from '../../values/optionsNaN';
 
-class SelectionDetailNum extends React.Component {
+class SelectionDetail extends React.Component {
   static contextType = SelectionContext;
 
   render() {
@@ -14,19 +15,18 @@ class SelectionDetailNum extends React.Component {
       nameOfSelection,
       valueOfSelection,
     } = this.props;
-    var options = [];
+    var optionsNum = [];
     var iNum = parseInt(start, 10);
     for (
       var i = iNum;
       i <= max;
       nameOfSelection !== 'noteLength' ? i++ : (i *= 2)
     ) {
-      options.push(i);
+      optionsNum.push(i);
     }
-    const optionDetail =
-      nameOfSelection !== 'totalBeats'
-        ? [null, options]
-        : [<option></option>, options.reverse()];
+    //if start and max are defined then selection is a number
+    //numbers use function above for options, not a number uses OptionsNaN values
+    const optionsDefined = !start && !max ? optionsNaN[arrNum] : optionsNum;
     return (
       <div>
         <label className="tooltip" htmlFor={`${nameOfSelection}`}>
@@ -51,8 +51,11 @@ class SelectionDetailNum extends React.Component {
               : this.context.onSelectionChange
           }
         >
-          {optionDetail[0]}
-          {optionDetail[1].map(option => {
+          {nameOfSelection === 'totalBeats' ||
+          nameOfSelection === 'oscillator' ? (
+            <option></option>
+          ) : null}
+          {optionsDefined.map(option => {
             return (
               <option key={option} value={option}>
                 {option}
@@ -65,4 +68,4 @@ class SelectionDetailNum extends React.Component {
   }
 }
 
-export default SelectionDetailNum;
+export default SelectionDetail;
