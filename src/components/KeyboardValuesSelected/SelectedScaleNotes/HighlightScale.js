@@ -18,7 +18,6 @@ class HighlightScale extends React.Component {
 
   componentDidUpdate() {
     this.clearHighlight();
-    console.log('update');
     this.highlightScaleNotes();
   }
 

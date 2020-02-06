@@ -25,9 +25,9 @@ class KeyboardValuesSelected extends React.Component {
           .filter(noteInfo => {
             return noteInfo.note === startingNote;
           })
-          .map(note => {
+          .map((note, i) => {
             return (
-              <div key={note.frequency}>
+              <div key={i}>
                 <SelectedKeyboardSlice
                   noteValue={note.value}
                   notesDefined={notesDefined}
