@@ -2,7 +2,7 @@ import { cutPoints } from '../values/cutPoints';
 import { noteValues } from '../values/noteValues';
 import { optionsNaN } from '../values/optionsNaN';
 
-export const scale = {
+export const defineScale = {
   renderNotes(scaleInfo) {
     const selectedOctave = scaleInfo[0];
     const nextOctave = scaleInfo[1];

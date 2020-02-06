@@ -1,10 +1,10 @@
-import { scale } from './scale';
+import { defineScale } from './defineScale';
 
 export const highlight = {
   allScaleNotes(scaleInfo) {
-    const scaleNotes = scale
+    const scaleNotes = defineScale
       .renderNotes(scaleInfo)[0]
-      .concat(scale.renderNotes(scaleInfo)[1]);
+      .concat(defineScale.renderNotes(scaleInfo)[1]);
     scaleNotes.map(noteFull =>
       document
         .getElementById(`${noteFull} full`)
@@ -18,7 +18,7 @@ export const highlight = {
   },
 
   clearScaleNotes(scaleInfo) {
-    const sliceNotes = scale.renderNotes(scaleInfo)[2];
+    const sliceNotes = defineScale.renderNotes(scaleInfo)[2];
     sliceNotes.map(noteFull =>
       document.getElementById(`${noteFull} slice`).setAttribute('class', 'note')
     );
@@ -28,11 +28,27 @@ export const highlight = {
   },
 
   getAllNotes(i, scaleInfo) {
-    const allNotes = scale.renderNotes(scaleInfo)[3];
+    const allNotes = defineScale.renderNotes(scaleInfo)[3];
     allNotes.map(noteFull =>
       document
         .getElementById(`${noteFull}${i} full`)
         .setAttribute('class', 'note')
     );
+  },
+
+  singleNote(noteFull) {
+    setTimeout(() => {
+      this.handleNoteHighlight(noteFull, 'scale-note');
+    }, 450);
+    this.handleNoteHighlight(noteFull, 'active');
+  },
+
+  handleNoteHighlight(noteFull, otherClassName) {
+    document
+      .getElementById(`${noteFull} full`)
+      .setAttribute('class', `${noteFull} ${otherClassName}`);
+    document
+      .getElementById(`${noteFull} slice`)
+      .setAttribute('class', `${noteFull} ${otherClassName}`);
   },
 };

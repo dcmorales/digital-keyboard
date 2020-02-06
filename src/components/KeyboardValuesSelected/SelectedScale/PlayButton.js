@@ -1,23 +1,19 @@
 import React from 'react';
 
 import SelectionContext from '../../../contexts/SelectionContext';
-import { scale } from '../../../utils/scale';
-import { synthSlice } from '../../../utils/synthSlice';
+import { playScale } from '../../../utils/playScale';
+import { defineScale } from '../../../utils/defineScale';
 
 class PlayButton extends React.Component {
   static contextType = SelectionContext;
-
-  state = {
-    notesPlayed: [],
-  };
 
   componentDidUpdate(prevProps) {
     const { noteValue } = this.props;
     const { selectedOctave, nextOctave, selectedScale } = this.context;
     const scaleInfo = [selectedOctave, nextOctave, selectedScale, noteValue];
-    const maxBeatArray = scale
+    const maxBeatArray = defineScale
       .renderNotes(scaleInfo)[0]
-      .concat(scale.renderNotes(scaleInfo)[1]);
+      .concat(defineScale.renderNotes(scaleInfo)[1]);
     if (this.props.selectedScale !== prevProps.selectedScale) {
       this.context.getMaxBeats(maxBeatArray.length);
     }
@@ -75,7 +71,7 @@ class PlayButton extends React.Component {
       bpm,
       noteLength,
     } = this.context;
-    synthSlice.playNote(
+    playScale.playNote(
       sliceOrder,
       order,
       newStart,
@@ -85,7 +81,7 @@ class PlayButton extends React.Component {
       bpm,
       noteLength
     );
-    synthSlice.stopNote(sliceOrder, order, bpm, noteLength);
+    playScale.stopNote(sliceOrder, order, bpm, noteLength);
     this.props.getNotesPlayed(sliceOrder[0].concat(sliceOrder[1]));
   }
 
@@ -99,8 +95,8 @@ class PlayButton extends React.Component {
           id="play-button"
           onClick={() =>
             this.renderPlayButton(
-              scale.renderNotes(scaleInfo)[0],
-              scale.renderNotes(scaleInfo)[1]
+              defineScale.renderNotes(scaleInfo)[0],
+              defineScale.renderNotes(scaleInfo)[1]
             )
           }
         >
