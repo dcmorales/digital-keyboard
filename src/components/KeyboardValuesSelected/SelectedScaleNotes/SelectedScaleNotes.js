@@ -4,7 +4,7 @@ import HighLightScale from './HighlightScale';
 import PlayButton from './PlayButton';
 import NoteDisplay from './NoteDisplay';
 
-class SelectedScale extends React.Component {
+class SelectedScaleNotes extends React.Component {
   state = {
     notesPlayed: [],
   };
@@ -14,10 +14,10 @@ class SelectedScale extends React.Component {
   };
 
   render() {
-    const { noteValue } = this.props;
+    const { noteValue, selectedKey } = this.props;
     return (
       <div>
-        <HighLightScale noteValue={noteValue} />
+        <HighLightScale noteValue={noteValue} selectedKey={selectedKey} />
         <PlayButton
           noteValue={noteValue}
           getNotesPlayed={this.getNotesPlayed}
@@ -28,4 +28,4 @@ class SelectedScale extends React.Component {
   }
 }
 
-export default SelectedScale;
+export default SelectedScaleNotes;

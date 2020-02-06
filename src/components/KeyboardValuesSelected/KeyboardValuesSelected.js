@@ -3,7 +3,7 @@ import React from 'react';
 import SelectionContext from '../../contexts/SelectionContext';
 import { noteValues } from '../../values/noteValues';
 import SelectedKeyboardSlice from './SelectedKeyboardSlice/SelectedKeyboardSlice';
-import SelectedScale from './SelectedScale/SelectedScale';
+import SelectedScaleNotes from './SelectedScaleNotes/SelectedScaleNotes';
 
 class KeyboardValuesSelected extends React.Component {
   static contextType = SelectionContext;
@@ -32,7 +32,7 @@ class KeyboardValuesSelected extends React.Component {
                   noteValue={note.value}
                   notesDefined={notesDefined}
                 />
-                <SelectedScale
+                <SelectedScaleNotes
                   noteValue={note.value}
                   selectedScale={selectedScale}
                 />
