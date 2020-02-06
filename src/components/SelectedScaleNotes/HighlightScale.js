@@ -1,6 +1,11 @@
 import React from 'react';
 
+import SelectionContext from '../../contexts/SelectionContext';
+import { scale } from '../../utils/scale';
+
 class HighlightScale extends React.Component {
+  static contextType = SelectionContext;
+
   firstHighlight() {
     setTimeout(() => {
       this.highlightScaleNotes();
@@ -13,9 +18,18 @@ class HighlightScale extends React.Component {
   }
 
   highlightScaleNotes() {
-    const scaleNotes = this.props
-      .renderScale()[0]
-      .concat(this.props.renderScale()[1]);
+    const { noteValue } = this.props;
+    const { selectedOctave, nextOctave, selectedScale } = this.context;
+    const scaleNotes = scale
+      .renderScale(selectedOctave, nextOctave, selectedScale, noteValue)[0]
+      .concat(
+        scale.renderScale(
+          selectedOctave,
+          nextOctave,
+          selectedScale,
+          noteValue
+        )[1]
+      );
     scaleNotes.map(noteFull =>
       document
         .getElementById(`${noteFull} full`)
@@ -29,7 +43,14 @@ class HighlightScale extends React.Component {
   }
 
   clearHighlight() {
-    const sliceNotes = this.props.renderScale()[2];
+    const { noteValue } = this.props;
+    const { selectedOctave, nextOctave, selectedScale } = this.context;
+    const sliceNotes = scale.renderScale(
+      selectedOctave,
+      nextOctave,
+      selectedScale,
+      noteValue
+    )[2];
     sliceNotes.map(noteFull =>
       document.getElementById(`${noteFull} slice`).setAttribute('class', 'note')
     );
@@ -39,7 +60,14 @@ class HighlightScale extends React.Component {
   }
 
   getAllNotes(i) {
-    const allNotes = this.props.renderScale()[3];
+    const { noteValue } = this.props;
+    const { selectedOctave, nextOctave, selectedScale } = this.context;
+    const allNotes = scale.renderScale(
+      selectedOctave,
+      nextOctave,
+      selectedScale,
+      noteValue
+    )[3];
     allNotes.map(noteFull =>
       document
         .getElementById(`${noteFull}${i} full`)

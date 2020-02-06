@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
+import { scale } from '../../utils/scale';
 import { synthSlice } from '../../utils/synthSlice';
 
 class PlayScale extends React.Component {
@@ -11,9 +12,18 @@ class PlayScale extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
-    const maxBeatArray = this.props
-      .renderScale()[0]
-      .concat(this.props.renderScale()[1]);
+    const { noteValue } = this.props;
+    const { selectedOctave, nextOctave, selectedScale } = this.context;
+    const maxBeatArray = scale
+      .renderScale(selectedOctave, nextOctave, selectedScale, noteValue)[0]
+      .concat(
+        scale.renderScale(
+          selectedOctave,
+          nextOctave,
+          selectedScale,
+          noteValue
+        )[1]
+      );
     if (this.props.selectedScale !== prevProps.selectedScale) {
       this.context.getMaxBeats(maxBeatArray.length);
     }
@@ -63,22 +73,25 @@ class PlayScale extends React.Component {
   }
 
   renderPlayScales(newStart, sliceOrder) {
+    const {
+      order,
+      waveform,
+      oscillator,
+      totalBeats,
+      bpm,
+      noteLength,
+    } = this.context;
     synthSlice.playNote(
       sliceOrder,
-      this.context.order,
+      order,
       newStart,
-      this.context.waveform,
-      this.context.oscillator,
-      this.context.totalBeats,
-      this.context.bpm,
-      this.context.noteLength
+      waveform,
+      oscillator,
+      totalBeats,
+      bpm,
+      noteLength
     );
-    synthSlice.stopNote(
-      sliceOrder,
-      this.context.order,
-      this.context.bpm,
-      this.context.noteLength
-    );
+    synthSlice.stopNote(sliceOrder, order, bpm, noteLength);
     this.displayNotes(sliceOrder[0].concat(sliceOrder[1]));
   }
 
@@ -87,14 +100,26 @@ class PlayScale extends React.Component {
   }
 
   render() {
+    const { noteValue } = this.props;
+    const { selectedOctave, nextOctave, selectedScale } = this.context;
     return (
       <div>
         <button
           id="play-button"
           onClick={() =>
             this.renderPlayButton(
-              this.props.renderScale()[0],
-              this.props.renderScale()[1]
+              scale.renderScale(
+                selectedOctave,
+                nextOctave,
+                selectedScale,
+                noteValue
+              )[0],
+              scale.renderScale(
+                selectedOctave,
+                nextOctave,
+                selectedScale,
+                noteValue
+              )[1]
             )
           }
         >

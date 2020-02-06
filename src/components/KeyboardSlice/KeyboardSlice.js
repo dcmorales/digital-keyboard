@@ -2,8 +2,8 @@ import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
 import { noteValues } from '../../values/noteValues';
-import SelectedScaleNotes from '../SelectedScaleNotes/SelectedScaleNotes';
-
+import HighLightScale from '../SelectedScaleNotes/HighlightScale';
+import PlayScale from '../SelectedScaleNotes/PlayScale';
 import SelectedKeyboardSlice from './SelectedKeyboardSlice';
 
 class KeyboardSlice extends React.Component {
@@ -18,10 +18,11 @@ class KeyboardSlice extends React.Component {
 
   renderKeyboardSlice = () => {
     const { noteValues, notesDefined } = this.state;
-    const startingNote = this.context.selectedKey;
+    const { selectedKey, selectedOctave, selectedScale } = this.context;
+    const startingNote = selectedKey;
     return (
       <div>
-        {noteValues[this.context.selectedOctave]
+        {noteValues[selectedOctave]
           .filter(noteInfo => {
             return noteInfo.note === startingNote;
           })
@@ -32,10 +33,11 @@ class KeyboardSlice extends React.Component {
                   noteValue={note.value}
                   notesDefined={notesDefined}
                 />
-                <SelectedScaleNotes
+                <HighLightScale noteValue={note.value} />
+                <PlayScale
+                  selectedScale={selectedScale}
                   noteValue={note.value}
-                  notesDefined={notesDefined}
-                />{' '}
+                />
               </div>
             );
           })}

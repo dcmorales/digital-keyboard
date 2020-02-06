@@ -1,18 +1,10 @@
-import React from 'react';
+import { cutPoints } from '../values/cutPoints';
+import { noteValues } from '../values/noteValues';
+import { optionsNaN } from '../values/optionsNaN';
 
-import SelectionContext from '../../contexts/SelectionContext';
-import { cutPoints } from '../../values/cutPoints';
-import { optionsNaN } from '../../values/optionsNaN';
-
-import HighLightScale from './HighlightScale';
-import PlayScale from './PlayScale';
-
-class SelectedScaleNotes extends React.Component {
-  static contextType = SelectionContext;
-
-  renderScale = () => {
-    const { notesDefined, noteValue } = this.props;
-    const { selectedOctave, nextOctave, selectedScale } = this.context;
+export const scale = {
+  renderScale(selectedOctave, nextOctave, selectedScale, noteValue) {
+    const notesDefined = noteValues[selectedOctave].map(note => note.note);
     const newPoint = notesDefined
       .slice(noteValue)
       .map(point => point + selectedOctave);
@@ -41,19 +33,5 @@ class SelectedScaleNotes extends React.Component {
       const scaleNext = scaleCombined.slice(slicePoint, 8);
       return [scaleNow, scaleNext, combinedNotes, notesDefined];
     }
-  };
-
-  render() {
-    return (
-      <div>
-        <HighLightScale renderScale={this.renderScale} />
-        <PlayScale
-          selectedScale={this.context.selectedScale}
-          renderScale={this.renderScale}
-        />
-      </div>
-    );
-  }
-}
-
-export default SelectedScaleNotes;
+  },
+};
