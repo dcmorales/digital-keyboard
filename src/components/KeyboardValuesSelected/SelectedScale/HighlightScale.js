@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SelectionContext from '../../contexts/SelectionContext';
-import { highlight } from '../../utils/highlight';
+import SelectionContext from '../../../contexts/SelectionContext';
+import { highlight } from '../../../utils/highlight';
 
 class HighlightScale extends React.Component {
   static contextType = SelectionContext;

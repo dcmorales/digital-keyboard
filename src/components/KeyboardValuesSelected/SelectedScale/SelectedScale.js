@@ -1,5 +1,6 @@
 import React from 'react';
 
+import HighLightScale from './HighlightScale';
 import PlayButton from './PlayButton';
 import NoteDisplay from './NoteDisplay';
 
@@ -13,10 +14,12 @@ class SelectedScale extends React.Component {
   };
 
   render() {
+    const { noteValue } = this.props;
     return (
       <div>
+        <HighLightScale noteValue={noteValue} />
         <PlayButton
-          noteValue={this.props.noteValue}
+          noteValue={noteValue}
           getNotesPlayed={this.getNotesPlayed}
         />
         <NoteDisplay notesPlayed={this.state.notesPlayed} />

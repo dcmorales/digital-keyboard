@@ -2,11 +2,10 @@ import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
 import { noteValues } from '../../values/noteValues';
-import HighLightScale from '../SelectedScale/HighlightScale';
-import SelectedScale from '../SelectedScale/SelectedScale';
-import SelectedKeyboardSlice from './SelectedKeyboardSlice';
+import SelectedKeyboardSlice from './SelectedKeyboardSlice/SelectedKeyboardSlice';
+import SelectedScale from './SelectedScale/SelectedScale';
 
-class KeyboardSlice extends React.Component {
+class KeyboardValuesSelected extends React.Component {
   static contextType = SelectionContext;
 
   state = {
@@ -33,10 +32,9 @@ class KeyboardSlice extends React.Component {
                   noteValue={note.value}
                   notesDefined={notesDefined}
                 />
-                <HighLightScale noteValue={note.value} />
                 <SelectedScale
-                  selectedScale={selectedScale}
                   noteValue={note.value}
+                  selectedScale={selectedScale}
                 />
               </div>
             );
@@ -50,4 +48,4 @@ class KeyboardSlice extends React.Component {
   }
 }
 
-export default KeyboardSlice;
+export default KeyboardValuesSelected;

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import SelectionContext from '../../contexts/SelectionContext';
-import { scale } from '../../utils/scale';
-import { synthSlice } from '../../utils/synthSlice';
+import SelectionContext from '../../../contexts/SelectionContext';
+import { scale } from '../../../utils/scale';
+import { synthSlice } from '../../../utils/synthSlice';
 
 class PlayButton extends React.Component {
   static contextType = SelectionContext;
