@@ -4,7 +4,7 @@ import SelectionContext from '../../contexts/SelectionContext';
 import { scale } from '../../utils/scale';
 import { synthSlice } from '../../utils/synthSlice';
 
-class PlayScale extends React.Component {
+class PlayButton extends React.Component {
   static contextType = SelectionContext;
 
   state = {
@@ -14,16 +14,10 @@ class PlayScale extends React.Component {
   componentDidUpdate(prevProps) {
     const { noteValue } = this.props;
     const { selectedOctave, nextOctave, selectedScale } = this.context;
+    const scaleInfo = [selectedOctave, nextOctave, selectedScale, noteValue];
     const maxBeatArray = scale
-      .renderScale(selectedOctave, nextOctave, selectedScale, noteValue)[0]
-      .concat(
-        scale.renderScale(
-          selectedOctave,
-          nextOctave,
-          selectedScale,
-          noteValue
-        )[1]
-      );
+      .renderNotes(scaleInfo)[0]
+      .concat(scale.renderNotes(scaleInfo)[1]);
     if (this.props.selectedScale !== prevProps.selectedScale) {
       this.context.getMaxBeats(maxBeatArray.length);
     }
@@ -92,45 +86,29 @@ class PlayScale extends React.Component {
       noteLength
     );
     synthSlice.stopNote(sliceOrder, order, bpm, noteLength);
-    this.displayNotes(sliceOrder[0].concat(sliceOrder[1]));
-  }
-
-  displayNotes(notesPlayed) {
-    this.setState({ notesPlayed: notesPlayed });
+    this.props.getNotesPlayed(sliceOrder[0].concat(sliceOrder[1]));
   }
 
   render() {
     const { noteValue } = this.props;
     const { selectedOctave, nextOctave, selectedScale } = this.context;
+    const scaleInfo = [selectedOctave, nextOctave, selectedScale, noteValue];
     return (
       <div>
         <button
           id="play-button"
           onClick={() =>
             this.renderPlayButton(
-              scale.renderScale(
-                selectedOctave,
-                nextOctave,
-                selectedScale,
-                noteValue
-              )[0],
-              scale.renderScale(
-                selectedOctave,
-                nextOctave,
-                selectedScale,
-                noteValue
-              )[1]
+              scale.renderNotes(scaleInfo)[0],
+              scale.renderNotes(scaleInfo)[1]
             )
           }
         >
           Play keys
         </button>
-        <div className="notes-played">
-          Notes that were played: {this.state.notesPlayed.join('-')}
-        </div>
       </div>
     );
   }
 }
 
-export default PlayScale;
+export default PlayButton;

@@ -2,8 +2,8 @@ import React from 'react';
 
 import SelectionContext from '../../contexts/SelectionContext';
 import { noteValues } from '../../values/noteValues';
-import HighLightScale from '../SelectedScaleNotes/HighlightScale';
-import PlayScale from '../SelectedScaleNotes/PlayScale';
+import HighLightScale from '../SelectedScale/HighlightScale';
+import SelectedScale from '../SelectedScale/SelectedScale';
 import SelectedKeyboardSlice from './SelectedKeyboardSlice';
 
 class KeyboardSlice extends React.Component {
@@ -34,7 +34,7 @@ class KeyboardSlice extends React.Component {
                   notesDefined={notesDefined}
                 />
                 <HighLightScale noteValue={note.value} />
-                <PlayScale
+                <SelectedScale
                   selectedScale={selectedScale}
                   noteValue={note.value}
                 />
