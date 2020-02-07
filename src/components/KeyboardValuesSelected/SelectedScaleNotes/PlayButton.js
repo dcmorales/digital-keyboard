@@ -82,7 +82,11 @@ class PlayButton extends React.Component {
       noteLength
     );
     playScale.stopNote(sliceOrder, order, bpm, noteLength);
-    this.props.getNotesPlayed(sliceOrder[0].concat(sliceOrder[1]));
+    const notesPlayedArray =
+      order !== 'descending'
+        ? sliceOrder[0].concat(sliceOrder[1])
+        : sliceOrder[1].concat(sliceOrder[0]).reverse();
+    this.props.getNotesPlayed(notesPlayedArray);
   }
 
   render() {
