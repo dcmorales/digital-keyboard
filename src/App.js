@@ -6,6 +6,7 @@ import KeyboardValuesSelected from './components/KeyboardValuesSelected/Keyboard
 import { SelectionStore } from './contexts/SelectionContext';
 
 import './App.css';
+import './sass/main.scss';
 
 class App extends React.Component {
   render() {
