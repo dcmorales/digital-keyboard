@@ -23,9 +23,7 @@ class DropdownOptions extends React.Component {
             : this.context.onSelectionChange
         }
       >
-        {selectionName === 'totalBeats' || selectionName === 'oscillator' ? (
-          <option></option>
-        ) : null}
+        {selectionName === 'oscillator' ? <option></option> : null}
         {dropdownOpts.map(option => {
           return (
             <option key={option} value={option}>

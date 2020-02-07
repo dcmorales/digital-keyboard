@@ -11,7 +11,7 @@ export class SelectionStore extends React.Component {
     waveform: 'sawtooth',
     oscillator: '',
     order: 'ascending',
-    totalBeats: '',
+    totalBeats: 13,
     maxBeats: 13,
     repeatx: 0,
     bpm: 125,
@@ -36,7 +36,7 @@ export class SelectionStore extends React.Component {
   };
 
   getMaxBeats = maxBeats => {
-    this.setState({ maxBeats: maxBeats });
+    this.setState({ maxBeats: maxBeats, totalBeats: maxBeats });
   };
 
   render() {
