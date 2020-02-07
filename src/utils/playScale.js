@@ -2,7 +2,11 @@ import { synth } from './synth';
 import { highlight } from './highlight';
 
 export const playScale = {
-  stopNote(sliceOrder, order, bpm, noteLength) {
+  stopNote(updateInfo) {
+    const sliceOrder = updateInfo[0];
+    const order = updateInfo[1];
+    const bpm = updateInfo[5];
+    const noteLength = updateInfo[6];
     var offsetPlus = 250;
     var bpmToMs = parseInt(60000 / (bpm * (noteLength / 4)), 10);
     sliceOrder.forEach(notesDefinedSlice => {
@@ -19,16 +23,13 @@ export const playScale = {
     });
   },
 
-  playNote(
-    sliceOrder,
-    order,
-    newPoint,
-    waveform,
-    oscillator,
-    totalBeats,
-    bpm,
-    noteLength
-  ) {
+  playNote(updateInfo) {
+    const sliceOrder = updateInfo[0];
+    const order = updateInfo[1];
+    const waveform = updateInfo[2];
+    const oscillator = updateInfo[3];
+    const bpm = updateInfo[5];
+    const noteLength = updateInfo[6];
     var offsetPlus = 200;
     var bpmToMs = parseInt(60000 / (bpm * (noteLength / 4)), 10);
     sliceOrder.forEach(notesDefinedSlice => {

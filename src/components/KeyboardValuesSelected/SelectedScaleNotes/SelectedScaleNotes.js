@@ -9,8 +9,21 @@ class SelectedScaleNotes extends React.Component {
     notesPlayed: [],
   };
 
-  getNotesPlayed = notesPlayed => {
-    this.setState({ notesPlayed: notesPlayed });
+  updateNotesDisplay = updateInfo => {
+    const sliceOrder = updateInfo[0];
+    const order = updateInfo[1];
+    const totalBeats = updateInfo[4];
+    const noteArrays = updateInfo[10];
+    const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])];
+    const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)];
+    const notesPlayedArray =
+      order === 'ascending'
+        ? sliceOrder[0].concat(sliceOrder[1])
+        : order === 'descending'
+        ? sliceOrder[1].concat(sliceOrder[0]).reverse()
+        : //order !== ascending && !== descending, order === 'random'
+          fragmentSlice[0];
+    this.setState({ notesPlayed: notesPlayedArray });
   };
 
   render() {
@@ -21,7 +34,7 @@ class SelectedScaleNotes extends React.Component {
         <PlayButton
           noteValue={noteValue}
           selectedScale={selectedScale}
-          getNotesPlayed={this.getNotesPlayed}
+          updateNotesDisplay={this.updateNotesDisplay}
         />
         <NoteDisplay notesPlayed={this.state.notesPlayed} />
       </div>
