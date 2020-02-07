@@ -14,12 +14,13 @@ class SelectedScaleNotes extends React.Component {
   };
 
   render() {
-    const { noteValue } = this.props;
+    const { noteValue, selectedScale } = this.props;
     return (
       <div>
         <HighLightScale noteValue={noteValue} />
         <PlayButton
           noteValue={noteValue}
+          selectedScale={selectedScale}
           getNotesPlayed={this.getNotesPlayed}
         />
         <NoteDisplay notesPlayed={this.state.notesPlayed} />

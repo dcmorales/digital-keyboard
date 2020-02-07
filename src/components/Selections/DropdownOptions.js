@@ -7,6 +7,10 @@ class DropdownOptions extends React.Component {
 
   renderDropdownOptions() {
     const { selectionName, selectionValue, optionsDefined } = this.props;
+    const dropdownOpts =
+      selectionName === 'totalBeats'
+        ? optionsDefined.reverse()
+        : optionsDefined;
     return (
       <select
         className="selections"
@@ -22,7 +26,7 @@ class DropdownOptions extends React.Component {
         {selectionName === 'totalBeats' || selectionName === 'oscillator' ? (
           <option></option>
         ) : null}
-        {optionsDefined.map(option => {
+        {dropdownOpts.map(option => {
           return (
             <option key={option} value={option}>
               {option}
