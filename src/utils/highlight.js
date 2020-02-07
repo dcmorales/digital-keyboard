@@ -1,22 +1,6 @@
 import { defineScale } from './defineScale';
 
 export const highlight = {
-  allScaleNotes(scaleInfo) {
-    const scaleNotes = defineScale
-      .renderNotes(scaleInfo)[0]
-      .concat(defineScale.renderNotes(scaleInfo)[1]);
-    scaleNotes.map(noteFull =>
-      document
-        .getElementById(`${noteFull} full`)
-        .setAttribute('class', `${noteFull} scale-note`)
-    );
-    scaleNotes.map(noteFull =>
-      document
-        .getElementById(`${noteFull} slice`)
-        .setAttribute('class', `${noteFull} scale-note`)
-    );
-  },
-
   clearScaleNotes(scaleInfo) {
     const sliceNotes = defineScale.renderNotes(scaleInfo)[2];
     sliceNotes.map(noteFull =>

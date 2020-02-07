@@ -23,7 +23,7 @@ export class SelectionStore extends React.Component {
     await this.onNextOctaveChange();
   };
 
-  onNextOctaveChange = async e => {
+  onNextOctaveChange = e => {
     const { selectedOctave } = this.state;
     var selOctNum = parseInt(selectedOctave, 10);
     for (var i = selectedOctave; i <= selOctNum + 1; i++) {
