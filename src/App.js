@@ -11,7 +11,7 @@ import './sass/main.scss';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="app-container">
         <SelectionStore>
           <Selections />
           <KeyboardFull />

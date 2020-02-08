@@ -35,7 +35,7 @@ class SelectionDetail extends React.Component {
   render() {
     const { arrNum, selectionName, selectionValue } = this.props;
     return (
-      <div>
+      <div className="selection-detail">
         <Label arrNum={arrNum} selectionName={selectionName} />
 
         <DropdownOptions
