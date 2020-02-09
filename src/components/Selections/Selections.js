@@ -9,7 +9,7 @@ class Selections extends React.Component {
 
   render() {
     return (
-      <div className="selection-container">
+      <div className="selections-container">
         <SelectionDetail
           selectionName="selectedScale"
           selectionValue={this.context.selectedScale}

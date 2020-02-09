@@ -2,19 +2,20 @@ import React from 'react';
 
 import Selections from './components/Selections/Selections';
 import KeyboardFull from './components/KeyboardFull/KeyboardFull';
-import KeyboardSlice from './components/KeyboardSlice/KeyboardSlice';
+import KeyboardValuesSelected from './components/KeyboardValuesSelected/KeyboardValuesSelected';
 import { SelectionStore } from './contexts/SelectionContext';
 
 import './App.css';
+import './sass/main.scss';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="app-container">
         <SelectionStore>
           <Selections />
           <KeyboardFull />
-          <KeyboardSlice />
+          <KeyboardValuesSelected />
         </SelectionStore>
       </div>
     );

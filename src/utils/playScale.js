@@ -1,7 +1,12 @@
 import { synth } from './synth';
+import { highlight } from './highlight';
 
-export const synthSlice = {
-  stopNote(sliceOrder, order, bpm, noteLength) {
+export const playScale = {
+  stopNote(updateInfo) {
+    const sliceOrder = updateInfo[0];
+    const order = updateInfo[1];
+    const bpm = updateInfo[5];
+    const noteLength = updateInfo[6];
     var offsetPlus = 250;
     var bpmToMs = parseInt(60000 / (bpm * (noteLength / 4)), 10);
     sliceOrder.forEach(notesDefinedSlice => {
@@ -18,16 +23,13 @@ export const synthSlice = {
     });
   },
 
-  playNote(
-    sliceOrder,
-    order,
-    newPoint,
-    waveform,
-    oscillator,
-    totalBeats,
-    bpm,
-    noteLength
-  ) {
+  playNote(updateInfo) {
+    const sliceOrder = updateInfo[0];
+    const order = updateInfo[1];
+    const waveform = updateInfo[2];
+    const oscillator = updateInfo[3];
+    const bpm = updateInfo[5];
+    const noteLength = updateInfo[6];
     var offsetPlus = 200;
     var bpmToMs = parseInt(60000 / (bpm * (noteLength / 4)), 10);
     sliceOrder.forEach(notesDefinedSlice => {
@@ -39,7 +41,7 @@ export const synthSlice = {
         const octave = noteFull.includes('b') ? noteFull[2] : noteFull[1];
         setTimeout(() => {
           synth.play(noteFull, waveform, oscillator, octave);
-          this.highlightNote(noteFull);
+          highlight.singleNote(noteFull);
         }, offsetPlus);
         offsetPlus += bpmToMs;
       });
@@ -60,21 +62,5 @@ export const synthSlice = {
       document.getElementById('play-button').removeAttribute('disabled');
       buttons.map(button => button.removeAttribute('disabled'));
     }, offset);
-  },
-
-  highlightNote(noteFull) {
-    setTimeout(() => {
-      this.handleNoteHighlight(noteFull, 'scale-note');
-    }, 450);
-    this.handleNoteHighlight(noteFull, 'active');
-  },
-
-  handleNoteHighlight(noteFull, otherClassName) {
-    document
-      .getElementById(`${noteFull} full`)
-      .setAttribute('class', `${noteFull} ${otherClassName}`);
-    document
-      .getElementById(`${noteFull} slice`)
-      .setAttribute('class', `${noteFull} ${otherClassName}`);
   },
 };

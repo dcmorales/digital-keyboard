@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SelectionContext from '../../contexts/SelectionContext';
+import SelectionContext from '../../../contexts/SelectionContext';
 
 import SliceSection from './SliceSection';
 

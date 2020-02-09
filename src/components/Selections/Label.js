@@ -1,18 +1,9 @@
 import React from 'react';
 
-import { selectionInfo } from '../../values/selectionInfo';
-
-const Label = ({ arrNum, selectionName }) => {
+const Label = ({ selectionName }) => {
   return (
-    <label className="tooltip" htmlFor={`${selectionName}`}>
+    <label className="selection-detail__label" htmlFor={`${selectionName}`}>
       {selectionName}
-      <span className="tooltiptext">
-        <ul>
-          {selectionInfo[arrNum].map((info, i) => (
-            <li key={i}>{info}</li>
-          ))}
-        </ul>
-      </span>
     </label>
   );
 };
