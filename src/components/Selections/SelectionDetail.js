@@ -39,10 +39,10 @@ class SelectionDetail extends React.Component {
   };
 
   render() {
-    const { arrNum, selectionName, selectionValue } = this.props;
+    const { arrNum, labelName, selectionName, selectionValue } = this.props;
     return (
       <div className="selection-detail">
-        <Label selectionName={selectionName} />
+        <Label labelName={labelName} selectionName={selectionName} />
 
         <InfoText
           arrNum={arrNum}
