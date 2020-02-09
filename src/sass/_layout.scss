@@ -1,5 +1,12 @@
 .app-container {
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 .selections-container {
+  font-size: $default-font-size;
+
+  display: flex;
+  justify-content: space-around;
 }

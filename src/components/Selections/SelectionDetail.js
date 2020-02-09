@@ -3,11 +3,13 @@ import React from 'react';
 import { optionsNaN } from '../../values/optionsNaN';
 
 import DropdownOptions from './DropdownOptions';
+import InfoText from './InfoText';
 import Label from './Label';
 
 class SelectionDetail extends React.Component {
   state = {
     optionsDefined: [],
+    showInfoText: false,
   };
 
   componentDidMount() {
@@ -32,11 +34,22 @@ class SelectionDetail extends React.Component {
     });
   }
 
+  onButtonClick = () => {
+    this.setState({ showInfoText: !this.state.showInfoText });
+  };
+
   render() {
     const { arrNum, selectionName, selectionValue } = this.props;
     return (
       <div className="selection-detail">
-        <Label arrNum={arrNum} selectionName={selectionName} />
+        <Label selectionName={selectionName} />
+
+        <InfoText
+          arrNum={arrNum}
+          selectionName={selectionName}
+          showInfoText={this.state.showInfoText}
+          onButtonClick={this.onButtonClick}
+        />
 
         <DropdownOptions
           selectionName={selectionName}
