@@ -94,3 +94,61 @@
 
 //******************************************************************************
 //Full Keyboard
+.key {
+  &__white {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    box-shadow: 0 1rem 1.5rem rgba($color-black, 0.15);
+    background: $color-white;
+    border: 1px solid $color-black;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-grey-light-1;
+    }
+
+    &:active {
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &__black {
+    width: 70%;
+    height: 60%;
+    position: absolute;
+    z-index: 2;
+    right: -35%;
+    background: $color-grey-dark-2;
+    border: 1px solid $color-black;
+    color: $color-white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-grey-dark-1;
+    }
+
+    &:active {
+      background-color: $color-black;
+    }
+  }
+
+  &__black--2 {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    z-index: 2;
+    background: $color-grey-dark-2;
+    border: 1px solid $color-black;
+    color: $color-white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-grey-dark-1;
+    }
+
+    &:active {
+      background-color: $color-black;
+    }
+  }
+}

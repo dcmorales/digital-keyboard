@@ -7,7 +7,7 @@ const SliceSection = ({ notesDefinedSlice }) => {
     return (
       <div className="keys" key={noteFull}>
         <Key
-          color={noteFull.includes('b') ? 'black2' : 'white'}
+          color={noteFull.includes('b') ? 'black--2' : 'white'}
           noteFull={noteFull}
           octave={noteFull.includes('b') ? noteFull[2] : noteFull[1]}
           keyboard="slice"
