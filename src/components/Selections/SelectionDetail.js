@@ -9,7 +9,6 @@ import Label from './Label';
 class SelectionDetail extends React.Component {
   state = {
     optionsDefined: [],
-    showInfoText: false,
   };
 
   componentDidMount() {
@@ -34,22 +33,15 @@ class SelectionDetail extends React.Component {
     });
   }
 
-  onButtonClick = () => {
-    this.setState({ showInfoText: !this.state.showInfoText });
-  };
-
   render() {
     const { arrNum, labelName, selectionName, selectionValue } = this.props;
     return (
       <div className="selection-detail">
-        <Label labelName={labelName} selectionName={selectionName} />
+        <div className="selection-detail__label">
+          <Label labelName={labelName} selectionName={selectionName} />
 
-        <InfoText
-          arrNum={arrNum}
-          selectionName={selectionName}
-          showInfoText={this.state.showInfoText}
-          onButtonClick={this.onButtonClick}
-        />
+          <InfoText arrNum={arrNum} selectionName={selectionName} />
+        </div>
 
         <DropdownOptions
           selectionName={selectionName}

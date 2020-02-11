@@ -1,16 +1,91 @@
 .selection-detail {
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5rem;
+
   &__label {
+    display: flex;
+    padding: 0 0.5rem;
+  }
+
+  &__label-name {
+    padding: 0.5rem;
   }
 
   &__info-text {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    max-width: 4px;
+    max-height: 4px;
   }
 
   &__info-text-button {
+    font-size: $font-size-small;
+
+    color: $color-grey-light-1;
+    background-color: $color-primary-dark;
+    border-color: $color-grey-light-1;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    outline: none;
+    padding: 0.1rem 0.4rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary-light;
+      background-color: $color-grey-light-1;
+      border-color: $color-primary-light;
+    }
+  }
+
+  &__info-text:hover &__info-text-list {
+    visibility: visible;
   }
 
   &__info-text-list {
+    font-size: $font-size-medium;
+    font-weight: 300;
+    list-style: none;
+
+    background: $color-grey-light-1;
+    color: $color-primary;
+    border-style: solid;
+    border-color: $color-primary-light;
+    border-radius: 3px;
+    padding: 1rem;
+    min-width: 13rem;
+
+    visibility: hidden;
+    position: absolute;
+    z-index: 3;
+  }
+
+  &__dropdown {
+    padding-bottom: 0.5rem;
   }
 
   &__dropdown-menu {
+    font-size: inherit;
+    background-color: $color-primary-dark;
+    color: $color-grey-light-1;
+
+    border-color: $color-grey-light-1;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-grey-light-1;
+      color: $color-primary-dark;
+    }
+  }
+
+  &__dropdown-options {
+    background-color: $color-primary-dark;
+    color: $color-grey-light-1;
   }
 }

@@ -73,7 +73,7 @@ class Selections extends React.Component {
         />
 
         {this.context.order !== 'random' ? null : (
-          <div>
+          <React.Fragment>
             <SelectionDetail
               labelName="Total Beats"
               start="1"
@@ -82,17 +82,15 @@ class Selections extends React.Component {
               selectionValue={this.context.totalBeats}
               arrNum={8}
             />
-            {this.context.totalBeats === '' ? null : (
-              <SelectionDetail
-                LabelName="Repeat"
-                start="0"
-                max="8"
-                selectionName="repeatx"
-                selectionValue={this.context.repeatx}
-                arrNum={9}
-              />
-            )}
-          </div>
+            <SelectionDetail
+              labelName="Repeat"
+              start="0"
+              max="8"
+              selectionName="repeatx"
+              selectionValue={this.context.repeatx}
+              arrNum={9}
+            />
+          </React.Fragment>
         )}
       </div>
     );

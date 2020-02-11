@@ -5,8 +5,9 @@
 }
 
 .selections-container {
-  font-size: $default-font-size;
+  background-color: $color-primary-dark;
+  font-size: $font-size-large;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
