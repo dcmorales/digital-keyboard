@@ -31,12 +31,12 @@ class HighlightScale extends React.Component {
     scaleNotes.map(noteFull =>
       document
         .getElementById(`${noteFull} full`)
-        .setAttribute('class', `${noteFull} scale-note`)
+        .setAttribute('class', `${noteFull} note__scale-note`)
     );
     scaleNotes.map(noteFull =>
       document
         .getElementById(`${noteFull} slice`)
-        .setAttribute('class', `${noteFull} scale-note`)
+        .setAttribute('class', `${noteFull} note__scale-note`)
     );
   }
 

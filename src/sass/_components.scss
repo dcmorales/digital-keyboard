@@ -95,6 +95,8 @@
 //******************************************************************************
 //Full Keyboard
 .key {
+  position: relative;
+
   &__white {
     width: 100%;
     height: 100%;
@@ -150,5 +152,30 @@
     &:active {
       background-color: $color-black;
     }
+  }
+}
+
+//******************************************************************************
+//Highlight Scale
+.note {
+  position: absolute;
+  font-size: $font-size-small;
+  bottom: 0;
+
+  &__scale-note {
+    font-size: $font-size-medium;
+    font-weight: 700;
+    color: $color-primary-light;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 8rem;
+  }
+
+  &__active {
+    font-weight: 800;
+    color: $color-primary;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 4rem;
   }
 }
