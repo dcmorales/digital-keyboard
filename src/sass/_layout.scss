@@ -10,6 +10,7 @@
 
   display: flex;
   justify-content: center;
+  height: 10vh;
 }
 
 .keyboard-container {
@@ -27,4 +28,13 @@
 .keys {
   width: 100%;
   position: relative;
+}
+
+.selected-scale-notes {
+  display: flex;
+  height: 10vh;
+  align-items: center;
+
+  color: $color-grey-light-1;
+  background-color: $color-primary-dark;
 }

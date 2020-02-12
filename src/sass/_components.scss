@@ -191,6 +191,7 @@
   border-style: solid;
   border-radius: 3px;
   padding: 1rem 2rem;
+  margin: 0 2rem;
   outline: none;
   cursor: pointer;
 
@@ -199,4 +200,10 @@
     background-color: $color-grey-light-1;
     border-color: $color-primary-light;
   }
+}
+
+//******************************************************************************
+//Note Display
+.note-display {
+  font-size: $font-size-extra-large;
 }
