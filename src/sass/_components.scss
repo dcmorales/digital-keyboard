@@ -75,14 +75,14 @@
     background-color: $color-primary-dark;
     color: $color-grey-light-1;
 
-    border-color: $color-grey-light-1;
+    border-color: $color-primary-light;
     border-radius: 3px;
     outline: none;
     cursor: pointer;
 
     &:hover {
       background-color: $color-grey-light-1;
-      color: $color-primary-dark;
+      color: $color-primary-light;
     }
   }
 
