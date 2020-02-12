@@ -52,7 +52,7 @@ export const playScale = {
 
   disableButtons(offset) {
     const selectionsArray = Array.from(
-      document.getElementsByClassName('selections')
+      document.getElementsByClassName('selection-detail__dropdown-menu')
     );
     const keysArray = Array.from(document.getElementsByClassName('key'));
     const buttons = selectionsArray.concat(keysArray);
