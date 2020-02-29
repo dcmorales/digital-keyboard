@@ -1,6 +1,5 @@
 .app-container {
   margin: 0;
-  max-width: 100%;
   width: 100%;
 }
 
@@ -9,7 +8,7 @@
   font-size: $font-size-large;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 10vh;
 }
