@@ -216,4 +216,18 @@
     align-self: center;
     padding-left: 1rem;
   }
+
+  @media only screen and (max-width: $bp-extra-large) {
+    display: block;
+
+    &__label {
+      font-size: $font-size-large;
+      font-weight: 800;
+    }
+
+    &__list {
+      font-size: $font-size-extra-large;
+      padding-left: 0;
+    }
+  }
 }
