@@ -16,8 +16,16 @@ $color-white: #fff;
 $color-black: #000;
 
 // Font
-$font-size-extra-large: 6rem;
+$font-size-largest: 5.4rem;
+$font-size-extra-large: 4.6rem;
 $font-size-large: 1.6rem;
 $font-size-medium: 1.3rem;
 $font-size-small: 1rem;
 $font-primary: sans-serif;
+
+// Responsive Breakpoints
+$bp-largest: 112.5em; // 1800px
+$bp-extra-large: 100em; //1600px
+$bp-large: 75em; // 1200px
+$bp-medium: 62.5em; // 1000px
+$bp-small: 50em; // 800px

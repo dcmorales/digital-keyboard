@@ -205,5 +205,15 @@
 //******************************************************************************
 //Note Display
 .note-display {
-  font-size: $font-size-extra-large;
+  display: flex;
+
+  &__label {
+    font-size: $font-size-largest;
+  }
+
+  &__list {
+    font-size: $font-size-extra-large;
+    align-self: center;
+    padding-left: 1rem;
+  }
 }
