@@ -37,7 +37,7 @@
     padding: 0.1rem 0.4rem;
     cursor: pointer;
 
-    @media only screen and (max-width: $bp-extra-large) {
+    @media only screen and (max-width: $bp-large) {
       font-size: $font-size-smallest;
     }
 
@@ -166,7 +166,7 @@
   font-size: $font-size-small;
   bottom: 0;
 
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: $bp-medium) {
     font-size: $font-size-medium;
   }
 
@@ -220,13 +220,13 @@
   &__label {
     font-size: $font-size-largest;
 
-    @media only screen and (max-width: $bp-extra-large) {
+    @media only screen and (max-width: $bp-large) {
       font-size: $font-size-extra-large;
       font-weight: 700;
       padding-left: 2.5rem;
     }
 
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-medium) {
       font-size: $font-size-extra-large;
       padding-left: 1rem;
     }
@@ -237,13 +237,13 @@
     align-self: center;
     padding-left: 1rem;
 
-    @media only screen and (max-width: $bp-extra-large) {
+    @media only screen and (max-width: $bp-large) {
       font-size: $font-size-large;
       font-weight: 800;
       padding-left: 1.5rem;
     }
 
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-medium) {
       padding-left: 0.5rem;
     }
   }
