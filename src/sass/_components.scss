@@ -12,6 +12,7 @@
   }
 
   &__label-name {
+    font-size: $font-size-large;
     padding: 0.5rem;
   }
 
@@ -35,6 +36,10 @@
     outline: none;
     padding: 0.1rem 0.4rem;
     cursor: pointer;
+
+    @media only screen and (max-width: $bp-extra-large) {
+      font-size: $font-size-smallest;
+    }
 
     &:hover {
       color: $color-primary-light;
