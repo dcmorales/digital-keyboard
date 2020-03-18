@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Label = ({ selectionName }) => {
+const Label = ({ labelName, selectionName }) => {
   return (
-    <label className="selection-detail__label" htmlFor={`${selectionName}`}>
-      {selectionName}
+    <label
+      className="selection-detail__label-name"
+      htmlFor={`${selectionName}`}
+    >
+      {labelName}
     </label>
   );
 };

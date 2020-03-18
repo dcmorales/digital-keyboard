@@ -2,8 +2,9 @@ import React from 'react';
 
 const NoteDisplay = ({ notesPlayed }) => {
   return (
-    <div className="notes-played">
-      Notes that were played: {notesPlayed.join('-')}
+    <div className="note-display">
+      <div className="note-display__label">Notes played:</div>
+      <div className="note-display__list">{notesPlayed.join('-')}</div>
     </div>
   );
 };

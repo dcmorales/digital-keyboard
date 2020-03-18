@@ -11,36 +11,42 @@ class Selections extends React.Component {
     return (
       <div className="selections-container">
         <SelectionDetail
+          labelName="Scale"
           selectionName="selectedScale"
           selectionValue={this.context.selectedScale}
           arrNum={0}
         />
 
         <SelectionDetail
+          labelName="Key"
           selectionName="selectedKey"
           selectionValue={this.context.selectedKey}
           arrNum={1}
         />
 
         <SelectionDetail
+          labelName="Waveform"
           selectionName="waveform"
           selectionValue={this.context.waveform}
           arrNum={2}
         />
 
         <SelectionDetail
+          labelName="Oscillator"
           selectionName="oscillator"
           selectionValue={this.context.oscillator}
           arrNum={3}
         />
 
         <SelectionDetail
+          labelName="Order"
           selectionName="order"
           selectionValue={this.context.order}
           arrNum={4}
         />
 
         <SelectionDetail
+          labelName="Octave"
           start="1"
           max="6"
           selectionName="selectedOctave"
@@ -49,6 +55,7 @@ class Selections extends React.Component {
         />
 
         <SelectionDetail
+          labelName="BPM"
           start="100"
           max="130"
           selectionName="bpm"
@@ -57,6 +64,7 @@ class Selections extends React.Component {
         />
 
         <SelectionDetail
+          labelName="Note Length"
           start="4"
           max="32"
           selectionName="noteLength"
@@ -65,24 +73,24 @@ class Selections extends React.Component {
         />
 
         {this.context.order !== 'random' ? null : (
-          <div>
+          <React.Fragment>
             <SelectionDetail
+              labelName="Total Beats"
               start="1"
               max={this.context.maxBeats}
               selectionName="totalBeats"
               selectionValue={this.context.totalBeats}
               arrNum={8}
             />
-            {this.context.totalBeats === '' ? null : (
-              <SelectionDetail
-                start="0"
-                max="8"
-                selectionName="repeatx"
-                selectionValue={this.context.repeatx}
-                arrNum={9}
-              />
-            )}
-          </div>
+            <SelectionDetail
+              labelName="Repeat"
+              start="0"
+              max="8"
+              selectionName="repeatx"
+              selectionValue={this.context.repeatx}
+              arrNum={9}
+            />
+          </React.Fragment>
         )}
       </div>
     );

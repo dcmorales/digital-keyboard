@@ -28,7 +28,9 @@ class SelectedKeyboardSlice extends React.Component {
 
   render() {
     return (
-      <div className="keyboard-container">{this.renderSelectedKeys()}</div>
+      <div className="keyboard-container keyboard-container--2">
+        {this.renderSelectedKeys()}
+      </div>
     );
   }
 }

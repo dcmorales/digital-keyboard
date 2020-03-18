@@ -4,7 +4,7 @@ import Octave from './Octave';
 
 const KeyboardFull = () => {
   return (
-    <div className="keyboard-container">
+    <div className="keyboard-container keyboard-container--1">
       <Octave octNum="1" />
 
       <Octave octNum="2" />

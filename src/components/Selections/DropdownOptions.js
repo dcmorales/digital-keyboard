@@ -12,9 +12,9 @@ class DropdownOptions extends React.Component {
         ? optionsDefined.reverse()
         : optionsDefined;
     return (
-      <div className="selection-detail__dropdown-menu">
+      <div className="selection-detail__dropdown">
         <select
-          className="selections"
+          className="selection-detail__dropdown-menu"
           name={selectionName}
           id={`${selectionName}`}
           value={selectionValue}
@@ -24,10 +24,16 @@ class DropdownOptions extends React.Component {
               : this.context.onSelectionChange
           }
         >
-          {selectionName === 'oscillator' ? <option></option> : null}
+          {selectionName === 'oscillator' ? (
+            <option className="selection-detail__dropdown-options"></option>
+          ) : null}
           {dropdownOpts.map(option => {
             return (
-              <option key={option} value={option}>
+              <option
+                className="selection-detail__dropdown-options"
+                key={option}
+                value={option}
+              >
                 {option}
               </option>
             );

@@ -7,12 +7,25 @@ $color-primary-light: #3399ff;
 $color-primary-dark: #004a8d;
 
 $color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eeeeee;
 
-$color-grey-dark-1: #777;
+$color-grey-dark-1: #181818;
+$color-grey-dark-2: #0b0b0b;
 
 $color-white: #fff;
 $color-black: #000;
 
 // Font
-$default-font-size: 1.6rem;
+$font-size-largest: 5.4rem;
+$font-size-extra-large: 4.26rem;
+$font-size-large: 2rem;
+$font-size-medium: 1.2rem;
+$font-size-small: 1rem;
+$font-size-smallest: 0.7rem;
 $font-primary: sans-serif;
+
+// Responsive Breakpoints
+$bp-largest: 112.5em; // 1800px
+$bp-large: 100em; //1600px
+$bp-medium: 75em; // 1200px
+$bp-small: 50em; // 800px

@@ -22,9 +22,9 @@ export const highlight = {
 
   singleNote(noteFull) {
     setTimeout(() => {
-      this.handleNoteHighlight(noteFull, 'scale-note');
+      this.handleNoteHighlight(noteFull, 'note__scale-note');
     }, 450);
-    this.handleNoteHighlight(noteFull, 'active');
+    this.handleNoteHighlight(noteFull, 'note__active');
   },
 
   handleNoteHighlight(noteFull, otherClassName) {

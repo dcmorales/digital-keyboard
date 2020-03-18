@@ -29,7 +29,7 @@ class SelectedScaleNotes extends React.Component {
   render() {
     const { noteValue, selectedScale } = this.props;
     return (
-      <div>
+      <div className="selected-scale-notes">
         <HighLightScale noteValue={noteValue} />
         <PlayButton
           noteValue={noteValue}

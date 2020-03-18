@@ -23,26 +23,26 @@ export const selectionInfo = [
   //****************************************************************************
   //oscillator
   [
-    'Osc1 detunes value by -50',
-    'Osc2 detunes value by +50',
-    'Mid-bass is (pitch + 50)/2',
-    'Bass is pitch/2',
+    'Osc1 detunes value by -50.',
+    'Osc2 detunes value by +50.',
+    'Mid-bass is (pitch + 50)/2.',
+    'Bass is pitch/2.',
   ],
 
   //****************************************************************************
   //order
   [
-    'Ascending: frequency => higher frequency',
-    'Descending: frequency => lower frequency',
-    'Random: will play notes in random order',
+    'Ascending: lowest frequency to highest frequency.',
+    'Descending: highest frequency to lowest frequency.',
+    'Random: will play notes in random order.',
   ],
 
   //****************************************************************************
   //octave
   [
-    'Series of notes occupying the interval between two notes',
-    'Going up an octave doubles the frequency',
-    'Going down an octave divides frequency in half',
+    'Series of notes occupying the interval between two notes.',
+    'Going up an octave doubles the frequency.',
+    'Going down an octave divides frequency in half.',
   ],
 
   //****************************************************************************
@@ -51,21 +51,21 @@ export const selectionInfo = [
 
   //****************************************************************************
   //noteLength
-  ['Length of note, options are quarter, eighth, sixteenth, 32nd '],
+  ['Length of note.', 'Options are quarter, eighth, sixteenth, 32nd.'],
 
   //****************************************************************************
   //# of different beats
   [
-    'Total of different beats to play',
-    'Max number is defined by total notes in scale',
-    'Only works when order is set to random',
+    'Total of different beats to play.',
+    'Max number is defined by total notes in scale.',
+    'Only works when order is set to random.',
   ],
 
   //****************************************************************************
   //repeatx
   [
-    'Number of times to repeat selected notes',
+    'Number of times to repeat selected notes.',
     'Note: repeat 0x will play through once, 1x will play all notes then repeat once, etc.',
-    'Only works when order is set to random and total beats is not blank',
+    'Only works when order is set to random.',
   ],
 ];

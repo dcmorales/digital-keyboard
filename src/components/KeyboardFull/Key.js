@@ -24,7 +24,7 @@ class Key extends React.Component {
     const { color, noteFull, keyboard } = this.props;
     return (
       <button
-        className={`${color} key`}
+        className={`key__${color} key`}
         onMouseDown={this.playNote}
         onMouseUp={this.holdNote}
       >

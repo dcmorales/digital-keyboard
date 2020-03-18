@@ -52,6 +52,7 @@ class PlayButton extends React.Component {
       <div>
         <button
           id="play-button"
+          className="play-button"
           onClick={() =>
             this.renderPlayButton(
               defineScale.renderNotes(scaleInfo)[0],
