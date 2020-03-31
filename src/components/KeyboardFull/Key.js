@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SelectionContext from '../../contexts/SelectionContext';
+import SelectionContext from '../../context/SelectionContext';
 import { synth } from '../../utils/synth';
 
 class Key extends React.Component {

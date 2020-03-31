@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SelectionContext from '../../contexts/SelectionContext';
+import SelectionContext from '../../context/SelectionContext';
 import { noteValues } from '../../values/noteValues';
 import SelectedKeyboardSlice from './SelectedKeyboardSlice/SelectedKeyboardSlice';
 import SelectedScaleNotes from './SelectedScaleNotes/SelectedScaleNotes';

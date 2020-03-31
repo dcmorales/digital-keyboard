@@ -3,7 +3,7 @@ import React from 'react';
 import Selections from './components/Selections/Selections';
 import KeyboardFull from './components/KeyboardFull/KeyboardFull';
 import KeyboardValuesSelected from './components/KeyboardValuesSelected/KeyboardValuesSelected';
-import { SelectionStore } from './contexts/SelectionContext';
+import { SelectionStore } from './context/SelectionContext';
 
 import './sass/main.scss';
 
