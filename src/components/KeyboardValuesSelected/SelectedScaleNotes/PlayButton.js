@@ -10,7 +10,7 @@ class PlayButton extends React.Component {
   componentDidUpdate(prevProps) {
     const { noteValue } = this.props;
     const { selectedOctave, nextOctave, selectedScale } = this.context;
-    const scaleInfo = [selectedOctave, nextOctave, selectedScale, noteValue];
+    const scaleInfo = { selectedOctave, nextOctave, selectedScale, noteValue };
     const maxBeatArray = defineScale
       .renderNotes(scaleInfo)[0]
       .concat(defineScale.renderNotes(scaleInfo)[1]);
@@ -47,7 +47,7 @@ class PlayButton extends React.Component {
   render() {
     const { noteValue } = this.props;
     const { selectedOctave, nextOctave, selectedScale } = this.context;
-    const scaleInfo = [selectedOctave, nextOctave, selectedScale, noteValue];
+    const scaleInfo = { selectedOctave, nextOctave, selectedScale, noteValue };
     return (
       <div>
         <button

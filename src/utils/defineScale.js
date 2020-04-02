@@ -4,10 +4,7 @@ import { optionsNaN } from '../values/optionsNaN';
 
 export const defineScale = {
   renderNotes(scaleInfo) {
-    const selectedOctave = scaleInfo[0];
-    const nextOctave = scaleInfo[1];
-    const selectedScale = scaleInfo[2];
-    const noteValue = scaleInfo[3];
+    const { selectedOctave, nextOctave, selectedScale, noteValue } = scaleInfo;
     const notesDefined = noteValues[selectedOctave].map(note => note.note);
     const newPoint = notesDefined
       .slice(noteValue)

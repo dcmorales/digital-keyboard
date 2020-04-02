@@ -16,7 +16,7 @@ class HighlightScale extends React.Component {
   componentDidUpdate() {
     const { noteValue } = this.props;
     const { selectedOctave, nextOctave, selectedScale } = this.context;
-    const scaleInfo = [selectedOctave, nextOctave, selectedScale, noteValue];
+    const scaleInfo = { selectedOctave, nextOctave, selectedScale, noteValue };
     highlight.clearScaleNotes(scaleInfo);
     this.highlightScaleNotes();
   }
@@ -24,7 +24,7 @@ class HighlightScale extends React.Component {
   highlightScaleNotes() {
     const { noteValue } = this.props;
     const { selectedOctave, nextOctave, selectedScale } = this.context;
-    const scaleInfo = [selectedOctave, nextOctave, selectedScale, noteValue];
+    const scaleInfo = { selectedOctave, nextOctave, selectedScale, noteValue };
     const scaleNotes = defineScale
       .renderNotes(scaleInfo)[0]
       .concat(defineScale.renderNotes(scaleInfo)[1]);
