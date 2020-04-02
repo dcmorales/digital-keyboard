@@ -3,8 +3,7 @@ import { noteValues } from '../values/noteValues';
 import { optionsNaN } from '../values/optionsNaN';
 
 export const defineScale = {
-  renderNotes(scaleInfo) {
-    const { selectedOctave, nextOctave, selectedScale, noteValue } = scaleInfo;
+  renderNotes({ selectedOctave, nextOctave, selectedScale, noteValue }) {
     const notesDefined = noteValues[selectedOctave].map(note => note.note);
     const newPoint = notesDefined
       .slice(noteValue)
