@@ -21,22 +21,31 @@ class PlayButton extends React.Component {
 
   renderPlayButton = (newStart, lastPoint) => {
     const noteArrays = [newStart, lastPoint];
+    const {
+      order,
+      waveform,
+      oscillator,
+      totalBeats,
+      bpm,
+      noteLength,
+      repeatx,
+    } = this.context;
     const sliceOrder =
-      this.context.order === 'descending' ? noteArrays.reverse() : noteArrays;
-    const updateInfo = [
+      order === 'descending' ? noteArrays.reverse() : noteArrays;
+    const updateInfo = {
       sliceOrder,
-      this.context.order,
-      this.context.waveform,
-      this.context.oscillator,
-      this.context.totalBeats,
-      this.context.bpm,
-      this.context.noteLength,
-      this.context.repeatx,
+      order,
+      waveform,
+      oscillator,
+      totalBeats,
+      bpm,
+      noteLength,
+      repeatx,
       newStart,
       lastPoint,
       noteArrays,
-    ];
-    if (this.context.order !== 'random') {
+    };
+    if (order !== 'random') {
       updateScale.handleNewScaleNotes(updateInfo);
     } else {
       updateScale.handleNoteShuffle(updateInfo);

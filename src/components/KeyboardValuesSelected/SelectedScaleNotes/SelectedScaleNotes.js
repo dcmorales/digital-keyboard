@@ -9,11 +9,7 @@ class SelectedScaleNotes extends React.Component {
     notesPlayed: [],
   };
 
-  updateNotesDisplay = updateInfo => {
-    const sliceOrder = updateInfo[0];
-    const order = updateInfo[1];
-    const totalBeats = updateInfo[4];
-    const noteArrays = updateInfo[10];
+  updateNotesDisplay = ({ sliceOrder, order, totalBeats, noteArrays }) => {
     const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])];
     const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)];
     const notesPlayedArray =

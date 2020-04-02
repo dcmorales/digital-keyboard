@@ -3,10 +3,7 @@ import { highlight } from './highlight';
 
 export const playScale = {
   stopNote(updateInfo) {
-    const sliceOrder = updateInfo[0];
-    const order = updateInfo[1];
-    const bpm = updateInfo[5];
-    const noteLength = updateInfo[6];
+    const [sliceOrder, order, , , , bpm, noteLength] = updateInfo;
     var offsetPlus = 250;
     var bpmToMs = parseInt(60000 / (bpm * (noteLength / 4)), 10);
     sliceOrder.forEach(notesDefinedSlice => {
@@ -24,12 +21,15 @@ export const playScale = {
   },
 
   playNote(updateInfo) {
-    const sliceOrder = updateInfo[0];
-    const order = updateInfo[1];
-    const waveform = updateInfo[2];
-    const oscillator = updateInfo[3];
-    const bpm = updateInfo[5];
-    const noteLength = updateInfo[6];
+    const [
+      sliceOrder,
+      order,
+      waveform,
+      oscillator,
+      ,
+      bpm,
+      noteLength,
+    ] = updateInfo;
     var offsetPlus = 200;
     var bpmToMs = parseInt(60000 / (bpm * (noteLength / 4)), 10);
     sliceOrder.forEach(notesDefinedSlice => {
