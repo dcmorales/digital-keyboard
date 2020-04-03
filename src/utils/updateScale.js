@@ -34,7 +34,8 @@ export const updateScale = {
   },
 
   handleNewScaleNotes(updateInfo) {
-    playScale.playNote(updateInfo);
-    playScale.stopNote(updateInfo);
+    const updateInfoArray = Object.values(updateInfo);
+    playScale.playNote(updateInfoArray);
+    playScale.stopNote(updateInfoArray);
   },
 };
