@@ -10,14 +10,10 @@ export const updateScale = {
         [shuffleSlice[i], shuffleSlice[j]] = [shuffleSlice[j], shuffleSlice[i]];
       }
     });
-    if (totalBeats === '') {
-      this.handleNewScaleNotes(updateInfo);
-    } else {
-      const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])];
-      const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)];
-      updateInfo.fragmentSlice = fragmentSlice;
-      this.handleTotalBeatChange(updateInfo);
-    }
+    const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])];
+    const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)];
+    updateInfo.fragmentSlice = fragmentSlice;
+    this.handleTotalBeatChange(updateInfo);
   },
 
   handleTotalBeatChange(updateInfo) {
