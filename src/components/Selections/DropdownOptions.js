@@ -34,7 +34,7 @@ class DropdownOptions extends React.Component {
                 key={option}
                 value={option}
               >
-                {option}
+                {selectionName === 'noteLength' ? `1/${option}` : `${option}`}
               </option>
             );
           })}
