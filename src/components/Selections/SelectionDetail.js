@@ -5,6 +5,7 @@ import { optionsNaN } from '../../values/optionsNaN';
 import DropdownOptions from './DropdownOptions';
 import InfoText from './InfoText';
 import Label from './Label';
+import contextToProps from './contextToProps';
 
 class SelectionDetail extends React.Component {
   state = {
@@ -13,6 +14,16 @@ class SelectionDetail extends React.Component {
 
   componentDidMount() {
     this.defineOptions();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { selectionName } = this.props;
+    if (
+      selectionName === 'totalBeats' &&
+      prevProps.maxBeats !== this.props.maxBeats
+    ) {
+      this.defineOptions();
+    }
   }
 
   defineOptions() {
@@ -53,4 +64,4 @@ class SelectionDetail extends React.Component {
   }
 }
 
-export default SelectionDetail;
+export default contextToProps(SelectionDetail);
