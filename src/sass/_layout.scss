@@ -20,6 +20,14 @@
     font-size: $font-size-medium;
     font-weight: 600;
   }
+
+  @media only screen and (max-width: $bp-small) {
+    height: 25vh;
+    flex-wrap: wrap;
+
+    font-size: $font-size-medium;
+    font-weight: 500;
+  }
 }
 
 .keyboard-container {
