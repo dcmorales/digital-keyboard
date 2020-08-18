@@ -66,7 +66,7 @@ class Selections extends React.Component {
         <SelectionDetail
           labelName="Note Length"
           start="4"
-          max="32"
+          max="16"
           selectionName="noteLength"
           selectionValue={this.context.noteLength}
           arrNum={7}
