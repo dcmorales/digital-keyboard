@@ -19,8 +19,7 @@ class PlayButton extends React.Component {
     }
   }
 
-  renderPlayButton = (newStart, lastPoint) => {
-    const notesArray = newStart.concat(lastPoint);
+  renderPlayButton = (notesArray) => {
     const {
       order,
       waveform,
@@ -41,8 +40,6 @@ class PlayButton extends React.Component {
       bpm,
       noteLength,
       repeatx,
-      newStart,
-      lastPoint,
       notesArray,
     };
     if (order !== 'random') {
@@ -64,8 +61,9 @@ class PlayButton extends React.Component {
           className="play-button"
           onClick={() =>
             this.renderPlayButton(
-              defineScale.renderNotes(scaleInfo)[0],
-              defineScale.renderNotes(scaleInfo)[1]
+              defineScale
+                .renderNotes(scaleInfo)[0]
+                .concat(defineScale.renderNotes(scaleInfo)[1])
             )
           }
         >
