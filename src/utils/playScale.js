@@ -4,13 +4,14 @@ import { highlight } from './highlight';
 export const playScale = {
   stopNote(updateInfo) {
     const [sliceOrder, , , , , bpm, noteLength] = updateInfo;
-    var offsetPlus = 0;
+    var offsetPlus = 50;
     var bpmToMs = parseInt(60000 / bpm / (noteLength / 4), 10);
     sliceOrder.forEach((noteFull) => {
       setTimeout(() => {
         synth.noteOff(noteFull);
       }, offsetPlus);
       offsetPlus += bpmToMs;
+      console.log(offsetPlus);
     });
   },
 
