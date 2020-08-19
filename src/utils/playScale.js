@@ -11,7 +11,6 @@ export const playScale = {
         synth.noteOff(noteFull);
       }, offsetPlus);
       offsetPlus += bpmToMs;
-      console.log(offsetPlus);
     });
   },
 
