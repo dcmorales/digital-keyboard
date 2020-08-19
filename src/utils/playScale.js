@@ -4,8 +4,8 @@ import { highlight } from './highlight';
 export const playScale = {
   stopNote(updateInfo) {
     const [sliceOrder, , , , , bpm, noteLength] = updateInfo;
-    var offsetPlus = 250;
-    var bpmToMs = parseInt(60000 / (bpm * (noteLength / 4)), 10);
+    var offsetPlus = 0;
+    var bpmToMs = parseInt(60000 / bpm / (noteLength / 4), 10);
     sliceOrder.forEach((noteFull) => {
       setTimeout(() => {
         synth.noteOff(noteFull);
@@ -16,13 +16,13 @@ export const playScale = {
 
   playNote(updateInfo) {
     const [sliceOrder, , waveform, oscillator, , bpm, noteLength] = updateInfo;
-    var offsetPlus = 200;
-    var bpmToMs = parseInt(60000 / (bpm * (noteLength / 4)), 10);
+    var offsetPlus = 0;
+    var bpmToMs = parseInt(60000 / bpm / (noteLength / 4), 10);
     sliceOrder.forEach((noteFull) => {
       const octave = noteFull.includes('b') ? noteFull[2] : noteFull[1];
       setTimeout(() => {
         synth.play(noteFull, waveform, oscillator, octave);
-        highlight.singleNote(noteFull);
+        highlight.singleNote(noteFull, bpmToMs);
       }, offsetPlus);
       offsetPlus += bpmToMs;
     });
