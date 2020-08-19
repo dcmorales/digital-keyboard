@@ -20,7 +20,7 @@ class PlayButton extends React.Component {
   }
 
   renderPlayButton = (newStart, lastPoint) => {
-    const noteArrays = [newStart, lastPoint];
+    const notesArray = newStart.concat(lastPoint);
     const {
       order,
       waveform,
@@ -31,7 +31,7 @@ class PlayButton extends React.Component {
       repeatx,
     } = this.context;
     const sliceOrder =
-      order === 'descending' ? noteArrays.reverse() : noteArrays;
+      order === 'descending' ? notesArray.reverse() : notesArray;
     const updateInfo = {
       sliceOrder,
       order,
@@ -43,7 +43,7 @@ class PlayButton extends React.Component {
       repeatx,
       newStart,
       lastPoint,
-      noteArrays,
+      notesArray,
     };
     if (order !== 'random') {
       updateScale.handleNewScaleNotes(updateInfo);
