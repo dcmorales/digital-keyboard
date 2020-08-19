@@ -5,20 +5,10 @@ import PlayButton from './PlayButton';
 import NoteDisplay from './NoteDisplay';
 
 class SelectedScaleNotes extends React.Component {
-  state = {
-    notesPlayed: [],
-  };
+  state = { notesPlayed: [] };
 
-  updateNotesDisplay = ({ sliceOrder, order, totalBeats, noteArrays }) => {
-    const noteArrayFragment = [noteArrays[0].concat(noteArrays[1])];
-    const fragmentSlice = [noteArrayFragment[0].slice(0, totalBeats)];
-    const notesPlayedArray =
-      order === 'ascending'
-        ? sliceOrder[0].concat(sliceOrder[1])
-        : order === 'descending'
-        ? sliceOrder[1].concat(sliceOrder[0]).reverse()
-        : //order !== ascending && !== descending, order === 'random'
-          fragmentSlice[0];
+  updateNotesDisplay = ({ sliceOrder, order, totalBeats, notesArray }) => {
+    const notesPlayedArray = notesArray.slice(0, totalBeats);
     this.setState({ notesPlayed: notesPlayedArray });
   };
 
