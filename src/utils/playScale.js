@@ -35,12 +35,15 @@ export const playScale = {
       document.getElementsByClassName('selection-detail__dropdown-menu')
     );
     const keysArray = Array.from(document.getElementsByClassName('key'));
-    const buttons = selectionsArray.concat(keysArray);
     document.getElementById('play-button').setAttribute('disabled', 'disbaled');
-    buttons.map((button) => button.setAttribute('disabled', 'disabled'));
+    keysArray.map((button) => button.classList.add('key__disabled'));
+    selectionsArray.map((button) =>
+      button.setAttribute('disabled', 'disabled')
+    );
     setTimeout(() => {
       document.getElementById('play-button').removeAttribute('disabled');
-      buttons.map((button) => button.removeAttribute('disabled'));
+      keysArray.map((button) => button.classList.remove('key__disabled'));
+      selectionsArray.map((button) => button.removeAttribute('disabled'));
     }, offset);
   },
 };
